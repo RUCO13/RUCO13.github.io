@@ -1,4 +1,4 @@
-## Welcome to RUCOS's page
+## Welcome to RUCO's page
 <h1 align='center'> Hi there 👋 I'm Oscar an 🇲🇽 Experimental Solid State Physicist with a great taste for Computational Physics 
 </h1>
 
