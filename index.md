@@ -43,7 +43,6 @@
 <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"> 
 <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"> 
 <img src="https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white"> 
-
 </td>
 </tr>
 <tr>
@@ -51,7 +50,6 @@
 <td><img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white"> 
 <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white"> 
 <img src="https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white"> 
-
 </td>
 </tr>
 <tr>
@@ -76,32 +74,24 @@
 <td><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></td>
 </tr>
 </table>
-
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RUCO13&show_icons=true&include_all_commits=true&theme=cobalt2"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=RUCO13&show_icons=true&include_all_commits=true&theme=cobalt2">
 </p>
 <p align="center">
  <!-- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RUCO13&hide=html&theme=cobalt2"/> -->
  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&theme=cobalt2"/>
 </p>
-
 <p align="center">
 <a href="https://github.com/RUCO13?tab=repositories">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=RUCO13&theme=dracula&hide_border=true"/>
 </p>
-
-
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RUCO13&theme=solarized_dark"/>
 </p>
-
 <p align="center"
 <a href="https://github.com/anuraghazra/github-readme-stats">
     <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RUCO13&langs_count=8&hide=html,PostScript&theme=radical&"/>
 </a>
 </p>
 
-<!-- </h2> -->
 ![](https://komarev.com/ghpvc/?username=RUCO13&style=for-the-badge&label=Visitors+Count&color=blue)
-
