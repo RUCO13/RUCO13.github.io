@@ -1,4 +1,10 @@
-<channel>
-<title>Homes on Oscar Ruiz-Cigarrillo | Solid State Phycicist</title>
-<link>https://ruco13.github.io/home</link>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Homes on Oscar Ruiz-Cigarrillo | Solid State Phycicist</title>
+        <link>https://ruco13.github.io/home</link>
+      <description>Recent content in RUCO's page | Solid State Physics| Computational Physics</description>
+      <language>en-us</language>
+      <atom:link href="/" rel="self" type="application/rss+xml" />
 </channel>
+</rss>
