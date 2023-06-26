@@ -5,7 +5,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #6e6e80;
+      background-color: #353740;
       color: #f8f9fc;
       margin: 0;
       padding: 20px;
@@ -17,11 +17,11 @@
       }
       
       .column:nth-child(1) {
-        background-color:#acacbe; /* Color de fondo para la primera columna */
+        background-color:#6e6e80; /* Color de fondo para la primera columna */
       }
       
       .column:nth-child(2) {
-        background-color:#6e6e80; /* Color de fondo para la segunda columna */
+        background-color:#353740; /* Color de fondo para la segunda columna */
       }
 
     .container {
@@ -82,17 +82,44 @@
       margin-right: 10px;
     }
     
+    .main-content {
+        flex-grow: 1;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
     
+    .contact-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        background-color: #333333;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .contact-bar a {
+        color: #ffffff;
+        text-decoration: none;
+    }
     /* Estilos adicionales para las pestañas, secciones, etc. */
   </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar column">
+            <h2>O. Ruiz-Cigarrillo's <br>Web Page</h2> 
             <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+
+
+            <h3>Social media</h3> 
             <ul class="social-links">
                 <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
             </ul>
+
+            <div class="contact-bar">
+                <a href="mailto:ruizoscar.1393@gmail.com">Contact Me</a>
+            </div>
         </div>
 
         <div class="main-content column">
