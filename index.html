@@ -1,60 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oscar's personal page</title>
+    <title>Oscar's web page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000000;
+      background-color: #6e6e80;
+      color: #f8f9fc;
       margin: 0;
-      padding: 50px;
+      padding: 20px;
     }
     
-    h1 {
-      color: #333;
-    }
-    
-    .about-section {
+    .container {
       display: flex;
-      align-items: center;
-      margin-bottom: 20px;
     }
     
-    .about-section img {
-      width: 200px;
-      border-radius: 50%;
+    .sidebar {
+      flex-basis: 250px;
       margin-right: 20px;
     }
     
-    .about-section p {
+    .main-content {
+      flex-grow: 1;
+    }
+    
+    h1 {
+      color: #333333;
+    }
+    
+    img.profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .social-links {
+      list-style-type: none;
+      padding:0px;
+      margin: 10px;
+    }
+    
+    .social-links li {
+      margin-bottom: 0px;
+    }
+    
+    .social-links a {
+      color: #333333;
+      text-decoration: none;
+    }
+    
+    .about-section {
+      margin-bottom: 30px;
+    }
+    
+    .tabs {
+      margin-top: 20px;
+    }
+    
+    .tabs ul {
+      list-style-type: none;
+      padding: 0;
       margin: 0;
     }
+    
+    .tabs li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    /* Estilos adicionales para las pestañas, secciones, etc. */
   </style>
 </head>
 <body>
-  <h1>About me</h1>
-  
-  <div class="about-section">
-    <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto">
-    <ul>
-      <li>
-        <p>I hold a PhD in Photonics from <a href="http://www.iico.uaslp.mx/Paginas/Luis-Felipe.aspx">IICO/UASLP</a> and teach Physics at <a href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
-      </li>
-      <li>
-        <p>Currently, I'm focusing on learning DFT and bandstructure packages</p>
-      </li>
-      <li>
-        <p>Ask me anything about Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures</p>
-      </li>
-      <li>
-        <p>I am the founder of the institutional repository <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a></p>
-      </li>
-    </ul>
-  </div>
-  
-  <h2>Interest</h2>
-  
-  <h2>List of Publications</h2>
-  <p><a href="./sections/publications.html">click me</a></p>
+    <div class="container">
+        <div class="sidebar">
+            <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+            <ul class="social-links">
+                <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1 style="color: #f6f2f2;">About me</h1>
+
+            <div class="about-section">
+                <ul>
+                    <li>
+                        <p>I hold a PhD in Photonics from <a href="http://www.iico.uaslp.mx/Paginas/Luis-Felipe.aspx">IICO/UASLP</a> and teach Physics at <a href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
+                    </li>
+                    <li>
+                        <p>Currently, I'm focusing on learning DFT and bandstructure packages</p>
+                    </li>
+                    <li>
+                        <p>Ask me anything about Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures</p>
+                    </li>
+                    <li>
+                        <p>I am the founder of the institutional repository <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tabs">
+                <ul>
+                    <li><a href="#section1">Section 1</a></li>
+                    <li><a href="#section2">Section 2</a></li>
+                    <li><a href="#section3">Section 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
