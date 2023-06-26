@@ -11,12 +11,25 @@
       padding: 20px;
     }
     
+    .column {
+        flex-grow: 1;
+        padding: 20px;
+      }
+      
+      .column:nth-child(1) {
+        background-color:#acacbe; /* Color de fondo para la primera columna */
+      }
+      
+      .column:nth-child(2) {
+        background-color:#6e6e80; /* Color de fondo para la segunda columna */
+      }
+
     .container {
       display: flex;
     }
     
     .sidebar {
-      flex-basis: 250px;
+      flex-basis: 350px;
       margin-right: 20px;
     }
     
@@ -25,7 +38,7 @@
     }
     
     h1 {
-      color: #333333;
+      color: #fff6f6;
     }
     
     img.profile-image {
@@ -69,19 +82,20 @@
       margin-right: 10px;
     }
     
+    
     /* Estilos adicionales para las pestañas, secciones, etc. */
   </style>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar column">
             <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
             <ul class="social-links">
                 <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
             </ul>
         </div>
 
-        <div class="main-content">
+        <div class="main-content column">
             <h1 style="color: #f6f2f2;">About me</h1>
 
             <div class="about-section">
@@ -98,6 +112,10 @@
                     <li>
                         <p>I am the founder of the institutional repository <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a></p>
                     </li>
+
+                    <li>
+                        <p> My GitHub contribution
+                    </li>
                 </ul>
             </div>
 
@@ -105,7 +123,7 @@
                 <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
             </p>
 
-
+            <h1 style="color: #f6f2f2;">Research interests</h1>
             <!-- <div class="tabs">
                 <ul>
                     <li><a href="#section1">Section 1</a></li>
