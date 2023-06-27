@@ -26,6 +26,11 @@
 
     .container {
       display: flex;
+      position:relative;
+    }
+
+    .sidebar-container {
+        position: relative;
     }
     
     .sidebar {
@@ -44,7 +49,7 @@
     img.profile-image {
       width: 200px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: 30%;
       object-fit: cover;
     }
     
@@ -89,19 +94,25 @@
     }
     
     .contact-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 20%;
-      background-color: #333333;
-      padding: 10px;
-      text-align: center;
-    }
-    
+        position: absolute;
+        bottom: 0px; /* Ajusta la posición verticalmente según sea necesario */
+        left: 0;
+        width: fit-content;
+        background-color: #333333;
+        padding: 10px;
+        text-align: center;
+      }
+
     .contact-bar a {
       color: #ffffff;
       text-decoration: none;
     }
+    .publications-container {
+        width: 100%;
+        max-height: 400px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+      }
   </style>
 </head>
 <body>
@@ -150,9 +161,9 @@
 
       <h1 style="color: #f6f2f2;">Research interests</h1>
       
-      <h1>Lista de Publicaciones</h1>
-     
+      <h1>Publications List</h1>
       <div class="tabs">
+        <div class="publications-container">
         <ul>
           <li>
             <h3>Journal of Applied Physics</h3>
@@ -203,6 +214,7 @@
             </ul>
           </li>
         </ul>
+      </div>
       </div>
     </div>
   </div>
