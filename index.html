@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Oscar's web page</title>
+  <title>Oscar's web page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,17 +12,17 @@
     }
     
     .column {
-        flex-grow: 1;
-        padding: 20px;
-      }
-      
-      .column:nth-child(1) {
-        background-color:#6e6e80; /* Color de fondo para la primera columna */
-      }
-      
-      .column:nth-child(2) {
-        background-color:#353740; /* Color de fondo para la segunda columna */
-      }
+      flex-grow: 1;
+      padding: 20px;
+    }
+    
+    .column:nth-child(1) {
+      background-color:#6e6e80; /* Color de fondo para la primera columna */
+    }
+    
+    .column:nth-child(2) {
+      background-color:#353740; /* Color de fondo para la segunda columna */
+    }
 
     .container {
       display: flex;
@@ -83,125 +83,128 @@
     }
     
     .main-content {
-        flex-grow: 1;
-        background-color: #f9f9f9;
-        padding: 20px;
+      flex-grow: 1;
+      background-color: #f9f9f9;
+      padding: 20px;
     }
     
     .contact-bar {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 20%;
-        background-color: #333333;
-        padding: 10px;
-        text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20%;
+      background-color: #333333;
+      padding: 10px;
+      text-align: center;
     }
     
     .contact-bar a {
-        color: #ffffff;
-        text-decoration: none;
+      color: #ffffff;
+      text-decoration: none;
     }
-    /* Estilos adicionales para las pestañas, secciones, etc. */
   </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar column">
-            <h2>Oscar's Web Page</h2> 
-            <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+  <div class="container">
+    <div class="sidebar column">
+      <h2>Oscar's Web Page</h2>
+      <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
 
+      <h3>Social media</h3>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
+      </ul>
 
-            <h3>Social media</h3> 
-            <ul class="social-links">
-                <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
-            </ul>
-
-            <div class="contact-bar">
-                <a href="mailto:ruizoscar.1393@gmail.com">Contact Me</a>
-            </div>
-        </div>
-
-        <div class="main-content column">
-            <h1 style="color: #f6f2f2;">About me</h1>
-
-            <div class="about-section">
-                <ul>
-                    <li>
-                        <p>I hold a PhD in Photonics from <a href="http://www.iico.uaslp.mx">IICO/UASLP</a> and teach Physics at <a href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
-                    </li>
-                    <li>
-                        <p>Currently, I'm focusing on learning DFT and bandstructure packages</p>
-                    </li>
-                    <li>
-                        <p>Ask me anything about Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures</p>
-                    </li>
-                    <li>
-                        <p>I am the founder of the institutional repository <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a></p>
-                    </li>
-
-                    <li>
-                        <p> My GitHub contribution
-                    </li>
-                </ul>
-            </div>
-
-            <p align='center'>
-                <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
-            </p>
-
-            <h1 style="color: #f6f2f2;">Research interests</h1>
-            <!-- <div class="tabs">
-                <ul>
-                    <li><a href="#section1">Section 1</a></li>
-                    <li><a href="#section2">Section 2</a></li>
-                    <li><a href="#section3">Section 3</a></li>
-                </ul>
-            </div> -->
-
-            <h1>Lista de Publicaciones</h1>
-            <ol id="publications-list"></ol>
-            <script>
-              function readCSV(file, callback) {
-                var rawFile = new XMLHttpRequest();
-                rawFile.open("GET", file, true);
-                rawFile.onreadystatechange = function () {
-                  if (rawFile.readyState === 4 && rawFile.status === 200) {
-                    var allText = rawFile.responseText;
-                    callback(allText);
-                  }
-                }
-                rawFile.send(null);
-              }
-          
-              function processCSV(csvContent) {
-                var publications = csvContent.split('\n');
-                var publicationsList = document.getElementById('publications-list');
-          
-                for (var i = 1; i < publications.length; i++) {
-                  var publicationData = publications[i].split('\t');
-          
-                  if (publicationData.length >= 8) {
-                    var authors = publicationData[0].replace(/['"]+/g, '');
-                    var title = publicationData[1].replace(/['"]+/g, '');
-                    var publication = publicationData[2].replace(/['"]+/g, '');
-                    var volume = publicationData[3].replace(/['"]+/g, '');
-                    var number = publicationData[4].replace(/['"]+/g, '');
-                    var pages = publicationData[5].replace(/['"]+/g, '');
-                    var year = publicationData[6].replace(/['"]+/g, '');
-                    var publisher = publicationData[7].replace(/['"]+/g, '');
-          
-                    var listItem = document.createElement('li');
-                    var listItemText = document.createTextNode(title + ' - ' + authors + ' - ' + publication + ' (' + year + ')');
-                    listItem.appendChild(listItemText);
-                    publicationsList.appendChild(listItem);
-                  }
-                }
-              }
-            readCSV('citations.csv', processCSV);
-            </script>
-
-
+      <div class="contact-bar">
+        <a href="mailto:ruizoscar.1393@gmail.com">Contact Me</a>
+      </div>
     </div>
+
+    <div class="main-content column">
+      <h1 style="color: #f6f2f2;">About me</h1>
+
+      <div class="about-section">
+        <ul>
+          <li>
+            <p>I hold a PhD in Photonics from <a href="http://www.iico.uaslp.mx">IICO/UASLP</a> and teach Physics at <a href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
+          </li>
+          <li>
+            <p>Currently, I'm focusing on learning DFT and bandstructure packages</p>
+          </li>
+          <li>
+            <p>Ask me anything about Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures</p>
+          </li>
+          <li>
+            <p>I am the founder of the institutional repository <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a></p>
+          </li>
+
+          <li>
+            <p> My GitHub contribution
+          </li>
+        </ul>
+      </div>
+
+      <p align='center'>
+        <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
+      </p>
+
+      <h1 style="color: #f6f2f2;">Research interests</h1>
+      
+      <h1>Lista de Publicaciones</h1>
+     
+      <div class="tabs">
+        <ul>
+          <li>
+            <h3>Journal of Applied Physics</h3>
+            <ul>
+              <li>Lastras-Martínez, LF; Almendarez-Rodríguez, J; Flores-Rangel, G; Ulloa-Castillo, NA; Ruiz-Cigarrillo, O; Ibarra-Becerra, CA; Castro-García, R; Balderas-Navarro, RE; Oliveira, MH; Lopes, JMJ;</li>
+              <li>Optical detection of graphene nanoribbons synthesized on stepped SiC surfaces</li>
+              <li>Volume 122, Number 3, 2017, AIP Publishing</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Physical Review B</h3>
+            <ul>
+              <li>Lastras-Martínez, LF; Cerda-Méndez, E; Ulloa-Castillo, N; Herrera-Jasso, R; Rodríguez-Tapia, LE; Ruiz-Cigarrillo, O; Castro-García, R; Biermann, K; Santos, PV;</li>
+              <li>Microscopic optical anisotropy of exciton-polaritons in a GaAs-based semiconductor microcavity</li>
+              <li>Volume 96, Number 23, 235306, 2017, APS</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Applied Surface Science</h3>
+            <ul>
+              <li>Flores-Rangel, G; Lastras-Martinez, LF; Castro-Garcia, R; Ruiz-Cigarrillo, O; Balderas-Navarro, RE; Espinosa-Cuellar, LD; Lastras-Martinez, A; Lopes, JMJ;</li>
+              <li>Optical contrast in the near-field limit for structural characterization of graphene nanoribbons</li>
+              <li>Volume 536, Number 147710, 2021, North-Holland</li>
+            </ul>
+          </li>
+          <li>
+            <h3>AIP Advances</h3>
+            <ul>
+              <li>Lastras-Martínez, LF; Medina-Escobedo, D; Flores-Rangel, G; Balderas-Navarro, RE; Ruiz-Cigarrillo, O; Castro-García, R; Morales-Morelos, M del P; Ortega-Gallegos, J; Losurdo, M;</li>
+              <li>Differential reflectance contrast technique in near field limit: Application to graphene</li>
+              <li>Volume 9, Number 4, 045309, 2019, AIP Publishing LLC</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Physical Review B</h3>
+            <ul>
+              <li>Ruiz-Cigarrillo, O; Lastras-Martínez, LF; Cerda-Méndez, EA; Flores-Rangel, G; Bravo-Velazquez, CA; Balderas-Navarro, RE; Lastras-Martínez, A; Ulloa-Castillo, NA; Biermann, K; Santos, PV;</li>
+              <li>Optical anisotropies of asymmetric double GaAs (001) quantum wells</li>
+              <li>Volume 103, Number 3, 035309, 2021, APS</li>
+            </ul>
+          </li>
+          <li>
+            <h3>physica status solidi (b)</h3>
+            <ul>
+              <li>Bravo-Velázquez, Carlos Alberto; Lastras-Martínez, Luis Felipe; Ruiz-Cigarrillo, Oscar; Flores-Rangel, Gabriela; Tapia-Rodríguez, Lucy Estefania; Biermann, Klaus; Santos, Paulo Ventura;</li>
+              <li>Photoluminescence of double quantum wells: asymmetry and excitation laser wavelength effects</li>
+              <li>Volume 259, Number 4, 2100612, 2022</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
