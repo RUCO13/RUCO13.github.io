@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Oscar's web page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -99,46 +101,68 @@
     }
     
     .contact-bar {
-        position: relative;
-        bottom: 0px;
-        right: 0;
-        background-color: #333333;
-        padding: 10px;
-        text-align: center;
-      }
+      position: relative;
+      bottom: 0px;
+      right: 0;
+      background-color: #333333;
+      padding: 10px;
+      text-align: center;
+    }
 
     .contact-bar a {
       color: #ffffff;
       text-decoration: none;
     }
     .publications-container {
-        width: 100%;
-        max-height: 400px;
-        overflow-y: scroll;
-        border: 1px solid #ccc;
-      }
-     
-      a:hover {
-        color: #00c3ff; /* Cambia el color aquí */
-      }
-      a:visited {
-        color: #e5ff00; /* Cambia el color aquí */
-      }
-      a.link {
-        color: rgb(13, 238, 31);
-        /* Otros estilos que desees aplicar */
-      }
+      width: 100%;
+      max-height: 400px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+    }
+   
+    a:hover {
+      color: #00c3ff; /* Cambia el color aquí */
+    }
+    a:visited {
+      color: #e5ff00; /* Cambia el color aquí */
+    }
+    a.link {
+      color: rgb(13, 238, 31);
+      /* Otros estilos que desees aplicar */
+    }
 
-      .counter-container {
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        width: fit-content;
-        background-color: #333333;
-        padding: 10px;
-        text-align: center;
-      }
+    .counter-container {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: fit-content;
+      background-color: #333333;
+      padding: 10px;
+      text-align: center;
+    }
 
+    .social-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .social-icons li {
+        margin-right: 10px;
+      }
+      .social-icons a {
+        color: #333;
+        text-decoration: none;
+        font-size: 45px;
+      }
   </style>
 </head>
 <body>
@@ -147,24 +171,24 @@
       <h2>Oscar's Web Page</h2>
       <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
 
-      <h3>Social media</h3>
-      <ul class="social-links">
-        <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&"  ></a></li>
-      </ul>
+   
+     
+  
 
-      <div class="contact-bar">
-        <a href="mailto:ruizoscar.1393@gmail.com">Contact Me</a>
-      </div>
-
-      <div class="counter-container">
+      <!-- <div class="counter-container">
         <a href="https://www.hitwebcounter.com" target="_blank">
           <img src="https://hitwebcounter.com/counter/counter.php?page=8654039&style=0024&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
         </a>                                   
-      </div>
-                                            
-                                     
-                                            
+      </div> -->
+  
+      <ul class="social-icons">
+        <li><a href="https://twitter.com/RUCO0713"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/ruco0713/"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://github.com/RUCO13"><i class="fab fa-github"></i></a></li>
+      </ul>
+    
 
+  
     </div>
 
     <div class="main-content column">
@@ -246,16 +270,8 @@
               <li>Volume 103, Number 3, 035309, 2021, APS</li>
             </ul>
           </li>
-          <li>
-            <h3>physica status solidi (b)</h3>
-            <ul>
-              <li>Bravo-Velázquez, Carlos Alberto; Lastras-Martínez, Luis Felipe; Ruiz-Cigarrillo, Oscar; Flores-Rangel, Gabriela; Tapia-Rodríguez, Lucy Estefania; Biermann, Klaus; Santos, Paulo Ventura;</li>
-              <li>Photoluminescence of double quantum wells: asymmetry and excitation laser wavelength effects</li>
-              <li>Volume 259, Number 4, 2100612, 2022</li>
-            </ul>
-          </li>
         </ul>
-      </div>
+        </div>
       </div>
     </div>
   </div>
