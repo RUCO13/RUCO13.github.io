@@ -29,7 +29,7 @@
     }
     
     .sidebar {
-      flex-basis: 350px;
+      flex-basis: 200px;
       margin-right: 20px;
     }
     
@@ -160,13 +160,45 @@
             </div> -->
 
             <h1>Lista de Publicaciones</h1>
-            <div id="publications-container"></div>
-
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <ol id="publications-list"></ol>
             <script>
-              $(document).ready(function() {
-                $('#publications-container').load('_includes/publications.html');
-              });
+              function readCSV(file, callback) {
+                var rawFile = new XMLHttpRequest();
+                rawFile.open("GET", file, true);
+                rawFile.onreadystatechange = function () {
+                  if (rawFile.readyState === 4 && rawFile.status === 200) {
+                    var allText = rawFile.responseText;
+                    callback(allText);
+                  }
+                }
+                rawFile.send(null);
+              }
+          
+              function processCSV(csvContent) {
+                var publications = csvContent.split('\n');
+                var publicationsList = document.getElementById('publications-list');
+          
+                for (var i = 1; i < publications.length; i++) {
+                  var publicationData = publications[i].split('\t');
+          
+                  if (publicationData.length >= 8) {
+                    var authors = publicationData[0].replace(/['"]+/g, '');
+                    var title = publicationData[1].replace(/['"]+/g, '');
+                    var publication = publicationData[2].replace(/['"]+/g, '');
+                    var volume = publicationData[3].replace(/['"]+/g, '');
+                    var number = publicationData[4].replace(/['"]+/g, '');
+                    var pages = publicationData[5].replace(/['"]+/g, '');
+                    var year = publicationData[6].replace(/['"]+/g, '');
+                    var publisher = publicationData[7].replace(/['"]+/g, '');
+          
+                    var listItem = document.createElement('li');
+                    var listItemText = document.createTextNode(title + ' - ' + authors + ' - ' + publication + ' (' + year + ')');
+                    listItem.appendChild(listItemText);
+                    publicationsList.appendChild(listItem);
+                  }
+                }
+              }
+            readCSV('_data/citations.csv', processCSV);
             </script>
 
 

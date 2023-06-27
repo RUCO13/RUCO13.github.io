@@ -14,4 +14,4 @@ layout: default
 
 
 # List of Publications
-[click me](./sections/publications.html)
+{% include publications limit=10 %}
