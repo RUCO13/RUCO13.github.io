@@ -160,7 +160,14 @@
             </div> -->
 
             <h1>Lista de Publicaciones</h1>
-            {% include publications.md %}
+            <div id="publications-container"></div>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+              $(document).ready(function() {
+                $('#publications-container').load('_includes/publications.html');
+              });
+            </script>
 
 
     </div>
