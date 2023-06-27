@@ -60,9 +60,14 @@
     }
     
     .social-links li {
-      margin-bottom: 0px;
-    }
-    
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+      }
+    .social-links li img {
+        margin-right: 30px;
+      }
     .social-links a {
       color: #333333;
       text-decoration: none;
@@ -94,10 +99,9 @@
     }
     
     .contact-bar {
-        position: absolute;
-        bottom: 0px; /* Ajusta la posición verticalmente según sea necesario */
-        left: 0;
-        width: fit-content;
+        position: relative;
+        bottom: 0px;
+        right: 0;
         background-color: #333333;
         padding: 10px;
         text-align: center;
@@ -124,6 +128,17 @@
         color: rgb(13, 238, 31);
         /* Otros estilos que desees aplicar */
       }
+
+      .counter-container {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: fit-content;
+        background-color: #333333;
+        padding: 10px;
+        text-align: center;
+      }
+
   </style>
 </head>
 <body>
@@ -134,12 +149,22 @@
 
       <h3>Social media</h3>
       <ul class="social-links">
-        <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a></li>
+        <li><a href="https://twitter.com/RUCO0713"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&"  ></a></li>
       </ul>
 
       <div class="contact-bar">
         <a href="mailto:ruizoscar.1393@gmail.com">Contact Me</a>
       </div>
+
+      <div class="counter-container">
+        <a href="https://www.hitwebcounter.com" target="_blank">
+          <img src="https://hitwebcounter.com/counter/counter.php?page=8654039&style=0024&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
+        </a>                                   
+      </div>
+                                            
+                                     
+                                            
+
     </div>
 
     <div class="main-content column">
