@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Oscar's web page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    body {font-family: 'Montserrat', sans-serif;
       background-color: #353740;
       color: #f8f9fc;
       margin: 0;
-      padding: 20px;
-    }
-    
-    .column {
-      flex-grow: 1;
+      padding: 20px;}
+      
+    .column {flex-grow: 1;
       padding: 10px;
     }
-    
+
     .column:nth-child(1) {
-      background-color:#6e6e80; /* Color de fondo para la primera columna */
+      background-color: #6e6e80;
+      /* Color de fondo para la primera columna */
     }
-    
+
     .column:nth-child(2) {
-      background-color:#353740; /* Color de fondo para la segunda columna */
+      background-color: #353740;
+      /* Color de fondo para la segunda columna */
     }
 
     .container {
       display: flex;
-      position:relative;
+      position: relative;
     }
 
     .sidebar-container {
-        position: relative;
-        width: 350px;
-        
+      position: relative;
+      width: 350px;
+
     }
 
-    
+
     .sidebar {
-        position: fixed;
+      position: fixed;
       flex-basis: 345px;
       top: 0;
       left: 0;
       width: 345px;
       height: 100%;
     }
-    
+
     .main-content {
       flex-grow: 1;
       overflow-y: auto;
     }
-    
+
     h1 {
       color: #fff6f6;
     }
-    
+
     img.profile-image {
       width: 270px;
       height: 270px;
       border-radius: 50%;
       object-fit: cover;
     }
-    
+
     .social-links {
       list-style-type: none;
-      padding:0px;
+      padding: 0px;
       margin: 10px;
     }
-    
+
     .social-links li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        width: fit-content;
-      }
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+    }
+
     .social-links li img {
-        margin-right: 30px;
-      }
+      margin-right: 30px;
+    }
+
     .social-links a {
       color: #333333;
       text-decoration: none;
     }
-    
+
     .about-section {
       margin-bottom: 30px;
     }
-    
+
     .main-content {
       flex-grow: 1;
       background-color: #f9f9f9;
       padding: 20px;
-      margin-left: 340px; /* Ancho del sidebar */
-      
+      margin-left: 340px;
+      /* Ancho del sidebar */
+
     }
-    
+
     .contact-bar {
       position: relative;
       bottom: 0px;
@@ -109,26 +112,32 @@
       color: #ffffff;
       text-decoration: none;
     }
+
     .publications-container {
       width: 100%;
       max-height: 400px;
       overflow-y: scroll;
       border: 1px solid #ccc;
     }
-   
+
     a:hover {
-      color: #00c3ff; /* Cambia el color aquí */
+      color: #00c3ff;
+      /* Cambia el color aquí */
     }
+
     a:visited {
-      color: #e5ff00; /* Cambia el color aquí */
+      color: #e5ff00;
+      /* Cambia el color aquí */
     }
+
     a.link {
       color: rgb(13, 238, 31);
       /* Otros estilos que desees aplicar */
     }
+
     a {
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
 
     .counter-container {
       position: absolute;
@@ -147,198 +156,235 @@
     }
 
     .social-icons {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-      }
-      .social-icons li {
-        margin-right: 10px;
-      }
-      .social-icons a {
-        color: #333;
-        text-decoration: none;
-        font-size: 45px;
-      }
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
-      ul.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: #333;
-        overflow: hidden;
-        display: flex;
-        justify-content: flex-end; /* Alineación a la derecha */
-        align-items: center;
-        width: 100%; /* Resta el ancho del sidebar al 100% del ancho del contenedor principal */
-      }
-  
-      ul.navbar li {
-        display: inline-block;
-      }
-  
-      ul.navbar li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-        font-family: 'Zilla Slab';
-        font-size: 20px;
-      }
-  
-      ul.navbar li a:hover {
-        background-color: #111;
-      }
-  
-      .navbar-brand {
-        font-weight: bold;
-        margin-right: 0px;
-      }
+    .social-icons li {
+      margin-right: 10px;
+    }
 
-      .profile-name {
-        font-family: 'Zilla Slab';
-        font-size: 20px;
-        text-align: center;
-      }
+    .social-icons a {
+      color: #333;
+      text-decoration: none;
+      font-size: 45px;
+    }
 
-      .sidebar-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 350px;
-      }
-      
-.sidebar-card img {
-    max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
-    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
-  }
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      /* Alineación a la derecha */
+      align-items: center;
+      width: 100%;
+      /* Resta el ancho del sidebar al 100% del ancho del contenedor principal */
+    }
+
+    ul.navbar li {
+      display: inline-block;
+    }
+
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-family: 'Zilla Slab';
+      font-size: 20px;
+    }
+
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      margin-right: 0px;
+    }
+
+    .profile-name {
+      font-family: 'Zilla Slab';
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .sidebar-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+    }
+
+    .sidebar-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .title {
+      color: rgb(253, 245, 0);
+    }
+    .author {
+      color: rgb(16, 220, 227);
+    }
   </style>
 </head>
+
 <body>
-    <nav>
+  <nav>
     <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-      </ul>
-    </nav>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
+  </nav>
 
   <div class="container">
     <div class="sidebar column">
-        <div style="text-align: center;">
-      <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
-      <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
-      <h2 class="profile-name">Ph.D. Photonics</h2>
-        </div>
-  
+      <div style="text-align: center;">
+        <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+        <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
+        <h2 class="profile-name">Ph.D. Photonics</h2>
+      </div>
+
       <ul class="social-icons">
         <li><a href="mailto:ruizoscar.1393@gmail.com"><i class="far fa-envelope"></i></a></li>
         <li><a href="https://twitter.com/RUCO0713"><i class="fab fa-twitter"></i></a></li>
         <li><a href="https://www.instagram.com/ruco0713/"><i class="fab fa-instagram"></i></a></li>
         <li><a href="https://github.com/RUCO13"><i class="fab fa-github fa-beat-fade"></i></a></li>
       </ul>
-    
+
       <div class="sidebar-card">
-        <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=gruvbox" alt="Wakatime Stats">
+        <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=gruvbox"
+          alt="Wakatime Stats">
       </div>
 
     </div>
-  
+
     <div class="main-content column">
-      <h1 style="color: #f6f2f2;">About me</h1>
       <section id="home">
-      <div class="about-section">
-        <ul>
-          <li>
-            <p>I hold a PhD in Photonics from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as a Physics professor at <a class="visited" href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
-          </li>
-          <li>
-            <p>I am passionate about exploring the field of Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures. My current focus is on expanding my knowledge in DFT (Density Functional Theory) and band structure packages.</p>
-          </li>
-          <li>
-            <p>I take pride in being the founder of <a class="visited" href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics. </p>
-          </li>
-          <li>
-            <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
-          </li>
-          <li>
-            <p> My GitHub contribution
-          </li>
-        </ul>
-      </div>
+        <h1 style="color: #f6f2f2;">About me</h1>
+        <div class="about-section">
+          <ul>
+            <li>
+              <p>I hold a PhD in Photonics from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and
+                currently work as a Physics professor at <a class="visited"
+                  href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
+            </li>
+            <li>
+              <p>I am passionate about exploring the field of Solid State Experimental Physics and Computational
+                Calculation of Semiconductor Bandstructures. My current focus is on expanding my knowledge in DFT
+                (Density Functional Theory) and band structure packages.</p>
+            </li>
+            <li>
+              <p>I take pride in being the founder of <a class="visited"
+                  href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated
+                to advancing research in the field of nanophotonics. </p>
+            </li>
+            <li>
+              <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
+            </li>
+            <li>
+              <p> My GitHub contribution
+            </li>
+          </ul>
+        </div>
       </section>
 
-      <p> <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
+      <p> <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
+          style="max-width: 100%;" />
       </p>
 
       <section id="research">
-      <h1>Research Interests</h1>
+        <h1 style="color: #f6f2f2;">Research Interests</h1>
         <ul>
-        <li>Solid State Experimental Physics</li>
-        <li>Computational Calculation of Semiconductor Bandstructures</li>
-        <li>Density Functional Theory (DFT) and Band Structure Packages</li>
-        <li>Nanophotonics</li>
+          <li>Solid State Experimental Physics</li>
+          <li>Computational Calculation of Semiconductor Bandstructures</li>
+          <li>Density Functional Theory (DFT) and Band Structure Packages</li>
+          <li>Nanophotonics</li>
         </ul>
       </section>
-      
+
+
       <section id="publications">
-      <h1>Publications List</h1>
-      <div class="tabs">
+        <h1>Publications List</h1>
         <div class="publications-container">
-        <ul>
-          <li>
-            <h3>Journal of Applied Physics</h3>
-            <ul>
-              <li>Lastras-Martínez, LF; Almendarez-Rodríguez, J; Flores-Rangel, G; Ulloa-Castillo, NA; Ruiz-Cigarrillo, O; Ibarra-Becerra, CA; Castro-García, R; Balderas-Navarro, RE; Oliveira, MH; Lopes, JMJ;</li>
-              <li>Optical detection of graphene nanoribbons synthesized on stepped SiC surfaces</li>
-              <li>Volume 122, Number 3, 2017, AIP Publishing</li>
-            </ul>
-          </li>
-          <li>
-            <h3>Physical Review B</h3>
-            <ul>
-              <li>Lastras-Martínez, LF; Cerda-Méndez, E; Ulloa-Castillo, N; Herrera-Jasso, R; Rodríguez-Tapia, LE; Ruiz-Cigarrillo, O; Castro-García, R; Biermann, K; Santos, PV;</li>
-              <li>Microscopic optical anisotropy of exciton-polaritons in a GaAs-based semiconductor microcavity</li>
-              <li>Volume 96, Number 23, 235306, 2017, APS</li>
-            </ul>
-          </li>
-          <li>
-            <h3>Applied Surface Science</h3>
-            <ul>
-              <li>Flores-Rangel, G; Lastras-Martinez, LF; Castro-Garcia, R; Ruiz-Cigarrillo, O; Balderas-Navarro, RE; Espinosa-Cuellar, LD; Lastras-Martinez, A; Lopes, JMJ;</li>
-              <li>Optical contrast in the near-field limit for structural characterization of graphene nanoribbons</li>
-              <li>Volume 536, Number 147710, 2021, North-Holland</li>
-            </ul>
-          </li>
-          <li>
-            <h3>AIP Advances</h3>
-            <ul>
-              <li>Lastras-Martínez, LF; Medina-Escobedo, D; Flores-Rangel, G; Balderas-Navarro, RE; Ruiz-Cigarrillo, O; Castro-García, R; Morales-Morelos, M del P; Ortega-Gallegos, J; Losurdo, M;</li>
-              <li>Differential reflectance contrast technique in near field limit: Application to graphene</li>
-              <li>Volume 9, Number 4, 045309, 2019, AIP Publishing LLC</li>
-            </ul>
-          </li>
-          <li>
-            <h3>Physical Review B</h3>
-            <ul>
-              <li>Ruiz-Cigarrillo, O; Lastras-Martínez, LF; Cerda-Méndez, EA; Flores-Rangel, G; Bravo-Velazquez, CA; Balderas-Navarro, RE; Lastras-Martínez, A; Ulloa-Castillo, NA; Biermann, K; Santos, PV;</li>
-              <li>Optical anisotropies of asymmetric double GaAs (001) quantum wells</li>
-              <li>Volume 103, Number 3, 035309, 2021, APS</li>
-            </ul>
-          </li>
-        </ul>
-        </div>
-      </div>
+          <div id="citations"></div>
+        
+          <script>
+  // Cargar el archivo .bib con las citas
+  fetch('_data/citations.bib') // Ruta correcta al archivo de citas en la carpeta _data
+    .then(response => response.text())
+    .then(data => {
+      // Separar las entradas de citas
+      const entries = data.split('\n\n');
+
+      const citationsContainer = document.getElementById('citations');
+      let counter = 1; // Contador para los puntos
+
+      entries.forEach(entry => {
+        const citation = {};
+
+        entry.split('\n').forEach(line => {
+          const [key, value] = line.split('=');
+          if (key && value) {
+            citation[key.trim()] = value.trim().replace(/[{}]/g, '');
+          }
+        });
+
+        const authors = citation.author.split(' and ');
+        const formattedAuthors = authors.map(author => {
+          if ((author.trim() === 'Ruiz-Cigarrillo, O') || (author.trim() === 'Ruiz-Cigarrillo, Oscar')) {
+            return `<span class="author">${author}</span>`;
+          } else {
+            return replaceLaTeXAccents(author);
+          }
+        }).join(', ');
+
+        const title = citation.title;
+        const formattedTitle = replaceLaTeXAccents(title);
+
+        const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title">${formattedTitle}</span>. ${citation.publisher}.</p>`;
+        citationsContainer.innerHTML += citationHTML;
+
+        counter++; // Incrementar el contador de puntos
+      });
+    });
+
+  function replaceLaTeXAccents(text) {
+    const accentDictionary = {
+      "\\'a": "á",
+      "\\'e": "é",
+      "\\'i": "í",
+      "\\'o": "ó",
+      "\\'u": "ú",
+      "\\'A": "Á",
+      "\\'E": "É",
+      "\\'I": "Í",
+      "\\'O": "Ó",
+      "\\'U": "Ú"
+    };
+
+    const regex = /\\'(a|e|i|o|u|A|E|I|O|U)/g;
+
+    return text.replace(regex, match => accentDictionary[match]);
+  }
+</script>
+
+          
+          
       </section>
-
-   
-
     </div>
   </div>
-
-  
 </body>
+
 </html>
