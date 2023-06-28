@@ -16,7 +16,7 @@
     
     .column {
       flex-grow: 1;
-      padding: 20px;
+      padding: 10px;
     }
     
     .column:nth-child(1) {
@@ -35,16 +35,22 @@
     .sidebar-container {
         position: relative;
         width: 350px;
+        
     }
 
     
     .sidebar {
-      flex-basis: 350px;
-      margin-right: 20px;
+        position: fixed;
+      flex-basis: 345px;
+      top: 0;
+      left: 0;
+      width: 345px;
+      height: 100%;
     }
     
     .main-content {
       flex-grow: 1;
+      overflow-y: auto;
     }
     
     h1 {
@@ -52,9 +58,9 @@
     }
     
     img.profile-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 30%;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
       object-fit: cover;
     }
     
@@ -82,25 +88,12 @@
       margin-bottom: 30px;
     }
     
-    .tabs {
-      margin-top: 20px;
-    }
-    
-    .tabs ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .tabs li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-    
     .main-content {
       flex-grow: 1;
       background-color: #f9f9f9;
       padding: 20px;
+      margin-left: 340px; /* Ancho del sidebar */
+      
     }
     
     .contact-bar {
@@ -177,8 +170,9 @@
         background-color: #333;
         overflow: hidden;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end; /* Alineación a la derecha */
         align-items: center;
+        width: 100%; /* Resta el ancho del sidebar al 100% del ancho del contenedor principal */
       }
   
       ul.navbar li {
@@ -189,7 +183,7 @@
         display: block;
         color: white;
         text-align: center;
-        padding: 14px 16px;
+        padding: 14px 20px;
         text-decoration: none;
         font-family: 'Zilla Slab';
         font-size: 20px;
@@ -201,7 +195,7 @@
   
       .navbar-brand {
         font-weight: bold;
-        margin-left: 20px;
+        margin-right: 0px;
       }
 
       .profile-name {
@@ -224,12 +218,13 @@
   </style>
 </head>
 <body>
+    <nav>
     <ul class="navbar">
-        <li class="navbar-brand"><a href="#home">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
       </ul>
-    
+    </nav>
 
   <div class="container">
     <div class="sidebar column">
@@ -238,14 +233,6 @@
       <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
       <h2 class="profile-name">Ph.D. Photonics</h2>
         </div>
-
-
-
-      <!-- <div class="counter-container">
-        <a href="https://www.hitwebcounter.com" target="_blank">
-          <img src="https://hitwebcounter.com/counter/counter.php?page=8654039&style=0024&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
-        </a>                                   
-      </div> -->
   
       <ul class="social-icons">
         <li><a href="mailto:ruizoscar.1393@gmail.com"><i class="far fa-envelope"></i></a></li>
@@ -260,21 +247,19 @@
 
     </div>
   
-
-
     <div class="main-content column">
       <h1 style="color: #f6f2f2;">About me</h1>
       <section id="home">
       <div class="about-section">
         <ul>
           <li>
-            <p>I hold a PhD in Photonics from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as a Physics professor at <a href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
+            <p>I hold a PhD in Photonics from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as a Physics professor at <a class="visited" href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
           </li>
           <li>
             <p>I am passionate about exploring the field of Solid State Experimental Physics and Computational Calculation of Semiconductor Bandstructures. My current focus is on expanding my knowledge in DFT (Density Functional Theory) and band structure packages.</p>
           </li>
           <li>
-            <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics. </p>
+            <p>I take pride in being the founder of <a class="visited" href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics. </p>
           </li>
           <li>
             <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
@@ -286,8 +271,7 @@
       </div>
       </section>
 
-      <p align='center'>
-        <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
+      <p> <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
       </p>
 
       <section id="research">
