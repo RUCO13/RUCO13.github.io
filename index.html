@@ -34,10 +34,12 @@
 
     .sidebar-container {
         position: relative;
+        width: 350px;
     }
+
     
     .sidebar {
-      flex-basis: 200px;
+      flex-basis: 350px;
       margin-right: 20px;
     }
     
@@ -50,8 +52,8 @@
     }
     
     img.profile-image {
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       border-radius: 30%;
       object-fit: cover;
     }
@@ -212,14 +214,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 270px; /* Ajusta el ancho según tus necesidades */
+        width: 350px;
       }
-      .sidebar-card-git {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 10px; /* Ajusta el ancho según tus necesidades */
-      }
+      
+.sidebar-card img {
+    max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
+    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
+  }
   </style>
 </head>
 <body>
@@ -254,10 +255,11 @@
       </ul>
     
       <div class="sidebar-card">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RUCO13&theme=onedark&show_icons=true&hide_border=true&hide_rank=true&langs_count=20" alt="Wakatime Stats">
+        <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=gruvbox" alt="Wakatime Stats">
       </div>
 
     </div>
+  
 
 
     <div class="main-content column">
