@@ -3,6 +3,7 @@
 <head>
   <title>Oscar's web page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
 
   <style>
     body {
@@ -130,6 +131,9 @@
       color: rgb(13, 238, 31);
       /* Otros estilos que desees aplicar */
     }
+    a {
+        text-decoration: none;
+      }
 
     .counter-container {
       position: absolute;
@@ -163,17 +167,66 @@
         text-decoration: none;
         font-size: 45px;
       }
+
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      ul.navbar li {
+        display: inline-block;
+      }
+  
+      ul.navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: 'Zilla Slab';
+        font-size: 20px;
+      }
+  
+      ul.navbar li a:hover {
+        background-color: #111;
+      }
+  
+      .navbar-brand {
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      .profile-name {
+        font-family: 'Zilla Slab';
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
   </style>
 </head>
 <body>
+    <ul class="navbar">
+        <li class="navbar-brand"><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
+    
+
   <div class="container">
     <div class="sidebar column">
-      <h2>Oscar's Web Page</h2>
+        <div style="text-align: center;">
       <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+      <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
+      <h2 class="profile-name">Ph.D. Photonics</h2>
+        </div>
 
-   
-     
-  
+
 
       <!-- <div class="counter-container">
         <a href="https://www.hitwebcounter.com" target="_blank">
@@ -188,13 +241,12 @@
         <li><a href="https://github.com/RUCO13"><i class="fab fa-github fa-beat-fade"></i></a></li>
       </ul>
     
-
-  
+   
     </div>
 
     <div class="main-content column">
       <h1 style="color: #f6f2f2;">About me</h1>
-
+      <section id="home">
       <div class="about-section">
         <ul>
           <li>
@@ -214,11 +266,13 @@
           </li>
         </ul>
       </div>
+      </section>
 
       <p align='center'>
         <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg" style="max-width: 100%;"/>
       </p>
 
+      <section id="research">
       <h1>Research Interests</h1>
         <ul>
         <li>Solid State Experimental Physics</li>
@@ -226,7 +280,9 @@
         <li>Density Functional Theory (DFT) and Band Structure Packages</li>
         <li>Nanophotonics</li>
         </ul>
+      </section>
       
+      <section id="publications">
       <h1>Publications List</h1>
       <div class="tabs">
         <div class="publications-container">
@@ -274,7 +330,13 @@
         </ul>
         </div>
       </div>
+      </section>
+
+   
+
     </div>
   </div>
+
+  
 </body>
 </html>
