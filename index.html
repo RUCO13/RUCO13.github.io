@@ -3,7 +3,7 @@
 
 <head>
   <title>Oscar's web page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
@@ -160,7 +160,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
     .social-icons {
       list-style: none;
       padding: 0;
@@ -169,17 +168,22 @@
       align-items: center;
       margin-top: 10px;
     }
-
+    
     .social-icons li {
       margin-right: 10px;
     }
-
+    
     .social-icons a {
       color: #333;
       text-decoration: none;
       font-size: 45px;
+      transition: transform 0.3s ease;
     }
-
+    
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+    
     ul.navbar {
       position: fixed;
       top: 0;
