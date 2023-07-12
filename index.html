@@ -7,7 +7,13 @@
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="css/particle.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NE33R61XSF');
+  </script>
 
   <style>
     body {font-family: 'Montserrat', sans-serif;
@@ -297,7 +303,26 @@
       </style>
       <div id="container-01" class="mol-container"></div>
       <script src="scripts/cs3dmol.js"></script>
-      
+      <style>
+        .visit-count {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      </style>
+      <p>Counter:<span class="visit-count" id="visitCount"></span></p>
+        <script>
+          function getVisitCount() {
+            gtag('event', 'page_view');
+            var visitCount = ga.getAll()[0].get('metric1');
+                  document.getElementById('visitCount').textContent = visitCount;
+          }
+          document.addEventListener('DOMContentLoaded', function() {
+            getVisitCount();
+          });
+        </script>
+
+   
+            
 
 
 
