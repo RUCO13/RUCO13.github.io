@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/particle.css">
 
   <style>
     body {font-family: 'Montserrat', sans-serif;
@@ -18,7 +19,6 @@
     .column {flex-grow: 1;
       padding: 10px;
     }
-
     .column:nth-child(1) {
       background-color: #6e6e80;
       /* Color de fondo para la primera columna */
@@ -256,6 +256,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#publications">Programming</a></li>
     </ul>
   </nav>
 
@@ -278,6 +279,29 @@
         <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=cobalt"
           alt="Wakatime Stats">
       </div> -->
+      
+      <!-- <div class="electron"></div>
+      <script src="scripts/particle.js"></script> -->
+      <!-- <div id="plotlyContainer"></div>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="scripts/cs.js"></script> -->
+        
+      <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <style>
+        .mol-container {
+          width: 350px;
+          height: 300px;
+          position: relative;
+        }
+      </style>
+      <div id="container-01" class="mol-container"></div>
+      <script src="scripts/cs3dmol.js"></script>
+      
+
+
+
+
 
     </div>
 
@@ -390,9 +414,6 @@
     return text.replace(regex, match => accentDictionary[match]);
   }
 </script>
-
-          
-          
       </section>
     </div>
   </div>

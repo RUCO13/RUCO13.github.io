@@ -1,0 +1,35 @@
+COMPND    Ga4 As4
+COMPND   1Created by VESTA
+HETATM    1 Ga0                  0.000   0.000   0.000  1.00  0.00          Ga
+HETATM    2 Ga0                  0.000   0.000   5.750  1.00  0.00          Ga
+HETATM    3 Ga0                  0.000   5.750   0.000  1.00  0.00          Ga
+HETATM    4 Ga0                  0.000   5.750   5.750  1.00  0.00          Ga
+HETATM    5 Ga0                  5.750   0.000   0.000  1.00  0.00          Ga
+HETATM    6 Ga0                  5.750   0.000   5.750  1.00  0.00          Ga
+HETATM    7 Ga0                  5.750   5.750   0.000  1.00  0.00          Ga
+HETATM    8 Ga0                  5.750   5.750   5.750  1.00  0.00          Ga
+HETATM    9 Ga1                  0.000   2.875   2.875  1.00  0.00          Ga
+HETATM   10 Ga1                  5.750   2.875   2.875  1.00  0.00          Ga
+HETATM   11 Ga2                  2.875   0.000   2.875  1.00  0.00          Ga
+HETATM   12 Ga2                  2.875   5.750   2.875  1.00  0.00          Ga
+HETATM   13 Ga3                  2.875   2.875   0.000  1.00  0.00          Ga
+HETATM   14 Ga3                  2.875   2.875   5.750  1.00  0.00          Ga
+HETATM   15 As4                  1.438   4.313   4.313  1.00  0.00          As
+HETATM   16 As5                  1.438   1.438   1.438  1.00  0.00          As
+HETATM   17 As6                  4.313   4.313   1.438  1.00  0.00          As
+HETATM   18 As7                  4.313   1.438   4.313  1.00  0.00          As
+CONECT    1   16
+CONECT    4   15
+CONECT    6   18
+CONECT    7   17
+CONECT    9   16   15
+CONECT   10   18   17
+CONECT   11   16   18
+CONECT   12   15   17
+CONECT   13   16   17
+CONECT   14   15   18
+CONECT   15    4    9   12   14
+CONECT   16    1    9   11   13
+CONECT   17    7   10   12   13
+CONECT   18    6   10   11   14
+END
