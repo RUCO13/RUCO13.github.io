@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Oscar's web page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -290,8 +289,7 @@
       <script src="scripts/particle.js"></script> -->
       <!-- <div id="plotlyContainer"></div>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="scripts/cs.js"></script> -->
-        
+      <script src="scripts/cs.js"></script> -->  
       <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <style>
@@ -305,29 +303,30 @@
       <script src="scripts/cs3dmol.js"></script>
       <style>
         .visit-count {
-          font-size: 24px;
+          font-size: 30px;
           font-weight: bold;
         }
       </style>
-      <p>Counter:<span class="visit-count" id="visitCount"></span></p>
-        <script>
-          function getVisitCount() {
-            gtag('event', 'page_view');
-            var visitCount = ga.getAll()[0].get('metric1');
-                  document.getElementById('visitCount').textContent = visitCount;
-          }
-          document.addEventListener('DOMContentLoaded', function() {
-            getVisitCount();
+      <span id="visitCount"></span>
+      <script>
+        function getVisitCount() {
+          gtag('event', 'page_view');
+          gtag('config', 'G-NE33R61XSF', {
+            'send_to': 'G-NE33R61XSF',
+            'metric1': 'visitCount'
           });
-        </script>
-
-   
-            
-
-
-
-
-
+          gtag('event', 'metric_view', {
+            'event_label': 'visitCount'
+          });
+          var visitCount = gtag('get', 'visitCount');
+          document.getElementById('visitCount').textContent = visitCount;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+          getVisitCount();
+        });
+      </script>
+      
+      
     </div>
 
     <div class="main-content column">

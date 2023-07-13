@@ -1,10 +1,10 @@
 let element = document.querySelector('#container-01');
-let pdbUri = 'scripts/GaAs.pdb';
+let data_dir = '_data/GaAs.xyz';
 let viewer = $3Dmol.createViewer(element, { backgroundColor: '#6e6e80' });
 
-jQuery.ajax(pdbUri, {
+jQuery.ajax(data_dir, {
   success: function(data) {
-    viewer.addModel(data, "pdb", {
+    viewer.addModel(data, "xyz", {
       doAssembly: true,
       duplicateAssemblyAtoms: true,
       normalizeAssembly: true
@@ -15,6 +15,8 @@ jQuery.ajax(pdbUri, {
     viewer.render(); /* render scene */
   },
   error: function(hdr, status, err) {
-    console.error("Failed to load PDB " + pdbUri + ": " + err);
+    console.error("Failed to load data " + data_dir + ": " + err);
   },
 });
+
+
