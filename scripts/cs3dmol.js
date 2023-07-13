@@ -1,5 +1,5 @@
 let element = document.querySelector('#container-01');
-let data_dir = '_data/GaAs.xyz';
+let data_dir = './_data/GaAs.xyz';
 let viewer = $3Dmol.createViewer(element, { backgroundColor: '#6e6e80' });
 
 jQuery.ajax(data_dir, {
