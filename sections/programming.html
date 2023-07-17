@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    .carousel-container {
+      width: 100%;
+      max-width: 70%;
+      margin: 0 auto;
+      padding: 50px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      height: 150px;
+      background-color: #353740;
+      border: 1px solid #f50606 !important;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .swiper-button-next
+    .swiper-button-prev {
+      color: #fff;
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .swiper-button-next:focus,
+    .swiper-button-prev:focus {
+      outline: none;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido de la sección "Programming" -->
+  <!-- Agrega aquí el contenido específico de la sección "Programming" -->
+  
+  <div class="carousel-container">
+    <div class="swiper-container carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="https://github.com/NanophotonIICOs/cqws-codes">
+            <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" style="width: 100%; height: 100%;">
+          </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://github.com/NanophotonIICOs/bash-scripts">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" style="width: 100%; height: 100%;">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://github.com/NanophotonIICOs/iico-spectra">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" style="width: 100%; height: 100%;">
+            </a>
+          </div>
+      </div>
+      
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var swiper = new Swiper('.carousel', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
+</body>
+</html>
