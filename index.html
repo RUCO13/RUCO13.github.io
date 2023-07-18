@@ -374,17 +374,95 @@
         </ul>
       </section>
 
-
       <section id="publications">
         <h1>Publications List</h1>
         <div class="publications-container">
           <div id="citations"></div>
-          <script src="scripts/publications.js"></script></script>
-      </section>
+          <script>
+            // Cargar el archivo .bib con las citas
+            fetch('_data/citations.bib') // Ruta correcta al archivo de citas en la carpeta _data
+              .then(response => response.text())
+              .then(data => {
+                // Separar las entradas de citas
+                const entries = data.split('\n\n');
+          
+                const citationsContainer = document.getElementById('citations');
+                let counter = 1; // Contador para los puntos
+          
+                entries.forEach(entry => {
+                  const citation = {};
+          
+                  entry.split('\n').forEach(line => {
+                    const [key, value] = line.split('=');
+                    if (key && value) {
+                      citation[key.trim()] = value.trim().replace(/[{}]/g, '');
+                    }
+                  });
+          
+                  const authors = citation.author.split(' and ');
+                  const formattedAuthors = authors.map(author => {
+                    if ((author.trim() === 'Ruiz-Cigarrillo, O') || (author.trim() === 'Ruiz-Cigarrillo, Oscar')) {
+                      return `<span class="author">${author}</span>`;
+                    } else {
+                      return replaceLaTeXAccents(author);
+                    }
+                  }).join(', ');
+          
+                  const title = citation.title;
+                  const formattedTitle = replaceLaTeXAccents(title);
+          
+                  const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title">${formattedTitle}</span>. ${citation.publisher}.</p>`;
+                  citationsContainer.innerHTML += citationHTML;
+          
+                  counter++; // Incrementar el contador de puntos
+                });
+              });
+          
+            function replaceLaTeXAccents(text) {
+              const accentDictionary = {
+                "\\'a": "á",
+                "\\'e": "é",
+                "\\'i": "í",
+                "\\'o": "ó",
+                "\\'u": "ú",
+                "\\'A": "Á",
+                "\\'E": "É",
+                "\\'I": "Í",
+                "\\'O": "Ó",
+                "\\'U": "Ú"
+              };
+          
+              const regex = /\\'(a|e|i|o|u|A|E|I|O|U)/g;
+          
+              return text.replace(regex, match => accentDictionary[match]);
+            }
+          </script>
+                </section>
 
     
     </div>
   </div>
+  <script>
+    // Obtener la sección actual desde el hash de la URL
+    const currentSection = window.location.hash.substring(1);
+  
+    // Si hay una sección actual, almacenarla en localStorage
+    if (currentSection) {
+      localStorage.setItem('currentSection', currentSection);
+    }
+  
+    // Obtener la sección almacenada en localStorage
+    const storedSection = localStorage.getItem('currentSection');
+  
+    // Si hay una sección almacenada, desplazarse a ella
+    if (storedSection) {
+      const targetSection = document.getElementById(storedSection);
+      if (targetSection) {
+        targetSection.scrollIntoView();
+      }
+    }
+  </script>
+  
 </body>
 
 </html>
