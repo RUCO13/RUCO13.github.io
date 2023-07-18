@@ -130,9 +130,7 @@
 
     .publications-container {
       width: 100%;
-      max-height: 400px;
-      overflow-y: scroll;
-      border: 1px solid #ccc;
+      max-height: 700px;
     }
 
     a:hover {
@@ -249,11 +247,16 @@
     }
 
     .title {
-      color: rgb(193, 107, 226);
+      color: rgb(82, 226, 149);
     }
+    
     .author {
       color: rgb(16, 220, 227);
     }
+
+    .custom-icon {
+        color: #eeff00; 
+      }
   </style>
 </head>
 
@@ -389,7 +392,7 @@
                 const citationsContainer = document.getElementById('citations');
                 let counter = 1; // Contador para los puntos
           
-                entries.forEach(entry => {
+                entries.reverse().forEach(entry => {
                   const citation = {};
           
                   entry.split('\n').forEach(line => {
@@ -401,7 +404,7 @@
           
                   const authors = citation.author.split(' and ');
                   const formattedAuthors = authors.map(author => {
-                    if ((author.trim() === 'Ruiz-Cigarrillo, O') || (author.trim() === 'Ruiz-Cigarrillo, Oscar')) {
+                    if ((author.trim() === 'Ruiz-Cigarrillo, O') || (author.trim() === 'Ruiz-Cigarrillo, Oscar') ||(author.trim() === 'Ruiz-Cigarrillo, O.')) {
                       return `<span class="author">${author}</span>`;
                     } else {
                       return replaceLaTeXAccents(author);
@@ -411,7 +414,11 @@
                   const title = citation.title;
                   const formattedTitle = replaceLaTeXAccents(title);
           
-                  const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title">${formattedTitle}</span>. ${citation.publisher}.</p>`;
+                  const publicationLink = citation.url;
+                  const publicationIcon = `<i class="fas fa-external-link-alt custom-icon"></i>`;
+
+          
+                  const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title">${formattedTitle}</span>. ${citation.publisher} <a href="${publicationLink}" target="_blank">${publicationIcon}</a></p>`;
                   citationsContainer.innerHTML += citationHTML;
           
                   counter++; // Incrementar el contador de puntos
@@ -437,32 +444,11 @@
               return text.replace(regex, match => accentDictionary[match]);
             }
           </script>
-          </section>
+        </div>
+      </section>
 
-    
     </div>
   </div>
-  <script>
-    // Obtener la sección actual desde el hash de la URL
-    const currentSection = window.location.hash.substring(1);
-  
-    // Si hay una sección actual, almacenarla en localStorage
-    if (currentSection) {
-      localStorage.setItem('currentSection', currentSection);
-    }
-  
-    // Obtener la sección almacenada en localStorage
-    const storedSection = localStorage.getItem('currentSection');
-  
-    // Si hay una sección almacenada, desplazarse a ella
-    if (storedSection) {
-      const targetSection = document.getElementById(storedSection);
-      if (targetSection) {
-        targetSection.scrollIntoView();
-      }
-    }
-  </script>
-  
 </body>
 
 </html>
