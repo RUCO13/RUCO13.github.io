@@ -274,31 +274,33 @@
       grid-gap: 10px;
       justify-content: center;
     }
-  
+
     .card {
-      background-color: #353740; /* Color de fondo actual */
+      background-color: #353740;
+      /* Color de fondo actual */
       padding: 10px;
       border: 1px solid #ccc;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-  
+
     .card a {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
-  
+
     .card img {
       max-width: 100%;
       height: auto;
       margin-bottom: 10px;
       filter: invert(90%) sepia(1%) hue-rotate(180deg);
     }
-      .card {
-      background-color: #353740; 
+
+    .card {
+      background-color: #353740;
     }
   </style>
 </head>
@@ -358,6 +360,24 @@
           font-weight: bold;
         }
       </style>
+      <!-- <span id="visitCount"></span>
+      <script>
+        function getVisitCount() {
+          gtag('event', 'page_view');
+          gtag('config', 'G-NE33R61XSF', {
+            'send_to': 'G-NE33R61XSF',
+            'metric1': 'visitCount'
+          });
+          gtag('event', 'metric_view', {
+            'event_label': 'visitCount'
+          });
+          var visitCount = gtag('get', 'visitCount');
+          document.getElementById('visitCount').textContent = visitCount;
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+          getVisitCount();
+        });
+      </script> -->
       <span id="visitCount"></span>
       <script>
         function getVisitCount() {
@@ -375,6 +395,7 @@
         document.addEventListener('DOMContentLoaded', function () {
           getVisitCount();
         });
+        document.getElementById('visitCount').style.color = 'red';
       </script>
 
 
@@ -429,7 +450,6 @@
       </section>
       <section id="codes">
         <h1>My Projects</h1>
-
         <div class="card-container">
           <div class="card">
             <a href="https://github.com/NanophotonIICOs/cqws-codes">
@@ -453,7 +473,7 @@
           </div>
           <div class="card">
             <a href="https://github.com/RUCO13/ruco-phd-project">
-              <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project" >
+              <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project">
             </a>
           </div>
         </div>
