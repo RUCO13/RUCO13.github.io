@@ -7,3 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  function showCodesSection() {
+    const codesContainer = document.getElementById('codes-container');
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'sections/codes.html', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        codesContainer.innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  }
+  

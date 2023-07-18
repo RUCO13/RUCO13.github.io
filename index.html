@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Oscar's web page</title>
+  <link rel="icon" href="_data/images/logo.png" type="image/icon type">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -10,7 +12,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-NE33R61XSF');
   </script>
@@ -18,15 +20,19 @@
   <script src="scripts/sectionToggle.js"></script>
 
   <style>
-    body {font-family: 'Roboto', sans-serif;
+    body {
+      font-family: 'Roboto', sans-serif;
       background-color: #353740;
       color: #f8f9fc;
       margin: 0;
-      padding: 20px;}
-      
-    .column {flex-grow: 1;
+      padding: 20px;
+    }
+
+    .column {
+      flex-grow: 1;
       padding: 10px;
     }
+
     .column:nth-child(1) {
       background-color: #6e6e80;
       /* Color de fondo para la primera columna */
@@ -56,7 +62,8 @@
       left: 0;
       width: 345px;
       height: 100%;
-      z-index: 1000; /* Ajusta el valor del z-index */
+      z-index: 1000;
+      /* Ajusta el valor del z-index */
       list-style-type: none;
       margin: 0;
       padding: 7px;
@@ -167,6 +174,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .social-icons {
       list-style: none;
       padding: 0;
@@ -175,22 +183,22 @@
       align-items: center;
       margin-top: 10px;
     }
-    
+
     .social-icons li {
       margin-right: 10px;
     }
-    
+
     .social-icons a {
       color: #333;
       text-decoration: none;
       font-size: 45px;
       transition: transform 0.3s ease;
     }
-    
+
     .social-icons a:hover {
       transform: scale(1.2);
     }
-    
+
     ul.navbar {
       position: fixed;
       top: 0;
@@ -205,10 +213,11 @@
       justify-content: flex-end;
       align-items: center;
     }
+
     ul.navbar li {
       display: inline-block;
     }
-    
+
     ul.navbar li a {
       display: block;
       color: white;
@@ -219,7 +228,7 @@
       font-size: 20px;
       transition: background-color 0.3s ease;
     }
-    
+
     ul.navbar li a:hover {
       background-color: #111;
     }
@@ -250,14 +259,47 @@
     .title {
       color: rgb(82, 226, 149);
     }
-    
+
     .author {
       color: rgb(16, 220, 227);
     }
 
     .custom-icon {
-        color: #eeff00; 
-      }
+      color: #eeff00;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 10px;
+      justify-content: center;
+    }
+  
+    .card {
+      background-color: #353740; /* Color de fondo actual */
+      padding: 10px;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .card a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      filter: invert(90%) sepia(1%) hue-rotate(180deg);
+    }
+      .card {
+      background-color: #353740; 
+    }
   </style>
 </head>
 
@@ -266,7 +308,7 @@
     <ul class="navbar">
       <li><a href="#home">Home</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#programming">Programming</a></li>
+      <li><a href="#codes">Codes</a></li>
     </ul>
   </nav>
 
@@ -279,22 +321,26 @@
       </div>
 
       <ul class="social-icons">
-        <li><a href="mailto:ruizoscar.1393@gmail.com"><i class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://twitter.com/RUCO0713"><i class="fab fa-twitter animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://www.instagram.com/ruco0713/"><i class="fab fa-instagram animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://github.com/RUCO13"><i class="fab fa-github fa-beat-fade animate__animated animate__pulse animate__infinite"></i></a></li>
+        <li><a href="mailto:ruizoscar.1393@gmail.com"><i
+              class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
+        <li><a href="https://twitter.com/RUCO0713"><i
+              class="fab fa-twitter animate__animated animate__pulse animate__infinite"></i></a></li>
+        <li><a href="https://www.instagram.com/ruco0713/"><i
+              class="fab fa-instagram animate__animated animate__pulse animate__infinite"></i></a></li>
+        <li><a href="https://github.com/RUCO13"><i
+              class="fab fa-github fa-beat-fade animate__animated animate__pulse animate__infinite"></i></a></li>
       </ul>
 
       <!-- <div class="sidebar-card">
         <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=cobalt"
           alt="Wakatime Stats">
       </div> -->
-      
+
       <!-- <div class="electron"></div>
       <script src="scripts/particle.js"></script> -->
       <!-- <div id="plotlyContainer"></div>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="scripts/cs.js"></script> -->  
+     \ <script src="scripts/cs.js"></script> -->
       <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <style>
@@ -326,12 +372,12 @@
           var visitCount = gtag('get', 'visitCount');
           document.getElementById('visitCount').textContent = visitCount;
         }
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
           getVisitCount();
         });
       </script>
-      
-      
+
+
     </div>
 
     <div class="main-content column">
@@ -359,9 +405,9 @@
             </li>
             <li>
               <p> My GitHub contribution</p>
-                <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
-                  style="max-width: 100%;" />
-              
+              <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
+                style="max-width: 100%;" />
+
             </li>
           </ul>
         </div>
@@ -381,7 +427,37 @@
           <script src="scripts/pubs.js"></script>
         </div>
       </section>
+      <section id="codes">
+        <h1>My Projects</h1>
 
+        <div class="card-container">
+          <div class="card">
+            <a href="https://github.com/NanophotonIICOs/cqws-codes">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="cqws-codes">
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://github.com/NanophotonIICOs/bash-scripts">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="bash-scripts">
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://github.com/NanophotonIICOs/iico-spectra">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="iico-spectra">
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://github.com/NanophotonIICOs/atomistiico">
+              <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="atomistiico">
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://github.com/RUCO13/ruco-phd-project">
+              <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project" >
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </body>
