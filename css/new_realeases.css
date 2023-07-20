@@ -1,0 +1,42 @@
+.new-releases {
+    margin: 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #353740;
+  }
+  
+  .new-releases h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #eadb0a;
+  }
+  
+  .new-releases h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #08ced5;
+  }
+  
+  .new-releases p {
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  
+  .new-releases img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    box-shadow: 0 2px 5px rgba(251, 250, 250, 0.1);
+  }
+  
+  .new-releases a {
+    color: #0073ff;
+    text-decoration: none;
+  }
+  
+  .new-releases a:hover {
+    text-decoration: underline;
+  }
+  

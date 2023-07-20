@@ -26,6 +26,7 @@
       color: #f8f9fc;
       margin: 0;
       padding: 20px;
+      line-height: 1.5;
     }
 
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
@@ -72,7 +73,7 @@
 
     .sidebar-container {
       position: relative;
-      width: 350px;
+      width: 300px;
 
     }
 
@@ -80,10 +81,10 @@
     .sidebar {
       flex-basis: 100%;
       position: fixed;
-      flex-basis: 345px;
+      flex-basis: 300px;
       top: 0;
       left: 0;
-      width: 345px;
+      width: 300px;
       height: 100%;
       z-index: 1000;
       /* Ajusta el valor del z-index */
@@ -135,13 +136,22 @@
 
     .about-section {
       margin-bottom: 30px;
+      margin: 0px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #353740;
+      text-align: justify;
+    }
+    .about-section p{
+      text-align: justify;
     }
 
     .main-content {
       flex-grow: 1;
       background-color: #f9f9f9;
       padding: 20px;
-      margin-left: 340px;
+      margin-left: 300px;
       /* Ancho del sidebar */
 
     }
@@ -370,7 +380,7 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <style>
         .mol-container {
-          width: 350px;
+          width: 300px;
           height: 300px;
           position: relative;
         }
@@ -428,12 +438,14 @@
             </li>
             <li>
               <p> My GitHub contribution</p>
+              <div style="display: flex; justify-content: center;">
               <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
-                style="max-width: 100%;" />
-
+                style="max-width: 70%;" />
+              </div>
             </li>
           </ul>
         </div>
+        <div id="newReleasesContainer"></div>
       </section>
 
       <section id="research">
@@ -482,6 +494,26 @@
       </section>
     </div>
   </div>
+  <script>
+    // Function to fetch and insert new releases content
+    function loadNewReleasesContent() {
+      const newReleasesContainer = document.getElementById('newReleasesContainer');
+  
+      // Fetch the content from new_releases.html
+      fetch('sections/new_releases.html')
+        .then(response => response.text())
+        .then(content => {
+          // Insert the content into the container
+          newReleasesContainer.innerHTML = content;
+        })
+        .catch(error => {
+          console.error('Error loading new releases content:', error);
+        });
+    }
+  
+    // Call the function to load new releases content when the page is loaded
+    document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
+  </script>
 </body>
 
 </html>
