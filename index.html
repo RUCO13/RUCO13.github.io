@@ -28,7 +28,29 @@
       padding: 20px;
     }
 
+    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        /* Cambiar a columnas en dispositivos más pequeños */
+      }
+
+      .sidebar {
+        flex-basis: 100%;
+        /* Ancho completo para la barra lateral en dispositivos móviles */
+      }
+
+      .main-content {
+        margin-left: 0;
+        /* No se necesita margen izquierdo en dispositivos móviles */
+      }
+
+      /* Otros ajustes específicos para dispositivos más pequeños */
+    }
+
     .column {
+      flex-grow: 1;
+      padding: 10px;
       flex-grow: 1;
       padding: 10px;
     }
@@ -56,6 +78,7 @@
 
 
     .sidebar {
+      flex-basis: 100%;
       position: fixed;
       flex-basis: 345px;
       top: 0;
@@ -74,6 +97,7 @@
     .main-content {
       flex-grow: 1;
       overflow-y: auto;
+      margin-left: 0;
     }
 
     h1 {
@@ -277,7 +301,6 @@
 
     .card {
       background-color: #353740;
-      /* Color de fondo actual */
       padding: 10px;
       border: 1px solid #ccc;
       display: flex;
@@ -360,45 +383,7 @@
           font-weight: bold;
         }
       </style>
-      <!-- <span id="visitCount"></span>
-      <script>
-        function getVisitCount() {
-          gtag('event', 'page_view');
-          gtag('config', 'G-NE33R61XSF', {
-            'send_to': 'G-NE33R61XSF',
-            'metric1': 'visitCount'
-          });
-          gtag('event', 'metric_view', {
-            'event_label': 'visitCount'
-          });
-          var visitCount = gtag('get', 'visitCount');
-          document.getElementById('visitCount').textContent = visitCount;
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-          getVisitCount();
-        });
-      </script> -->
-      <span id="visitCount"></span>
-      <script>
-        function getVisitCount() {
-          gtag('event', 'page_view');
-          gtag('config', 'G-NE33R61XSF', {
-            'send_to': 'G-NE33R61XSF',
-            'metric1': 'visitCount'
-          });
-          gtag('event', 'metric_view', {
-            'event_label': 'visitCount'
-          });
-          var visitCount = gtag('get', 'visitCount');
-          document.getElementById('visitCount').textContent = visitCount;
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-          getVisitCount();
-        });
-        document.getElementById('visitCount').style.color = 'red';
-      </script>
-
-
+      <span id="visitCount">0</span>
     </div>
 
     <div class="main-content column">
@@ -409,7 +394,7 @@
             <li>
               <p>I hold a PhD in Photonics from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and
                 currently work as a Physics professor at <a class="link"
-                  href="https://www.upslp.edu.mx/upslp/">Universidad Politecnica de San Luis Potosi</a></p>
+                  href="https://www.upslp.edu.mx/upslp">Universidad Politecnica de San Luis Potosi</a></p>
             </li>
             <li>
               <p>I am passionate about exploring the field of Solid State Experimental Physics and Computational
@@ -480,6 +465,23 @@
       </section>
     </div>
   </div>
+  <script>
+    function getVisitCount() {
+      gtag('event', 'page_view');
+      gtag('config', 'G-NE33R61XSF', {
+        'send_to': 'G-NE33R61XSF',
+        'metric1': 'visitCount'
+      });
+      gtag('event', 'metric_view', {
+        'event_label': 'visitCount'
+      });
+      var visitCount = gtag('get', 'visitCount');
+      document.getElementById('visitCount').textContent = visitCount;
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      getVisitCount();
+    });
+  </script>
 </body>
 
 </html>
