@@ -1,9 +1,7 @@
 fetch('citations.bib') 
  .then(response => response.text())
  .then(data => {
-   // Separar las entradas de citas
    const entries = data.split('\n\n');
-
    const citationsContainer = document.getElementById('citations');
    let counter = 1; // Contador para los puntos
 
@@ -58,3 +56,5 @@ function replaceLaTeXAccents(text) {
 
  return text.replace(regex, match => accentDictionary[match]);
 }
+
+
