@@ -336,6 +336,26 @@
     .card {
       background-color: #353740;
     }
+
+    .publications-container {
+      width: 100%;
+      max-height: 700px;
+      padding: 5px;
+      border: 1px solid #ccc; /* add this line */
+      border-radius: 5px; /* optional, if you want rounded corners */
+    }
+    
+    .citations {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .r-interest-container {
+      width: 100%;
+      max-height: 700px;
+      padding: 5px;
+      border: 1px solid #ccc; /* add this line */
+      border-radius: 5px; /* optional, if you want rounded corners */
+    }
   </style>
 </head>
 
@@ -441,26 +461,28 @@
               <p> My GitHub contribution</p>
               <div style="display: flex; justify-content: center;">
               <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
-                style="max-width: 70%;" />
+                style="max-width: 100%;" />
               </div>
             </li>
           </ul>
         </div>
-        <div id="newReleasesContainer"></div>
+        <div id="newReleasesContainer">
       </section>
-
       <section id="research">
         <h1>Research Interests</h1>
+        <div class="r-interest-container">
         <ul>
           <li>Solid State Experimental Physics</li>
           <li>Computational Calculation of Semiconductor Bandstructures</li>
           <li>Density Functional Theory (DFT) and Band Structure Packages</li>
           <li>Nanophotonics</li>
         </ul>
+      </div>
         <h1>Publications List</h1>
         <div class="publications-container">
-          <div id="citations"></div>
+          <div id="citations">
           <script src="scripts/pubs.js"></script>
+          </div>
         </div>
       </section>
       <section id="codes">
