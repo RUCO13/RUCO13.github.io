@@ -16,6 +16,9 @@
   <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script src="scripts/navbar.js"></script>
   <script src="scripts/sectionToggle.js"></script>
@@ -356,6 +359,22 @@
       border: 1px solid #ccc; /* add this line */
       border-radius: 5px; /* optional, if you want rounded corners */
     }
+
+    .visit-counter {
+      display: block;
+      width: 250px;
+      text-align: center;
+      font-family: 'Press Start 2P';
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: bold;
+      position: absolute; 
+      bottom: 20px; 
+      left: 50%;
+      transform: translateX(-50%); 
+  }
   </style>
 </head>
 
@@ -414,7 +433,7 @@
           font-weight: bold;
         }
       </style>
-      <span id="visitCount">0</span>
+      <!-- <span id="visitCount">0</span>
       <script>
         function getVisitCount() {
           gtag('event', 'page_view');
@@ -431,7 +450,39 @@
         document.addEventListener('DOMContentLoaded', function () {
           getVisitCount();
         });
-      </script>
+      </script> -->
+      <div class="visit-counter" id="visitCounter">0000000</div>
+    <script>
+        function getVisitCount() {
+            const visitCounter = document.getElementById('visitCounter');
+
+            // Recupera el contador almacenado en el navegador (si existe)
+            let count = localStorage.getItem('visitCount');
+
+            // Si no hay contador almacenado, inicia en 0
+            if (count === null) {
+                count = 0;
+            } else {
+                // Si hay contador almacenado, conviértelo a número
+                count = parseInt(count);
+            }
+
+            // Incrementa el contador
+            count++;
+
+            // Actualiza el contador almacenado en el navegador
+            localStorage.setItem('visitCount', count);
+
+            // Formatea el contador en el estilo "0000000"
+            const formattedCount = String(count).padStart(7, '0');
+
+            // Muestra el contador en el elemento HTML
+            visitCounter.textContent = formattedCount;
+        }
+
+        // Llama a la función para obtener y mostrar el contador de visitas
+        getVisitCount();
+    </script>
     </div>
 
     <div class="main-content column">
