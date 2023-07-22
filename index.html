@@ -405,17 +405,6 @@
         <li><a href="https://github.com/RUCO13"><i
               class="fab fa-github fa-beat-fade animate__animated animate__pulse animate__infinite"></i></a></li>
       </ul>
-
-      <!-- <div class="sidebar-card">
-        <img src="https://github-readme-stats.vercel.app/api/wakatime?username=RUCO13&range=last_7_days&theme=cobalt"
-          alt="Wakatime Stats">
-      </div> -->
-
-      <!-- <div class="electron"></div>
-      <script src="scripts/particle.js"></script> -->
-      <!-- <div id="plotlyContainer"></div>
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-     \ <script src="scripts/cs.js"></script> -->
       <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <style>
@@ -455,32 +444,17 @@
     <script>
         function getVisitCount() {
             const visitCounter = document.getElementById('visitCounter');
-
-            // Recupera el contador almacenado en el navegador (si existe)
             let count = localStorage.getItem('visitCount');
-
-            // Si no hay contador almacenado, inicia en 0
             if (count === null) {
                 count = 0;
             } else {
-                // Si hay contador almacenado, conviértelo a número
                 count = parseInt(count);
             }
-
-            // Incrementa el contador
             count++;
-
-            // Actualiza el contador almacenado en el navegador
             localStorage.setItem('visitCount', count);
-
-            // Formatea el contador en el estilo "0000000"
             const formattedCount = String(count).padStart(7, '0');
-
-            // Muestra el contador en el elemento HTML
             visitCounter.textContent = formattedCount;
         }
-
-        // Llama a la función para obtener y mostrar el contador de visitas
         getVisitCount();
     </script>
     </div>
@@ -518,6 +492,7 @@
           </ul>
         </div>
         <div id="newReleasesContainer">
+        
       </section>
       <section id="research">
         <h1>Research Interests</h1>

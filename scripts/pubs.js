@@ -1,4 +1,4 @@
-fetch('citations.bib') 
+fetch('_data/ruco-papers.bib') 
  .then(response => response.text())
  .then(data => {
    const entries = data.split('\n\n');
