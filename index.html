@@ -439,23 +439,20 @@
           getVisitCount();
         });
       </script> -->
-      <div class="visit-counter" id="visitCounter">0000000</div>
-    <script>
-        function getVisitCount() {
-            const visitCounter = document.getElementById('visitCounter');
-            let count = localStorage.getItem('visitCount');
-            if (count === null) {
-                count = 0;
-            } else {
-                count = parseInt(count);
+      <div id="visitData"></div>      
+      <script>
+        function showVisitData() {
+          var visitData = window.dataLayer.get("gaData");
+          var html = "";
+          for (var property in visitData) {
+            for (var metric in visitData[property]) {
+              html += "<p>" + property + ": " + visitData[property][metric] + "</p>";
             }
-            count++;
-            localStorage.setItem('visitCount', count);
-            const formattedCount = String(count).padStart(7, '0');
-            visitCounter.textContent = formattedCount;
+          }
+          document.getElementById("visitData").innerHTML = html;
         }
-        getVisitCount();
-    </script>
+        </script>
+        
     </div>
 
     <div class="main-content column">
