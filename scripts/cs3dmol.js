@@ -1,6 +1,6 @@
 let element = document.querySelector('#container-01');
 let data_dir = 'scripts/GaAs.xyz';
-let viewer = $3Dmol.createViewer(element, { backgroundColor: 'transparent' });
+let viewer = $3Dmol.createViewer(element, { backgroundColor: '#6e6e80' });
 jQuery.ajax(data_dir, {
   success: function(data) {
     viewer.addModel(data, "xyz", {
