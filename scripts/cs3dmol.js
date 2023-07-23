@@ -9,7 +9,7 @@ jQuery.ajax(data_dir, {
       normalizeAssembly: true
     }); /* load data */
     viewer.setStyle({ sphere: { colorscheme: 'Jmol', scale: 0.3 }, stick: { colorscheme: 'Jmol', radius: 0.15 } }); /* style all atoms */
-    viewer.spin("vy",3);
+    viewer.spin("x",3);
     viewer.zoomTo();
     viewer.zoom(0.7); /* set camera */
     viewer.render(); /* render scene */
