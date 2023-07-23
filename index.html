@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Oscar Ruiz Cigarrillo">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
     <script>
@@ -24,6 +27,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
+      font-size: 17px;
       background-color: #353740;
       color: #f8f9fc;
       margin: 0;
@@ -50,6 +54,12 @@
 
       /* Otros ajustes específicos para dispositivos más pequeños */
     }
+
+    ul:hover li {
+      margin-bottom: 0px;
+      transition: 500ms linear;
+    }
+
 
     .column {
       flex-grow: 1;
@@ -89,7 +99,6 @@
       width: 300px;
       height: 100%;
       z-index: 1000;
-      /* Ajusta el valor del z-index */
       list-style-type: none;
       margin: 0;
       padding: 7px;
@@ -218,7 +227,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 10px;
+      margin-top: -20px;
     }
 
     .social-icons li {
@@ -277,8 +286,10 @@
 
     .profile-name {
       font-family: 'Zilla Slab';
-      font-size: 20px;
+      font-size: 23px;
       text-align: center;
+      margin-top: 0px;
+
     }
 
     .sidebar-card {
@@ -374,6 +385,25 @@
       left: 50%;
       transform: translateX(-50%); 
   }
+
+  .software-text{
+    display: flex;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ccc; /* add this line */
+    border-radius: 5px; /* optional, if you want rounded corners */
+    text-align: justify;
+
+  }
+  .mol-container {
+    display: block;
+    width: 300px;
+    height: 215px;
+    position: absolute;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%); 
+  }
   </style>
 </head>
 
@@ -382,7 +412,8 @@
     <ul class="navbar">
       <li><a href="#home">Home</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#codes">Codes</a></li>
+      <li><a href="#codes">Software</a></li>
+      <li><a href="#teaching">Teaching</a></li>
     </ul>
   </nav>
 
@@ -406,13 +437,6 @@
       </ul>
       <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <style>
-        .mol-container {
-          width: 300px;
-          height: 300px;
-          position: relative;
-        }
-      </style>
       <div id="container-01" class="mol-container"></div>
       <script src="scripts/cs3dmol.js"></script>
       <style>
@@ -508,6 +532,19 @@
         </div>
       </section>
       <section id="codes">
+        <h1>Software</h1>
+        <div class="software-text">
+          <p>
+            Greetings! As part of my work, I specialize in developing software with two primary purposes. The first focus is on the development and utilization of DFT (Density Functional Theory) code calculators to investigate the electronic, magnetic, and optical properties of semiconductors. My expertise in Python, Julia, and Fortran allows me to create powerful and efficient computational tools for these purposes.
+
+            The second aspect of my work involves creating codes for experimental endeavors, including instrumentation interfaces and the analysis of experimental results. This enables me to bridge the gap between theoretical simulations and practical laboratory work, enhancing the overall research process.
+
+            With a strong background in programming and a passion for scientific computing, I continuously strive to push the boundaries of what is possible in the realms of computational physics and experimental research. My aim is to contribute significantly to the advancement of knowledge in these fields and to provide valuable tools for researchers and scientists alike.
+
+            If you are interested in collaborating or would like to know more about my projects and contributions, feel free to reach out. I am always open to exploring new opportunities and engaging in exciting scientific ventures. Let's push the boundaries of scientific exploration together!
+          </p>
+
+        </div>
         <h1>My Projects</h1>
         <div class="card-container">
           <div class="card">
