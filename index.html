@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Oscar Ruiz Cigarrillo">
   <!-- Google tag (gtag.js) -->
@@ -444,7 +444,7 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#software">Software</a></li>
       <li><a href="#teaching">Teaching</a></li>
-    </ul>
+    </ul>    
   </nav>
 
   <div class="container">
@@ -645,22 +645,20 @@
       links.forEach(link => {
         link.addEventListener('click', function(event) {
           event.preventDefault();
-          // Obtener la URL del enlace (por ejemplo, "/teaching")
+          // Obtener la URL del enlace (por ejemplo, "#home")
           const href = link.getAttribute('href');
-          // Cambiar la URL utilizando el API de Historial
-          history.pushState(null, '', href);
           // Mostrar la sección correspondiente
           showSection(href);
+          // Cambiar la URL utilizando el API de Historial
+          history.pushState(null, '', href);
         });
       });
   
-      // Función para mostrar la sección basada en la URL
-      function showSection(href) {
-        // Obtener el nombre de la sección desde la URL (por ejemplo, "teaching")
-        const sectionName = href.substr(1);
+      // Función para mostrar la sección basada en el nombre de la sección
+      function showSection(sectionName) {
         // Mostrar la sección y ocultar otras
         document.querySelectorAll('section').forEach(section => {
-          if (section.id === sectionName) {
+          if (section.id === sectionName.substr(1)) {
             section.style.display = 'block';
           } else {
             section.style.display = 'none';
@@ -671,13 +669,14 @@
       // Función para manejar el evento popstate (cambios en el historial del navegador)
       window.addEventListener('popstate', function() {
         // Mostrar la sección correspondiente basada en la URL actual
-        showSection(window.location.pathname);
+        showSection(window.location.hash);
       });
   
       // Mostrar la sección inicial basada en la URL actual
-      showSection(window.location.pathname);
+      showSection(window.location.hash);
     });
   </script>
+  
   
 </body>
 
