@@ -60,21 +60,33 @@
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
       .container {
-        flex-direction: column;
-        /* Cambiar a columnas en dispositivos más pequeños */
+        flex-direction: column; /* Change to columns in smaller devices */
       }
-
+    
       .sidebar {
-        flex-basis: 100%;
-        /* Ancho completo para la barra lateral en dispositivos móviles */
+        flex-basis: 100%; /* Full width for the sidebar in mobile devices */
+        position: relative; /* Remove fixed position to allow scrolling */
+        width: auto; /* Allow content to adjust to the screen width */
+        margin-bottom: 20px; /* Add some margin at the bottom for better separation */
       }
-
+    
       .main-content {
-        margin-left: 0;
-        /* No se necesita margen izquierdo en dispositivos móviles */
+        margin-left: 0; /* No need for margin-left in mobile devices */
+        margin-top: 20px; /* Add some margin at the top for better separation */
       }
-
-      /* Otros ajustes específicos para dispositivos más pequeños */
+    
+      /* Other adjustments specific to smaller devices can be added here */
+    
+      /* Adjust styles for the profile image */
+      img.profile-image {
+        max-width: 150px; /* Reduce the profile image size on smaller screens */
+        max-height: 150px;
+      }
+    
+      /* Adjust styles for the social icons */
+      .social-icons a {
+        font-size: 30px; /* Reduce the size of social icons on smaller screens */
+      }
     }
 
     ul:hover li {
@@ -635,7 +647,11 @@
           console.error('Error loading new releases content:', error);
         });
     }
+
     // Call the function to load new releases content when the page is loaded
     document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
   </script>
+  
+</body>
+
 </html>
