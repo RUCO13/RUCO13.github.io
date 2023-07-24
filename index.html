@@ -637,21 +637,32 @@
     document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
   </script>
   <script>
-    // Smooth scroll to section when clicking on a link
-    document.querySelectorAll('ul.navbar a').forEach(link => {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
+    // Function to show the section based on the hash in the URL
+    function showSection() {
+      const hash = window.location.hash;
+      const section = document.querySelector(hash);
+      if (section) {
+        // Show the section and scroll to it
+        section.style.display = 'block';
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+  
+        // Hide other sections
+        document.querySelectorAll('section:not(' + hash + ')').forEach(otherSection => {
+          otherSection.style.display = 'none';
+        });
+      }
+    }
+  
+    // Event listener to handle navigation when the hash changes
+    window.addEventListener('hashchange', showSection);
+  
+    // Show the initial section when the page loads
+    window.addEventListener('DOMContentLoaded', showSection);
   </script>
+  
 </body>
 
 </html>
