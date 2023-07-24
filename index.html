@@ -37,18 +37,18 @@
     }
 
     ::-webkit-scrollbar {
-      width: 12px;
+      width: 7px;
     }
 
     ::-webkit-scrollbar-thumb {
       background-color: #6e6e80;
-      border-radius: 6px;
+      border-radius: 3px;
     }
 
     body::-webkit-scrollbar-thumb {
       background-color: #6e6e80;
       /* Color del scroll */
-      border-radius: 6px;
+      border-radius: 3px;
       /* Radio de las esquinas del scroll */
     }
 
@@ -438,12 +438,12 @@
 </head>
 
 <body>
-  <nav>
+  <nav>.
     <ul class="navbar">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#codes">Software</a></li>
-      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/research">Research</a></li>
+      <li><a href="/software">Software</a></li>
+      <li><a href="/teaching">Teaching</a></li>
     </ul>
   </nav>
 
@@ -561,7 +561,7 @@
           </div>
         </div>
       </section>
-      <section id="codes">
+      <section id="software">
         <h1>Software</h1>
         <div class="software-text">
           <p>
@@ -637,31 +637,48 @@
     document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
   </script>
   <script>
-    // Function to show the section based on the hash in the URL
-    function showSection() {
-      const hash = window.location.hash;
-      const section = document.querySelector(hash);
-      if (section) {
-        // Show the section and scroll to it
-        section.style.display = 'block';
-        window.scrollTo({
-          top: section.offsetTop,
-          behavior: 'smooth'
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+      // Obtener todos los enlaces del menú de navegación
+      const links = document.querySelectorAll('ul.navbar a');
   
-        // Hide other sections
-        document.querySelectorAll('section:not(' + hash + ')').forEach(otherSection => {
-          otherSection.style.display = 'none';
+      // Añadir un evento clic a cada enlace
+      links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          // Obtener la URL del enlace (por ejemplo, "/teaching")
+          const href = link.getAttribute('href');
+          // Cambiar la URL utilizando el API de Historial
+          history.pushState(null, '', href);
+          // Mostrar la sección correspondiente
+          showSection(href);
+        });
+      });
+  
+      // Función para mostrar la sección basada en la URL
+      function showSection(href) {
+        // Obtener el nombre de la sección desde la URL (por ejemplo, "teaching")
+        const sectionName = href.substr(1);
+        // Mostrar la sección y ocultar otras
+        document.querySelectorAll('section').forEach(section => {
+          if (section.id === sectionName) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
         });
       }
-    }
   
-    // Event listener to handle navigation when the hash changes
-    window.addEventListener('hashchange', showSection);
+      // Función para manejar el evento popstate (cambios en el historial del navegador)
+      window.addEventListener('popstate', function() {
+        // Mostrar la sección correspondiente basada en la URL actual
+        showSection(window.location.pathname);
+      });
   
-    // Show the initial section when the page loads
-    window.addEventListener('DOMContentLoaded', showSection);
+      // Mostrar la sección inicial basada en la URL actual
+      showSection(window.location.pathname);
+    });
   </script>
+  
   
 </body>
 
