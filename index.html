@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
@@ -60,32 +61,23 @@
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
       .container {
-        flex-direction: column; /* Change to columns in smaller devices */
+        flex-direction: column;
+        /* Change to columns in smaller devices */
       }
-    
+
       .sidebar {
-        position: relative; /* Change to relative positioning for mobile devices */
+        position: relative;
+        /* Change to relative positioning for mobile devices */
         width: auto;
         height: auto;
         margin-bottom: 20px;
       }
-    
+
       .main-content {
-        margin-left: 0; /* No need for margin-left in mobile devices */
-        margin-top: 20px; /* Add some margin at the top for better separation */
-      }
-    
-      /* Other adjustments specific to smaller devices can be added here */
-    
-      /* Adjust styles for the profile image */
-      img.profile-image {
-        max-width: 150px; /* Reduce the profile image size on smaller screens */
-        max-height: 150px;
-      }
-    
-      /* Adjust styles for the social icons */
-      .social-icons a {
-        font-size: 30px; /* Reduce the size of social icons on smaller screens */
+        margin-left: 0;
+        /* No need for margin-left in mobile devices */
+        margin-top: 20px;
+        /* Add some margin at the top for better separation */
       }
     }
 
@@ -221,9 +213,9 @@
       text-align: justify;
     }
 
-    a:hover {
+    .main-content a:hover {
       color: #00c3ff;
-      /* Cambia el color aquí */
+
     }
 
     a:visited {
@@ -231,7 +223,7 @@
     }
 
     a.link {
-      color: rgb(13, 238, 31);
+      color: rgb(238, 234, 13);
       /* Otros estilos que desees aplicar */
     }
 
@@ -285,7 +277,8 @@
       left: 0;
       width: 100%;
       background-color: #333;
-      z-index: 1; /* Cambiar el valor de z-index a 1 */
+      z-index: 1;
+      /* Cambiar el valor de z-index a 1 */
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -351,40 +344,6 @@
       color: #eeff00;
     }
 
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 10px;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #353740;
-      padding: 10px;
-      border: 1px solid #ccc;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .card img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-      filter: invert(90%) sepia(1%) hue-rotate(180deg);
-    }
-
-    .card {
-      background-color: #353740;
-    }
-
     .publications-container {
       width: 100%;
       max-height: 700px;
@@ -426,18 +385,6 @@
       transform: translateX(-50%);
     }
 
-    .software-text {
-      display: flex;
-      margin-top: 30px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      /* add this line */
-      border-radius: 5px;
-      /* optional, if you want rounded corners */
-      text-align: justify;
-
-    }
-
     .mol-container {
       display: block;
       width: 300px;
@@ -446,6 +393,7 @@
       bottom: 0px;
       margin-bottom: 0px;
     }
+
     section {
       display: none;
     }
@@ -459,7 +407,7 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#software">Software</a></li>
       <li><a href="#teaching">Teaching</a></li>
-    </ul>    
+    </ul>
   </nav>
 
   <div class="container">
@@ -557,7 +505,6 @@
           </ul>
         </div>
         <div id="newReleasesContainer">
-
       </section>
       <section id="research">
         <h1>Research Interests</h1>
@@ -577,58 +524,12 @@
         </div>
       </section>
       <section id="software">
-        <h1>Software</h1>
-        <div class="software-text">
-          <p>
-            Greetings! As part of my work, I specialize in developing software with two primary purposes. The first
-            focus is on the development and utilization of DFT (Density Functional Theory) code calculators to
-            investigate the electronic, magnetic, and optical properties of semiconductors. My expertise in Python,
-            Julia, and Fortran allows me to create powerful and efficient computational tools for these purposes.
-
-            The second aspect of my work involves creating codes for experimental endeavors, including instrumentation
-            interfaces and the analysis of experimental results. This enables me to bridge the gap between theoretical
-            simulations and practical laboratory work, enhancing the overall research process.
-
-            With a strong background in programming and a passion for scientific computing, I continuously strive to
-            push the boundaries of what is possible in the realms of computational physics and experimental research. My
-            aim is to contribute significantly to the advancement of knowledge in these fields and to provide valuable
-            tools for researchers and scientists alike.
-
-            If you are interested in collaborating or would like to know more about my projects and contributions, feel
-            free to reach out. I am always open to exploring new opportunities and engaging in exciting scientific
-            ventures. Let's push the boundaries of scientific exploration together!
-          </p>
-
-        </div>
-        <h1>My Projects</h1>
-        <div class="card-container">
-          <div class="card">
-            <a href="https://github.com/NanophotonIICOs/cqws-codes">
-              <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="cqws-codes">
-            </a>
-          </div>
-          <div class="card">
-            <a href="https://github.com/NanophotonIICOs/bash-scripts">
-              <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="bash-scripts">
-            </a>
-          </div>
-          <div class="card">
-            <a href="https://github.com/NanophotonIICOs/iico-spectra">
-              <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="iico-spectra">
-            </a>
-          </div>
-          <div class="card">
-            <a href="https://github.com/NanophotonIICOs/atomistiico">
-              <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="atomistiico">
-            </a>
-          </div>
-          <div class="card">
-            <a href="https://github.com/RUCO13/ruco-phd-project">
-              <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project">
-            </a>
-          </div>
-        </div>
       </section>
+
+      <section id="teaching">
+
+      </section>
+
     </div>
   </div>
   <script>
@@ -651,7 +552,22 @@
     // Call the function to load new releases content when the page is loaded
     document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
   </script>
-  
+  <script>
+    function loadSection(sectionId, sectionPath) {
+      fetch(sectionPath)
+        .then(response => response.text())
+        .then(content => {
+          document.getElementById(sectionId).innerHTML = content;
+        })
+        .catch(error => {
+          console.error('Error loading section:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      loadSection('software', 'sections/software.html');
+      loadSection('teaching', 'sections/teaching.html');
+    });
+  </script>
 </body>
 
 </html>

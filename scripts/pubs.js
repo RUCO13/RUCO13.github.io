@@ -18,7 +18,7 @@ fetch('data/ruco-papers.bib')
      const authors = citation.author.split(' and ');
      const formattedAuthors = authors.map(author => {
        if ((author.trim() === 'Ruiz-Cigarrillo, O') || (author.trim() === 'Ruiz-Cigarrillo, Oscar') ||(author.trim() === 'Ruiz-Cigarrillo, O.')) {
-         return `<span class="author">${author}</span>`;
+         return `<span class="author"><strong>${author}</strong></span>`;
        } else {
          return replaceLaTeXAccents(author);
        }
@@ -31,7 +31,7 @@ fetch('data/ruco-papers.bib')
      const publicationIcon = `<i class="fas fa-external-link-alt custom-icon"></i>`;
 
 
-     const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title">${formattedTitle}</span>. ${citation.publisher} <a href="${publicationLink}" target="_blank">${publicationIcon}</a></p>`;
+     const citationHTML = `<p><span class="point">${counter}.</span> ${formattedAuthors}. (${citation.year}). <span class="title"><strong><em>${formattedTitle}</em></strong></span>. ${citation.publisher} <a href="${publicationLink}" target="_blank">${publicationIcon}</a></p>`;
      citationsContainer.innerHTML += citationHTML;
 
      counter++; // Incrementar el contador de puntos
