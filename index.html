@@ -207,11 +207,6 @@
       text-decoration: none;
     }
 
-    .publications-container {
-      width: 100%;
-      max-height: 700px;
-      text-align: justify;
-    }
 
     .main-content a:hover {
       color: #00c3ff;
@@ -310,7 +305,9 @@
       font-weight: bold;
       margin-right: 0px;
     }
-
+    .navbar a.active {
+      color: #00c3ff; /* Cambiar a tu color deseado */
+    }
     .profile-name {
       font-family: 'Zilla Slab';
       font-size: 23px;
@@ -346,12 +343,10 @@
 
     .publications-container {
       width: 100%;
-      max-height: 700px;
+      max-height: 900px;
       padding: 5px;
       border: 1px solid #ccc;
-      /* add this line */
       border-radius: 5px;
-      /* optional, if you want rounded corners */
     }
 
     .citations {
@@ -394,9 +389,6 @@
       margin-bottom: 0px;
     }
 
-    section {
-      display: none;
-    }
   </style>
 </head>
 
@@ -473,7 +465,7 @@
     </div>
 
     <div class="main-content column">
-      <section id="home">
+      <section id="home"  class="section">
         <h1 style="color: #f6f2f2;">About me</h1>
         <div class="about-section">
           <ul>
@@ -506,7 +498,7 @@
         </div>
         <div id="newReleasesContainer">
       </section>
-      <section id="research">
+      <section id="research"  class="section">
         <h1>Research Interests</h1>
         <div class="r-interest-container">
           <ul>
@@ -523,10 +515,10 @@
           </div>
         </div>
       </section>
-      <section id="software">
+      <section id="software"  class="section">
       </section>
 
-      <section id="teaching">
+      <section id="teaching" class="section">
 
       </section>
 
@@ -568,6 +560,39 @@
       loadSection('teaching', 'sections/teaching.html');
     });
   </script>
+
+  <script>
+    // Función para cambiar el color del enlace en el navbar
+    function setActiveLink(link) {
+      const navLinks = document.querySelectorAll('nav a');
+  
+      // Remover la clase "active" de todos los enlaces del navbar
+      navLinks.forEach(navLink => {
+        navLink.classList.remove('active');
+      });
+  
+      // Agregar la clase "active" al enlace clicado
+      link.classList.add('active');
+    }
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('nav a');
+      // Añadir un event listener a cada enlace del navbar
+      navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          // Prevenir el comportamiento predeterminado del enlace
+          event.preventDefault();
+          // Obtener el ID de la sección a la que se dirige el enlace
+          const targetId = link.getAttribute('href');
+          // Cambiar el color del enlace activo en el navbar
+          setActiveLink(link);
+          // Opcional: Scroll hasta la sección activa para asegurarse de que sea visible en pantalla
+          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
