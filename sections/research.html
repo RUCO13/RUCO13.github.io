@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    .r-interest-container {
+        width: 100%;
+        max-height: 700px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        /* add this line */
+        border-radius: 5px;
+        /* optional, if you want rounded corners */
+    }
+
+    .publications-container {
+        width: 100%;
+        max-height: 900px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .citations {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h1>Research Interests</h1>
+    <div class="r-interest-container">
+        <ul>
+            <li>Solid State Experimental Physics</li>
+            <li>Computational Calculation of Semiconductor Bandstructures</li>
+            <li>Density Functional Theory (DFT) and Band Structure Packages</li>
+            <li>Nanophotonics</li>
+        </ul>
+    </div>
+    <h1>Publications List</h1>
+    <div class="publications-container">
+        <div id="citations"></div>
+        <script src="pubs.js"></script>
+
+    </div>
+</body>
+</html>

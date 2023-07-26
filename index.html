@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script src="scripts/navbar.js"></script>
   <script src="scripts/sectionToggle.js"></script>
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -44,6 +46,10 @@
     ::-webkit-scrollbar-thumb {
       background-color: #6e6e80;
       border-radius: 3px;
+    }
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-thumb {
+      height: 3px; 
     }
 
     body::-webkit-scrollbar-thumb {
@@ -116,7 +122,7 @@
 
 
     .sidebar {
-      flex-basis: 100%;
+      /* Ajusta las demás propiedades como lo desees */
       position: fixed;
       flex-basis: 300px;
       top: 0;
@@ -130,7 +136,22 @@
       display: flex;
       flex-direction: column;
     }
-
+    
+    /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data/images/sidebar-atoms-2.png'); /* Ruta de la imagen de fondo */
+      background-size: 90%; /* O utiliza otra opción de escala si lo prefieres */
+      background-position: center; /* O ajusta la posición según tus preferencias */
+      opacity: 0.15; /* Ajusta este valor para cambiar la transparencia (0.0 a 1.0) */
+      z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
+    }
+    
     .main-content {
       flex-grow: 1;
       overflow-y: auto;
@@ -146,12 +167,14 @@
       height: 270px;
       border-radius: 50%;
       object-fit: cover;
+      opacity: 1;
     }
 
     .social-links {
       list-style-type: none;
       padding: 0px;
       margin: 10px;
+      opacity: 1;
     }
 
     .social-links li {
@@ -242,6 +265,12 @@
       justify-content: space-between;
     }
 
+    .cv-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .social-icons {
       list-style: none;
       padding: 0;
@@ -298,7 +327,7 @@
     }
 
     ul.navbar li a:hover {
-      background-color: #111;
+      background-color: #6e6e80;
     }
 
     .navbar-brand {
@@ -306,14 +335,18 @@
       margin-right: 0px;
     }
     .navbar a.active {
-      color: #00c3ff; /* Cambiar a tu color deseado */
+      color: #04f4e8; /* Cambiar a tu color deseado */
+      background-color: #6e6e80;
+      font-weight: bold;
     }
+
     .profile-name {
       font-family: 'Zilla Slab';
-      font-size: 23px;
+      font-size: 30px;
       text-align: center;
       margin-top: 0px;
       line-height: 1;
+      color: #04f4e8;
 
     }
 
@@ -388,7 +421,11 @@
       bottom: 0px;
       margin-bottom: 0px;
     }
+    .thin-text{
+      font-size: 27px;
+      text-decoration: underline;
 
+    }
   </style>
 </head>
 
@@ -403,9 +440,9 @@
   </nav>
 
   <div class="container">
-    <div class="sidebar column">
+    <div class="sidebar column sidebar-bg">
       <div style="text-align: center;">
-        <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Mi foto" class="profile-image">
+        <img src="https://wakatime.com/photo/2502acb2-1684-4597-a422-d30dfa6a2f67?s=420&cache=false&time=1690402961.9283767" alt="Mi foto" class="profile-image">
         <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
         <h2 class="profile-name">Ph.D. Photonics</h2>
       </div>
@@ -420,34 +457,21 @@
         <li><a href="https://github.com/RUCO13"><i
               class="fab fa-github fa-beat-fade animate__animated animate__pulse animate__infinite"></i></a></li>
       </ul>
-      <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <div id="container-01" class="mol-container"></div>
+
+      <div class="social-icons"><a href="data/RUCO_CV_eng.pdf" target="_blank">
+        <span class="thin-text">Oscar's CV</span>  <i class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
+        </i>
+      </a>
+      </div>
+
+      <!-- <div id="container-01" class="mol-container"></div>
       <script src="scripts/cs3dmol.js"></script>
       <style>
         .visit-count {
           font-size: 30px;
           font-weight: bold;
         }
-      </style>
-      <!-- <span id="visitCount">0</span>
-      <script>
-        function getVisitCount() {
-          gtag('event', 'page_view');
-          gtag('config', 'G-NE33R61XSF', {
-            'send_to': 'G-NE33R61XSF',
-            'metric1': 'visitCount'
-          });
-          gtag('event', 'metric_view', {
-            'event_label': 'visitCount'
-          });
-          var visitCount = gtag('get', 'metric1');
-          document.getElementById('visitCount').textContent = visitCount;
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-          getVisitCount();
-        });
-      </script> -->
+      </style> -->
       <div id="visitData"></div>
       <script>
         function showVisitData() {
@@ -517,7 +541,6 @@
       </section>
       <section id="software"  class="section">
       </section>
-
       <section id="teaching" class="section">
 
       </section>
