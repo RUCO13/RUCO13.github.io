@@ -145,10 +145,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('data/images/sidebar-atoms-2.png'); /* Ruta de la imagen de fondo */
+      background: url('data/images/sidebar-atoms.png'); /* Ruta de la imagen de fondo */
       background-size: 90%; /* O utiliza otra opción de escala si lo prefieres */
       background-position: center; /* O ajusta la posición según tus preferencias */
-      opacity: 0.15; /* Ajusta este valor para cambiar la transparencia (0.0 a 1.0) */
+      opacity: 0.1; /* Ajusta este valor para cambiar la transparencia (0.0 a 1.0) */
       z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
     }
     
@@ -216,21 +216,6 @@
 
     }
 
-    .contact-bar {
-      position: relative;
-      bottom: 0px;
-      right: 0;
-      background-color: #333333;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .contact-bar a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-
     .main-content a:hover {
       color: #00c3ff;
 
@@ -259,42 +244,34 @@
       text-align: center;
     }
 
-    .social-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .cv-container{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
     .social-icons {
       list-style: none;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: -20px;
+      margin-top: 5px;
     }
 
     .social-icons li {
-      margin-right: 10px;
+      align-items: center;
+      transition: transform 0.3s ease;
+      padding-right: 15px;
     }
 
     .social-icons a {
       color: #06f2ca;
       text-decoration: none;
-      font-size: 45px;
+      font-size: 43px;
       transition: transform 0.3s ease;
     }
-
+   
     .social-icons a:hover {
       transform: scale(1.2);
     }
-
+    .social-icons li:hover {
+      transform: scale(1.5);
+    }
     ul.navbar {
       position: fixed;
       top: 0;
@@ -344,8 +321,8 @@
       font-family: 'Zilla Slab';
       font-size: 30px;
       text-align: center;
-      margin-top: 0px;
-      line-height: 1;
+      margin-top: 15px;
+      line-height: 0.5;
       color: #04f4e8;
 
     }
@@ -422,7 +399,7 @@
       margin-bottom: 0px;
     }
     .thin-text{
-      font-size: 27px;
+      font-size: 23px;
       text-decoration: underline;
 
     }
@@ -448,8 +425,8 @@
       </div>
 
       <ul class="social-icons">
-        <li><a href="mailto:ruizoscar.1393@gmail.com"><i
-              class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
+        <li><a href="mailto:ruizoscar.1393@gmail.com">
+          <i class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
         <li><a href="https://twitter.com/RUCO0713"><i
               class="fab fa-twitter animate__animated animate__pulse animate__infinite"></i></a></li>
         <li><a href="https://www.instagram.com/ruco0713/"><i
