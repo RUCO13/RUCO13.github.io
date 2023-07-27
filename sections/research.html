@@ -53,6 +53,8 @@
         max-width: 150px; /* Ancho máximo para la imagen */
         height: auto; /* Escalar la imagen proporcionalmente */
         max-height: 150px; /* Altura máxima para la imagen */
+        float: right;
+        margin-left: 20px;
     }
 
     .publication-text {
@@ -64,16 +66,7 @@
         font-weight: bold;
         color: aqua;
     }
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+
 </style>
 
 <body>
@@ -199,15 +192,5 @@
         </div>
         <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/jap/122/3/10.1063_1.4993453/4/m_035701_1_f3.jpeg?Expires=1693519466&Signature=YjQHb4Pm-VpxnaW6hYy~9kivOJiH7MwL3KXxK7bozGZs12v1dZDrv1tVfjKrt5aoBDpmvEV0pFx8XCjmzwWFbBBpjq4Mlr4tQK~ze4kJNnhSyGl4EQrBKODgceQKc4R~ZES-LE2nplSPx755r0StcIH3vZ06BtzgwCxtdsxEDWSXvkCe9Mcjnf9hpf886hYSG80g3CdzYfHC-CkCRYgB5mb~9dqQqSvczT2E2nBim7jMXhHR2NJZFG~8vRwMrUW-ug5WzZ5e7b1o2I-nzjeECO3R94fTPGsbGuK6QcpSr3-z7n3R8PjJz7orrk2G74Cuj8JMdGKcEBDUb~9VKSeiXA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="graphene-2017-marcelo" >
     </div>
-    <script>
-        // JavaScript para activar la animación cuando se cargue la página
-        document.addEventListener("DOMContentLoaded", function() {
-            const publicationContainers = document.querySelectorAll(".publications-container");
-            publicationContainers.forEach((container, index) => {
-                // Aplicar animación de desvanecimiento y deslizamiento a cada contenedor
-                container.style.animation = `fadeInUp 0.5s ${index * 0.2}s ease both`;
-            });
-        });
-    </script>
 </body>
 </html>
