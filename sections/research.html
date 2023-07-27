@@ -6,25 +6,73 @@
 <style>
     .r-interest-container {
         width: 100%;
-        max-height: 700px;
         padding: 5px;
         border: 1px solid #ccc;
-        /* add this line */
         border-radius: 5px;
-        /* optional, if you want rounded corners */
     }
 
     .publications-container {
-        width: 100%;
-        max-height: 900px;
+        max-width: 100%;
+        margin: 20px auto;
         padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        background-color: #6e6e80;
+        display: flex;
+        align-items: start; /* Alinear verticalmente el contenido */
+        transform: translateY(-10px); /* Desplazamiento hacia arriba para la animación */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
     }
 
-    .citations {
-        border: 1px solid #ccc;
-        padding: 10px;
+    .publication-details {
+        flex: 1;
+        padding-right: 20px; 
+    }
+
+    .publications-container a {
+        text-decoration: none;
+        color: #f6ff00;
+        font-size: 21px;
+    }
+
+    .publications-container:hover {
+        transform: scale(1.05); /* Escalar ligeramente el contenedor al hacer hover */
+    }
+
+    .publications-container a:hover {
+        text-decoration: underline;
+    }
+
+    .publications-container name {
+        font-weight: bold;
+    }
+
+    .publications-container authors {
+        color: #00d0fa;
+    }
+
+    .publications-container img {
+        max-width: 150px; /* Ancho máximo para la imagen */
+        height: auto; /* Escalar la imagen proporcionalmente */
+        max-height: 150px; /* Altura máxima para la imagen */
+    }
+
+    .publication-text {
+        max-width: calc(100% - 150px); /* Restar el ancho de la imagen para el texto */
+    }
+
+    .publications-container author {
+        text-decoration: underline;
+        font-weight: bold;
+        color: aqua;
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
 
@@ -38,11 +86,128 @@
             <li>Nanophotonics</li>
         </ul>
     </div>
-    <h1>Publications List</h1>
+    <h1>Publications</h1>
     <div class="publications-container">
-        <div id="citations"></div>
-        <script src="pubs.js"></script>
-
+        <div class="publication-details publication-text">
+            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.045306">
+                <name>Spin relaxation of conduction electrons in coupled quantum wells</name>
+            </a><br>
+            <authors>C. A. Bravo-Velázquez, L.F Lastras-Martínez, <author>O. Ruiz-Cigarrillo</author>, G. Flores-Rangel, L. E Tapia-Rodríguez, K. Biermann, and P. V. Santos</authors>
+            <br>
+            <strong>Physical Review B</strong> 103 (3), 035309
+            <br>
+        </div>
+        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.108.045306/figures/1/medium" alt="Thumbnail">
     </div>
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://onlinelibrary.wiley.com/doi/10.1002/pssb.202100612">
+                <name>
+                    Photoluminescence of double quantum wells: Asymmetry and excitation laser wavelength effects
+                </name>
+            </a><br>
+            <authors>
+            Carlos Alberto Bravo-Velázquez, Luis Felipe Lastras-Martínez, <author>Oscar Ruiz-Cigarrillo</author>, Gabriela Flores-Rangel, Lucy Estefania Tapia-Rodríguez, Klaus Biermann, Paulo Ventura Santos
+            </authors>
+            <br>
+             <strong>physica status solidi (b)</strong> 259 (4), 2100612
+            <br>
+        </div>
+        <img src="https://onlinelibrary.wiley.com/cms/asset/69caf0e6-a99f-432c-ab80-75e7844e497e/pssb.v259.4.cover.jpg" alt="Thumbnail" >
+    </div>
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.035309">
+                <name>
+                    Optical anisotropies of asymmetric double GaAs (001) quantum wells
+                </name>
+            </a><br>
+            <authors>
+                <author>O. Ruiz-Cigarrillo</author>, L. F. Lastras-Martínez, E. A. Cerda-Méndez, G. Flores-Rangel, C. A. Bravo-Velazquez, R. E. Balderas-Navarro, A. Lastras-Martínez, N. A. Ulloa-Castillo, K. Biermann, and P. V. Santos
+            </authors>
+            <br>
+            <strong>Physical Review B</strong> 103 (3), 035309
+            <br>
+        </div>
+        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.103.035309/figures/2/medium" alt="ruco-paper" >
+    </div>
+
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://scholar.google.es/citations?view_op=view_citation&hl=es&user=d5ygTH8AAAAJ&sortby=pubdate&citation_for_view=d5ygTH8AAAAJ:2osOgNQ5qMEC">
+                <name>
+                    Optical contrast in the near-field limit for structural characterization of graphene nanoribbons
+                </name>
+            </a><br>
+            <authors>
+                G. Flores-Rangel, L.F. Lastras-Martinez, R. Castro-Garcia, <author>O. Ruiz-Cigarrillo</author>, R.E. Balderas-Navarro, L.D. Espinosa-Cuellar, A. Lastras-Martinez, J.M.J. Lopes
+            </authors>
+            <br>
+            <strong>Physical Review B</strong> 103 (3), 035309
+            <br>
+        </div>
+        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169433220324673-ga1.jpg" alt="gaby-paper" >
+    </div>
+
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://pubs.aip.org/aip/adv/article/9/4/045309/1076620/Differential-reflectance-contrast-technique-in">
+                <name>
+                    Differential reflectance contrast technique in near field limit: Application to graphene
+                </name>
+            </a><br>
+            <authors>
+                L.F. Lastras-Martínez, D. Medina-Escobedo, G. Flores-Rangel, R.E. Balderas-Navarro, <author>O. Ruiz-Cigarrillo</author>, R. Castro-García, M. del P. Morales-Morelos, J. Ortega-Gallegos, M. Losurdo
+            </authors>
+            <br>
+            <strong>AIP Advances</strong> 9 (4)
+            <br>
+        </div>
+        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/adv/9/4/10.1063_1.5092339/3/m_045309_1_f3.jpeg?Expires=1693518295&Signature=w7XtgRzpp8kKpTCYltxhagwJOwf-cZ~RGQnZts9VRe0MnStjbwSdKyi1TQW5i5oIRkecufypCWQaf9lB~kRwcu9Y~yYHay7kynhZtZ3BKxWVx~3WOWXzF5-KWIu3fOFYTdxgksMOwwTTyfgzOqlHrDZaMnl2ro0zOJKr8WOgZp-3l68abF1HAKLlt39CDiNufs0oUbrjatuZ~xMzZw-2E3rtx1oQQIgUsYQ4O-ci7jhOL-o1mutBHum~jUEpsQxTO8ER4LX4opO5Qg6SvHaio-pxVHCfEX4sBQ0xj1PBYCJIc3JMra8rFGkJxSlNFdUIDkxmoilyatN2xuLocgBY5A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="graphene-2017-losurdo" >
+    </div>
+
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.235306">
+                <name>
+                    Microscopic optical anisotropy of exciton-polaritons in a GaAs-based semiconductor microcavity
+                </name>
+            </a><br>
+            <authors>
+                L. F. Lastras-Martínez, E. Cerda-Méndez, N. Ulloa-Castillo, R. Herrera-Jasso, L. E. Rodríguez-Tapia, <author>O. Ruiz-Cigarrillo</author>, R. Castro-García, K. Biermann, and P. V. Santos
+            </authors>
+            <br>
+            <strong>Physical Review B </strong> 96 (23), 235306
+            <br>
+        </div>
+        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.96.235306/figures/2/medium" alt="cavity-2017-paper" >
+    </div>
+
+    <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://pubs.aip.org/aip/jap/article/122/3/035701/154962">
+                <name>
+                    Optical detection of graphene nanoribbons synthesized on stepped SiC surfaces
+                </name>
+            </a><br>
+            <authors>
+                L.F. Lastras-Martínez, J. Almendarez-Rodríguez, G. Flores-Rangel, N.A. Ulloa-Castillo, <author>O. Ruiz-Cigarrillo</author>, C.A. Ibarra-Becerra, R. Castro-García, R.E. Balderas-Navarro, M.H. Oliveira, J.M.J. Lopes
+            </authors>
+            <br>
+            <strong>Journal of Applied Physics </strong> 122 (3)
+            <br>
+        </div>
+        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/jap/122/3/10.1063_1.4993453/4/m_035701_1_f3.jpeg?Expires=1693519466&Signature=YjQHb4Pm-VpxnaW6hYy~9kivOJiH7MwL3KXxK7bozGZs12v1dZDrv1tVfjKrt5aoBDpmvEV0pFx8XCjmzwWFbBBpjq4Mlr4tQK~ze4kJNnhSyGl4EQrBKODgceQKc4R~ZES-LE2nplSPx755r0StcIH3vZ06BtzgwCxtdsxEDWSXvkCe9Mcjnf9hpf886hYSG80g3CdzYfHC-CkCRYgB5mb~9dqQqSvczT2E2nBim7jMXhHR2NJZFG~8vRwMrUW-ug5WzZ5e7b1o2I-nzjeECO3R94fTPGsbGuK6QcpSr3-z7n3R8PjJz7orrk2G74Cuj8JMdGKcEBDUb~9VKSeiXA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="graphene-2017-marcelo" >
+    </div>
+    <script>
+        // JavaScript para activar la animación cuando se cargue la página
+        document.addEventListener("DOMContentLoaded", function() {
+            const publicationContainers = document.querySelectorAll(".publications-container");
+            publicationContainers.forEach((container, index) => {
+                // Aplicar animación de desvanecimiento y deslizamiento a cada contenedor
+                container.style.animation = `fadeInUp 0.5s ${index * 0.2}s ease both`;
+            });
+        });
+    </script>
 </body>
 </html>

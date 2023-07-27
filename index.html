@@ -34,6 +34,7 @@
       background-color: #353740;
       color: #f8f9fc;
       margin: 0;
+      padding: 0;
       padding: 20px;
       line-height: 1.5;
       scrollbar-width: thin;
@@ -80,10 +81,13 @@
       }
 
       .main-content {
-        margin-left: 0;
-        /* No need for margin-left in mobile devices */
+        flex-grow: 2;
+        padding: 20px;
         margin-top: 20px;
-        /* Add some margin at the top for better separation */
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-left: calc(300px + 50px);
+        margin-right:30px;
       }
     }
 
@@ -96,7 +100,6 @@
     .column {
       flex-grow: 1;
       padding: 10px;
-      flex-grow: 1;
       padding: 10px;
     }
 
@@ -112,6 +115,7 @@
     .container {
       display: flex;
       position: relative;
+      justify-content: center;
     }
 
     .sidebar-container {
@@ -150,12 +154,6 @@
       background-position: center; /* O ajusta la posición según tus preferencias */
       opacity: 0.1; /* Ajusta este valor para cambiar la transparencia (0.0 a 1.0) */
       z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
-    }
-    
-    .main-content {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-left: 0;
     }
 
     h1 {
@@ -211,9 +209,8 @@
       flex-grow: 1;
       background-color: #f9f9f9;
       padding: 20px;
-      margin-left: 300px;
-      /* Ancho del sidebar */
-
+      margin-left: calc(300px + 70px);
+      margin-right:50px;
     }
 
     .main-content a:hover {
@@ -279,9 +276,9 @@
       width: 100%;
       background-color: #333;
       z-index: 1;
-      /* Cambiar el valor de z-index a 1 */
       list-style-type: none;
       margin: 0;
+      margin-top: 0;
       padding: 0;
       display: flex;
       justify-content: flex-end;
@@ -301,6 +298,7 @@
       font-family: 'Zilla Slab';
       font-size: 20px;
       transition: background-color 0.3s ease;
+
     }
 
     ul.navbar li a:hover {
@@ -325,18 +323,6 @@
       line-height: 0.5;
       color: #04f4e8;
 
-    }
-
-    .sidebar-card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 350px;
-    }
-
-    .sidebar-card img {
-      max-width: 100%;
-      height: auto;
     }
 
     .title {
@@ -413,6 +399,7 @@
       <li><a href="#research">Research</a></li>
       <li><a href="#software">Software</a></li>
       <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#blog">Blog</a></li>
     </ul>
   </nav>
 
@@ -501,21 +488,6 @@
         <div id="newReleasesContainer">
       </section>
       <section id="research"  class="section">
-        <h1>Research Interests</h1>
-        <div class="r-interest-container">
-          <ul>
-            <li>Solid State Experimental Physics</li>
-            <li>Computational Calculation of Semiconductor Bandstructures</li>
-            <li>Density Functional Theory (DFT) and Band Structure Packages</li>
-            <li>Nanophotonics</li>
-          </ul>
-        </div>
-        <h1>Publications List</h1>
-        <div class="publications-container">
-          <div id="citations">
-            <script src="scripts/pubs.js"></script>
-          </div>
-        </div>
       </section>
       <section id="software"  class="section">
       </section>
@@ -557,6 +529,7 @@
         });
     }
     document.addEventListener('DOMContentLoaded', function () {
+      loadSection('research', 'sections/research.html');
       loadSection('software', 'sections/software.html');
       loadSection('teaching', 'sections/teaching.html');
     });
