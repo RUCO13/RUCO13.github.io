@@ -79,6 +79,7 @@
         width: auto;
         height: auto;
         margin-bottom: 20px;
+        width: 30%;
       }
 
       .main-content {
@@ -351,16 +352,6 @@
       padding: 10px;
     }
 
-    .r-interest-container {
-      width: 100%;
-      max-height: 700px;
-      padding: 5px;
-      border: 1px solid #ccc;
-      /* add this line */
-      border-radius: 5px;
-      /* optional, if you want rounded corners */
-    }
-
     .visit-counter {
       display: block;
       width: 250px;
@@ -385,10 +376,10 @@
       bottom: 0px;
       margin-bottom: 0px;
     }
-    .thin-text{
+    .cv-text{
+      font-family: 'Zilla Slab';
       font-size: 23px;
       text-decoration: underline;
-
     }
   </style>
 </head>
@@ -425,7 +416,7 @@
 
       <div class="social-icons">
         <a href="data/RUCO_CV_eng.pdf" target="_blank">
-        <span class="thin-text">Oscar's CV</span>  <i class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
+        <span class="cv-text">Oscar's CV</span>  <i class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
         </i>
       </a>
       </div>
@@ -451,7 +442,6 @@
           document.getElementById("visitData").innerHTML = html;
         }
       </script>
-
     </div>
 
     <div class="main-content column">
@@ -567,7 +557,6 @@
       });
     });
   </script>
-
 </body>
 
 </html>
