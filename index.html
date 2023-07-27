@@ -74,13 +74,12 @@
       }
 
       .sidebar {
-        position: relative;
-        /* Change to relative positioning for mobile devices */
-        margin-bottom: 20px;
-        width: 30%;
+        width: 100%;
+        height: auto;
       }
 
       .main-content {
+        width: 100%;
         flex-grow: 2;
         flex-wrap: nowrap;
         padding: 20px;
@@ -88,8 +87,17 @@
         overflow-y: auto;
         margin-left: calc(300px + 20px);
         margin-right:20px;
-        width: 70%;
       }
+      ul.navbar {
+        justify-content: center; /* Centrar los enlaces */
+        padding: 10px; /* Espaciado para mejorar la visualización */
+      }
+      ul.navbar li {
+        display: block; /* Cambiar a bloques para ocupar toda la anchura */
+        text-align: center; /* Centrar los enlaces */
+        margin: 5px 0; /* Espaciado entre enlaces */
+      }
+
     }
 
     ul:hover li {
