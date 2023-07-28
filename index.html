@@ -16,12 +16,15 @@
   <title>Oscar's web page</title>
   <link rel="icon" href="data/images/logo.png" type="image/icon type">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab|Montserrat:400,700,900|Roboto:400,700|Playfair+Display|Press+Start+2P&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Zilla+Slab|Montserrat:400,700,900|Roboto:400,700|Playfair+Display|Press+Start+2P&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script src="scripts/navbar.js"></script>
   <script src="scripts/sectionToggle.js"></script>
   <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/42055755dc.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -153,7 +156,7 @@
     .main-content {
       flex-grow: 1;
       max-width: 60%;
-      margin-left:30%;
+      margin-left: 30%;
       margin-right: 2%;
       background-color: #f9f9f9;
     }
@@ -316,9 +319,10 @@
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
 
-      .main{
+      .main {
         flex-wrap: nowrap;
       }
+
       /* Estilos para la estructura del contenedor */
       .container {
         flex-direction: column-reverse;
@@ -470,20 +474,27 @@
 
       <ul class="social-icons">
         <li><a href="mailto:ruizoscar.1393@gmail.com">
-            <i class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://twitter.com/RUCO0713"><i
-              class="fab fa-twitter animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://www.instagram.com/ruco0713/"><i
-              class="fab fa-instagram animate__animated animate__pulse animate__infinite"></i></a></li>
-        <li><a href="https://github.com/RUCO13"><i
-              class="fab fa-github fa-beat-fade animate__animated animate__pulse animate__infinite"></i></a></li>
+            <i class="fa-solid fa-envelope fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+          </a>
+        </li>
+        <li><a href="https://twitter.com/RUCO0713">
+            <i class="fa-brands fa-twitter fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+          </a>
+        </li>
+        <li><a href="https://www.instagram.com/ruco0713/" style="--fa-animation-duration: 2s;">
+            <i class="fa-brands fa-instagram fa-beat-fade"></i>
+          </a>
+        </li>
+        <li><a href="https://github.com/RUCO13">
+            <i class="fa-brands fa-github fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+          </a>
+        </li>
       </ul>
 
       <div class="social-icons">
         <a href="data/RUCO_CV_eng.pdf" target="_blank" alt="RUCO CV">
-          <span class="cv-text">Oscar's CV</span> <i
-            class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
-          </i>
+          <span class="cv-text">Oscar's CV</span>
+          <i class="fa-solid fa-file-pdf fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
         </a>
       </div>
 
