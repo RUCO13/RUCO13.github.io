@@ -16,12 +16,7 @@
   <title>Oscar's web page</title>
   <link rel="icon" href="data/images/logo.png" type="image/icon type">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Zilla Slab" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab|Montserrat:400,700,900|Roboto:400,700|Playfair+Display|Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <script src="scripts/navbar.js"></script>
   <script src="scripts/sectionToggle.js"></script>
@@ -30,14 +25,13 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      font-size: 17px;
+      font-size: 1rem;
       background-color: #353740;
       color: #f8f9fc;
-      margin: 0;
-      padding: 0;
-      padding: 20px;
+      padding: 0em;
       line-height: 1.5;
       scrollbar-width: thin;
+      justify-content: space-between;
     }
 
     ::-webkit-scrollbar {
@@ -68,8 +62,7 @@
 
     .column {
       flex-grow: 1;
-      padding: 10px;
-      padding: 10px;
+      padding: 0px;
     }
 
     .column:nth-child(1) {
@@ -98,13 +91,12 @@
       max-width: 30%;
       /* Ancho máximo del sidebar al 30% del contenedor */
       top: 0;
-      top: 0;
       left: 0;
       height: 100%;
       z-index: 1;
       list-style-type: none;
       margin: 0;
-      padding: 7px;
+      padding: 0%;
       display: flex;
       flex-direction: column;
       background-color: #f9f9f9;
@@ -160,10 +152,9 @@
 
     .main-content {
       flex-grow: 1;
-      margin-left: calc(25% + 5%);
-      padding: 20px;
-      margin-right: 5%;
-      /* Margen derecho para separar del sidebar */
+      max-width: 60%;
+      margin-left:30%;
+      margin-right: 2%;
       background-color: #f9f9f9;
     }
 
@@ -209,7 +200,7 @@
     .social-icons a {
       color: #06f2ca;
       text-decoration: none;
-      font-size: 43px;
+      font-size: 2.5rem;
       transition: transform 0.3s ease;
     }
 
@@ -247,8 +238,8 @@
       text-align: center;
       padding: 10px 20px;
       text-decoration: none;
-      font-family: 'Zilla Slab';
-      font-size: 20px;
+      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
       transition: background-color 0.3s ease;
 
     }
@@ -271,7 +262,7 @@
 
     .profile-name {
       font-family: 'Zilla Slab';
-      font-size: 27px;
+      font-size: 1.5rem;
       text-align: center;
       margin-top: 15px;
       line-height: 0.5;
@@ -318,13 +309,16 @@
 
     .cv-text {
       font-family: 'Zilla Slab';
-      font-size: 23px;
+      font-size: 1.5rem;
       text-decoration: underline;
     }
 
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
 
+      .main{
+        flex-wrap: nowrap;
+      }
       /* Estilos para la estructura del contenedor */
       .container {
         flex-direction: column-reverse;
