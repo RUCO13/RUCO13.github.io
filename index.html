@@ -67,7 +67,6 @@
     }
 
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
-    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
       /* Estilos para la estructura del contenedor */
       .container {
@@ -97,6 +96,10 @@
         margin: 5px 0;
       }
     
+      ul.navbar li a {
+        font-size: 19px; /* Ajusta el tamaño del texto según sea necesario */
+      }
+    
       /* Estilos para la imagen de perfil */
       img.profile-image {
         width: 100%;
@@ -105,27 +108,12 @@
       }
     
       /* Estilos para los enlaces de redes sociales en dispositivos móviles */
-      .social-links {
-        list-style-type: none;
-        padding: 0;
-        margin: 10px;
-      }
-    
-      .social-links li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
-    
-      .social-links li img {
-        margin-right: 20px;
-      }
-    
-      .social-links a {
-        color: #333333;
+      .social-icons a {
+        color: #06f2ca;
         text-decoration: none;
+        font-size: 43px;
+        transition: transform 0.3s ease;
       }
-    
       /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
       ul.navbar {
         position: fixed;
@@ -163,16 +151,21 @@
       /* Estilos para el nombre del perfil en dispositivos móviles */
       .profile-name {
         font-family: 'Zilla Slab';
-        font-size: 19px;
+        font-size: 17px;
         text-align: center;
         margin-top: 15px;
         line-height: 0.5;
         color: #04f4e8;
       }
+
+      .cv-text {
+        font-family: 'Zilla Slab';
+        font-size: 17px;
+        text-decoration: underline;
+      }
     }
     
-
-
+  
     ul:hover li {
       margin-bottom: 0px;
       transition: 500ms linear;
@@ -255,29 +248,6 @@
       border-radius: 50%;
       object-fit: cover;
       opacity: 1;
-    }
-
-    .social-links {
-      list-style-type: none;
-      padding: 0px;
-      margin: 10px;
-      opacity: 1;
-    }
-
-    .social-links li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      width: fit-content;
-    }
-
-    .social-links li img {
-      margin-right: 30px;
-    }
-
-    .social-links a {
-      color: #333333;
-      text-decoration: none;
     }
 
     .about-section {
