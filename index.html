@@ -121,13 +121,72 @@
       }
   
       .social-links li img {
-        margin-right: 30px;
+        margin-right: 20px;
       }
   
       .social-links a {
         color: #333333;
         text-decoration: none;
       }
+
+
+    ul.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1;
+      list-style-type: none;
+      margin: 0;
+      margin-top: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    ul.navbar li {
+      display: inline-block;
+    }
+
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-family: 'Zilla Slab';
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+
+    }
+
+    ul.navbar li a:hover {
+      background-color: #6e6e80;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      margin-right: 0px;
+    }
+
+    .navbar a.active {
+      color: #04f4e8;
+      /* Cambiar a tu color deseado */
+      background-color: #6e6e80;
+      font-weight: bold;
+    }
+
+    .profile-name {
+      font-family: 'Zilla Slab';
+      font-size: 19px;
+      text-align: center;
+      margin-top: 15px;
+      line-height: 0.5;
+      color: #04f4e8;
+
+    }
   
     }
 
