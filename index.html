@@ -86,7 +86,8 @@
       flex-direction: column;
       background-color: #f9f9f9;
       /* Establece el ancho predeterminado para el sidebar en pantallas grandes */
-      width: 25%;
+      min-width: 200px; /* Ancho mínimo */
+      max-width: 300px; /* Ancho máximo */
     }
 
     /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
@@ -119,8 +120,8 @@
       }
     
       .sidebar {
-        width: 25%;
-        height: auto;
+        min-width: unset; /* Eliminar el ancho mínimo en dispositivos móviles */
+        max-width: unset; /* Eliminar el ancho máximo en dispositivos móviles */
       }
     
       .main-content {
