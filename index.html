@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Oscar Ruiz Cigarrillo">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
-  <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0"> -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -48,9 +48,10 @@
       background-color: #6e6e80;
       border-radius: 3px;
     }
+
     ::-webkit-scrollbar-corner,
     ::-webkit-scrollbar-thumb {
-      height: 3px; 
+      height: 3px;
     }
 
     body::-webkit-scrollbar-thumb {
@@ -66,38 +67,46 @@
     }
 
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
+    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
       .container {
         flex-direction: column;
         /* Change to columns in smaller devices */
       }
-    
+
       .sidebar {
         width: 100%;
         height: auto;
       }
-    
+
       .main-content {
         width: 100%;
-        flex-grow: 2;
-        flex-wrap: nowrap;
+        flex-grow: 1;
         padding: 20px;
         margin-top: 20px;
-        overflow-y: auto;
-        margin-left: 0;
-        margin-right: 0;
       }
+
       ul.navbar {
-        justify-content: center; /* Centrar los enlaces */
-        padding: 10px; /* Espaciado para mejorar la visualización */
+        justify-content: center;
+        /* Centrar los enlaces */
+        padding: 10px;
+        /* Espaciado para mejorar la visualización */
       }
+
       ul.navbar li {
-        display: block; /* Cambiar a bloques para ocupar toda la anchura */
-        text-align: center; /* Centrar los enlaces */
-        margin: 5px 0; /* Espaciado entre enlaces */
+        display: block;
+        /* Cambiar a bloques para ocupar toda la anchura */
+        text-align: center;
+        /* Centrar los enlaces */
+        margin: 5px 0;
+        /* Espaciado entre enlaces */
+      }
+      img.profile-image {
+        width: 100%; 
+        max-width: none; 
       }
     }
-    
+
 
     ul:hover li {
       margin-bottom: 0px;
@@ -139,7 +148,6 @@
       flex-basis: 300px;
       top: 0;
       left: 0;
-      width: 300px;
       height: 100%;
       z-index: 1;
       list-style-type: none;
@@ -147,8 +155,11 @@
       padding: 7px;
       display: flex;
       flex-direction: column;
+      background-color: #f9f9f9;
+      /* Establece el ancho predeterminado para el sidebar en pantallas grandes */
+      width: 25%;
     }
-    
+
     /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
     .sidebar::before {
       content: "";
@@ -169,8 +180,8 @@
     }
 
     img.profile-image {
-      width: 270px;
-      height: 270px;
+      width: 70%;
+      height: auto; 
       border-radius: 50%;
       object-fit: cover;
       opacity: 1;
@@ -218,7 +229,7 @@
       background-color: #f9f9f9;
       padding: 20px;
       margin-left: calc(300px + 70px);
-      margin-right:50px;
+      margin-right: 50px;
     }
 
     .main-content a:hover {
@@ -270,13 +281,15 @@
       font-size: 43px;
       transition: transform 0.3s ease;
     }
-   
+
     .social-icons a:hover {
       transform: scale(1.2);
     }
+
     .social-icons li:hover {
       transform: scale(1.5);
     }
+
     ul.navbar {
       position: fixed;
       top: 0;
@@ -317,8 +330,10 @@
       font-weight: bold;
       margin-right: 0px;
     }
+
     .navbar a.active {
-      color: #04f4e8; /* Cambiar a tu color deseado */
+      color: #04f4e8;
+      /* Cambiar a tu color deseado */
       background-color: #6e6e80;
       font-weight: bold;
     }
@@ -382,7 +397,8 @@
       bottom: 0px;
       margin-bottom: 0px;
     }
-    .cv-text{
+
+    .cv-text {
       font-family: 'Zilla Slab';
       font-size: 23px;
       text-decoration: underline;
@@ -404,14 +420,16 @@
   <div class="container">
     <div class="sidebar column sidebar-bg">
       <div style="text-align: center;">
-        <img src="https://wakatime.com/photo/2502acb2-1684-4597-a422-d30dfa6a2f67?s=420&cache=false&time=1690402961.9283767" alt="Mi foto" class="profile-image">
+        <img
+          src="https://wakatime.com/photo/2502acb2-1684-4597-a422-d30dfa6a2f67?s=420&cache=false&time=1690402961.9283767"
+          alt="Mi foto" class="profile-image">
         <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
         <h2 class="profile-name">Ph.D. Photonics</h2>
       </div>
 
       <ul class="social-icons">
         <li><a href="mailto:ruizoscar.1393@gmail.com">
-          <i class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
+            <i class="far fa-envelope animate__animated animate__pulse animate__infinite"></i></a></li>
         <li><a href="https://twitter.com/RUCO0713"><i
               class="fab fa-twitter animate__animated animate__pulse animate__infinite"></i></a></li>
         <li><a href="https://www.instagram.com/ruco0713/"><i
@@ -422,9 +440,10 @@
 
       <div class="social-icons">
         <a href="data/RUCO_CV_eng.pdf" target="_blank" alt="RUCO CV">
-        <span class="cv-text">Oscar's CV</span>  <i class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
-        </i>
-      </a>
+          <span class="cv-text">Oscar's CV</span> <i
+            class="fa fa-file fa-beat-fade animate__animated animate__pulse animate__infinite"></i>
+          </i>
+        </a>
       </div>
 
       <!-- <div id="container-01" class="mol-container"></div>
@@ -451,7 +470,7 @@
     </div>
 
     <div class="main-content column">
-      <section id="home"  class="section">
+      <section id="home" class="section">
         <h1 style="color: #f6f2f2;">About me</h1>
         <div class="about-section">
           <ul>
@@ -484,9 +503,9 @@
         </div>
         <div id="newReleasesContainer">
       </section>
-      <section id="research"  class="section">
+      <section id="research" class="section">
       </section>
-      <section id="software"  class="section">
+      <section id="software" class="section">
       </section>
       <section id="teaching" class="section">
 
@@ -536,16 +555,16 @@
     // Función para cambiar el color del enlace en el navbar
     function setActiveLink(link) {
       const navLinks = document.querySelectorAll('nav a');
-  
+
       // Remover la clase "active" de todos los enlaces del navbar
       navLinks.forEach(navLink => {
         navLink.classList.remove('active');
       });
-  
+
       // Agregar la clase "active" al enlace clicado
       link.classList.add('active');
     }
-  
+
     document.addEventListener('DOMContentLoaded', function () {
       const navLinks = document.querySelectorAll('nav a');
       // Añadir un event listener a cada enlace del navbar
@@ -563,6 +582,7 @@
       });
     });
   </script>
+  
 </body>
 
 </html>

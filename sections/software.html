@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="styles/soft-car.css">
+  <!-- <link rel="stylesheet" href="styles/soft-car.css"> -->
 </head>
+<style>
+  .software-text {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .repo-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #6e6e80;
+    display: flex;
+    align-items: center;
+    /* Alinear verticalmente el contenido */
+    transform: translateY(-10px);
+    /* Desplazamiento hacia arriba para la animación */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Transiciones suaves */
+  }
+
+  .repo-details {
+    flex: 1;
+    padding-left: 0px;
+    text-align: right;
+    display: flex; /* Agregar display flex para centrar verticalmente */
+    align-items: center; /* Alinear verticalmente el contenido */
+  }
+
+  .repo-container a {
+    text-decoration: none;
+    color: #f6ff00;
+    font-size: 21px;
+  }
+
+  .repo-container:hover {
+    transform: scale(1.05);
+    /* Escalar ligeramente el contenedor al hacer hover */
+  }
+
+  .repo-container a:hover {
+    text-decoration: underline;
+  }
+
+  .repo-container name {
+    font-weight: bold;
+  }
+
+  .repo-container authors {
+    color: #00d0fa;
+  }
+
+  .repo-container img {
+    max-width: 70%;
+    /* Ancho máximo para la imagen */
+    height: auto;
+    /* Escalar la imagen proporcionalmente */
+    max-height: 30%;
+    /* Altura máxima para la imagen */
+    float: left;
+    margin-right: 0px;
+  }
+
+  .repo-text {
+    max-width: calc(100% + 300px);
+    text-align: right;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+</style>
 
 <body>
   <h1>Software</h1>
-  <div class="software-section">
+  <div class="software-text">
     <p>
       Greetings! As part of my work, I specialize in developing software with two primary purposes. The first
       focus is on the development and utilization of <strong>DFT</strong> (Density Functional Theory) code calculators
@@ -34,31 +106,71 @@
 
   <h1>My Projects</h1>
 
-  <div class="cards-container">
-    <div class="card">
+
+  <div class="repo-container">
+    <div class="repo-details">
+      <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="cqws-codes">
       <a href="https://github.com/NanophotonIICOs/cqws-codes">
-        <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="cqws-codes">
-      </a>
+        <div class="repo-text">
+        <name>
+          cqws-codes
+        </name>
+        </div>
+      </a><br>
     </div>
-    <div class="card">
+  </div>
+
+  <div class="repo-container">
+    <div class="repo-details">
+      <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="bash-scripts">
       <a href="https://github.com/NanophotonIICOs/bash-scripts">
-        <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="bash-scripts">
-      </a>
+        <div class="repo-text">
+        <name>
+          bash-scripts
+        </name>
+        </div>
+      </a><br>
     </div>
-    <div class="card">
+  </div>
+
+
+  <div class="repo-container">
+    <div class="repo-details">
+      <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="iico-spectra">
       <a href="https://github.com/NanophotonIICOs/iico-spectra">
-        <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="iico-spectra">
-      </a>
+        <div class="repo-text">
+        <name>
+          iico-spectra
+        </name>
+        </div>
+      </a><br>
     </div>
-    <div class="card">
+  </div>
+
+
+  <div class="repo-container">
+    <div class="repo-details">
+      <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="atomistiico">
       <a href="https://github.com/NanophotonIICOs/atomistiico">
-        <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="atomistiico">
-      </a>
+        <div class="repo-text">
+        <name>
+          atomistiico
+        </name>
+        </div>
+      </a><br>
     </div>
-    <div class="card">
+  </div>
+
+  <div class="repo-container">
+    <div class="repo-details">
+      <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project">
       <a href="https://github.com/RUCO13/ruco-phd-project">
-        <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project">
-      </a>
+        <div class="repo-text" style=" margin-left: 30px;">
+        <name>
+          ruco-phd-project
+        </name>
+        </div>
+      </a><br>
     </div>
   </div>
 
