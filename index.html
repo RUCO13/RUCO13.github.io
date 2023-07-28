@@ -65,16 +65,35 @@
       background-color: #353740;
       /* Color de la línea del scrollbar */
     }
+    .column {
+      flex-grow: 1;
+      padding: 10px;
+      padding: 10px;
+    }
 
-    .sidebar-container {
+    .column:nth-child(1) {
+      background-color: #6e6e80;
+    }
+
+    .column:nth-child(2) {
+      background-color: #353740;
+      /* Color de fondo para la segunda columna */
+    }
+
+    .container {
+      display: flex;
       position: relative;
+      justify-content: center;
     }
 
 
     .sidebar {
       /* Ajusta las demás propiedades como lo desees */
       position: fixed;
-      flex-basis: 300px;
+      flex-basis: 30%; /* Ancho inicial del sidebar al 30% del contenedor */
+      min-width: 5%; /* Ancho mínimo del sidebar en píxeles */
+      max-width: 30%; /* Ancho máximo del sidebar al 30% del contenedor */
+      top: 0;
       top: 0;
       left: 0;
       height: 100%;
@@ -85,9 +104,7 @@
       display: flex;
       flex-direction: column;
       background-color: #f9f9f9;
-      /* Establece el ancho predeterminado para el sidebar en pantallas grandes */
-      min-width: 200px; /* Ancho mínimo */
-      max-width: 300px; /* Ancho máximo */
+      transition: flex-basis 0.3s; /* Transición suave al cambiar el ancho */
     }
 
     /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
@@ -110,148 +127,7 @@
       /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
     }
 
-
-
-    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
-    @media screen and (max-width: 768px) {
-      /* Estilos para la estructura del contenedor */
-      .container {
-        flex-direction: column;
-      }
-    
-      #sidebar {
-        width: 25%;
-        min-width: unset; /* Eliminar el ancho mínimo en dispositivos móviles */
-        max-width: unset; /* Eliminar el ancho máximo en dispositivos móviles */
-        height: auto;
-      }
-    
-      .main-content {
-        width: 100%;
-        margin: 0;
-        padding: 20px;
-      }
-    
-      /* Estilos para la barra de navegación en dispositivos móviles */
-      ul.navbar {
-        justify-content: center;
-        padding: 10px;
-      }
-    
-      ul.navbar li {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
-      }
-    
-      ul.navbar li a {
-        font-size: 19px; /* Ajusta el tamaño del texto según sea necesario */
-      }
-    
-      /* Estilos para la imagen de perfil */
-      img.profile-image {
-        width: 100%;
-        max-width: none;
-        height: auto;
-      }
-    
-      /* Estilos para los enlaces de redes sociales en dispositivos móviles */
-      .social-icons a {
-        color: #06f2ca;
-        text-decoration: none;
-        font-size: 17px;
-        transition: transform 0.3s ease;
-      }
-      /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
-      .navbar-brand {
-        font-weight: bold;
-        margin-right: 0px;
-      }
-  
-      .navbar a.active {
-        color: #04f4e8;
-        /* Cambiar a tu color deseado */
-        background-color: #6e6e80;
-        font-weight: bold;
-      }
-      ul.navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        z-index: 1;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-      }
-    
-      ul.navbar li {
-        display: block;
-      }
-    
-      ul.navbar li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-family: 'Zilla Slab';
-        font-size: 20px;
-        transition: background-color 0.3s ease;
-      }
-    
-      ul.navbar li a:hover {
-        background-color: #6e6e80;
-      }
-      /* Estilos para el nombre del perfil en dispositivos móviles */
-      .profile-name {
-        font-family: 'Zilla Slab';
-        font-size: 17px;
-        text-align: center;
-        margin-top: 15px;
-        line-height: 0.5;
-        color: #04f4e8;
-      }
-
-      .cv-text {
-        font-family: 'Zilla Slab';
-        font-size: 17px;
-        text-decoration: underline;
-      }
-    }
-    
-  
-    ul:hover li {
-      margin-bottom: 0px;
-      transition: 500ms linear;
-    }
-
-
-    .column {
-      flex-grow: 1;
-      padding: 10px;
-      padding: 10px;
-    }
-
-    .column:nth-child(1) {
-      background-color: #6e6e80;
-    }
-
-    .column:nth-child(2) {
-      background-color: #353740;
-      /* Color de fondo para la segunda columna */
-    }
-
-    .container {
-      display: flex;
-      position: relative;
-      justify-content: center;
-    }
-
-        h1 {
+    h1 {
       color: #fff6f6;
     }
 
@@ -279,13 +155,12 @@
 
     .main-content {
       flex-grow: 1;
-      background-color: #f9f9f9;
+      margin-left: calc(25% + 5%);
       padding: 20px;
-      margin-left: 30%;
-      margin-right: 50px;
-      width: 75%;
+      margin-right: 5%; /* Margen derecho para separar del sidebar */
+      background-color: #f9f9f9;
     }
-
+    
     .main-content a:hover {
       color: #00c3ff;
 
@@ -440,6 +315,128 @@
       font-size: 23px;
       text-decoration: underline;
     }
+
+    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
+    @media screen and (max-width: 768px) {
+      /* Estilos para la estructura del contenedor */
+      .container {
+         flex-direction: column-reverse;;
+      }
+    
+      .sidebar {
+        position: static; /* Cambiamos la posición a estática para que el sidebar fluya con el contenido */
+        flex-basis: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+      }
+    
+      .main-content {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        margin-left: 20px; 
+        margin-right: 20px;
+      }
+    
+      /* Estilos para la barra de navegación en dispositivos móviles */
+      ul.navbar {
+        justify-content: center;
+        padding: 10px;
+      }
+    
+      ul.navbar li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+      }
+    
+      ul.navbar li a {
+        font-size: 19px; /* Ajusta el tamaño del texto según sea necesario */
+      }
+    
+      /* Estilos para la imagen de perfil */
+      img.profile-image {
+        width: 100%;
+        max-width: none;
+        height: auto;
+      }
+    
+      /* Estilos para los enlaces de redes sociales en dispositivos móviles */
+      .social-icons a {
+        color: #06f2ca;
+        text-decoration: none;
+        font-size: 17px;
+        transition: transform 0.3s ease;
+      }
+      /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
+      .navbar-brand {
+        font-weight: bold;
+        margin-right: 0px;
+      }
+  
+      .navbar a.active {
+        color: #04f4e8;
+        /* Cambiar a tu color deseado */
+        background-color: #6e6e80;
+        font-weight: bold;
+      }
+      ul.navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+    
+      ul.navbar li {
+        display: block;
+      }
+    
+      ul.navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-family: 'Zilla Slab';
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+      }
+    
+      ul.navbar li a:hover {
+        background-color: #6e6e80;
+      }
+      /* Estilos para el nombre del perfil en dispositivos móviles */
+      .profile-name {
+        font-family: 'Zilla Slab';
+        font-size: 17px;
+        text-align: center;
+        margin-top: 15px;
+        line-height: 0.5;
+        color: #04f4e8;
+      }
+
+      .cv-text {
+        font-family: 'Zilla Slab';
+        font-size: 17px;
+        text-decoration: underline;
+      }
+    }
+    
+  
+    ul:hover li {
+      margin-bottom: 0px;
+      transition: 500ms linear;
+    }
+
+
   </style>
 </head>
 
