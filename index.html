@@ -119,9 +119,11 @@
         flex-direction: column;
       }
     
-      .sidebar {
+      #sidebar {
+        width: 25%;
         min-width: unset; /* Eliminar el ancho mínimo en dispositivos móviles */
         max-width: unset; /* Eliminar el ancho máximo en dispositivos móviles */
+        height: auto;
       }
     
       .main-content {
@@ -161,6 +163,17 @@
         transition: transform 0.3s ease;
       }
       /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
+      .navbar-brand {
+        font-weight: bold;
+        margin-right: 0px;
+      }
+  
+      .navbar a.active {
+        color: #04f4e8;
+        /* Cambiar a tu color deseado */
+        background-color: #6e6e80;
+        font-weight: bold;
+      }
       ul.navbar {
         position: fixed;
         top: 0;
