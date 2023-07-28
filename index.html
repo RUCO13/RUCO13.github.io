@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta name="author" content="Oscar Ruiz Cigarrillo">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
@@ -65,6 +65,7 @@
       background-color: #353740;
       /* Color de la línea del scrollbar */
     }
+
     .column {
       flex-grow: 1;
       padding: 10px;
@@ -90,9 +91,12 @@
     .sidebar {
       /* Ajusta las demás propiedades como lo desees */
       position: fixed;
-      flex-basis: 30%; /* Ancho inicial del sidebar al 30% del contenedor */
-      min-width: 5%; /* Ancho mínimo del sidebar en píxeles */
-      max-width: 30%; /* Ancho máximo del sidebar al 30% del contenedor */
+      flex-basis: 30%;
+      /* Ancho inicial del sidebar al 30% del contenedor */
+      min-width: 5%;
+      /* Ancho mínimo del sidebar en píxeles */
+      max-width: 30%;
+      /* Ancho máximo del sidebar al 30% del contenedor */
       top: 0;
       top: 0;
       left: 0;
@@ -104,7 +108,8 @@
       display: flex;
       flex-direction: column;
       background-color: #f9f9f9;
-      transition: flex-basis 0.3s; /* Transición suave al cambiar el ancho */
+      transition: flex-basis 0.3s;
+      /* Transición suave al cambiar el ancho */
     }
 
     /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
@@ -157,10 +162,11 @@
       flex-grow: 1;
       margin-left: calc(25% + 5%);
       padding: 20px;
-      margin-right: 5%; /* Margen derecho para separar del sidebar */
+      margin-right: 5%;
+      /* Margen derecho para separar del sidebar */
       background-color: #f9f9f9;
     }
-    
+
     .main-content a:hover {
       color: #00c3ff;
 
@@ -318,50 +324,54 @@
 
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
+
       /* Estilos para la estructura del contenedor */
       .container {
-         flex-direction: column-reverse;;
+        flex-direction: column-reverse;
+        ;
       }
-    
+
       .sidebar {
-        position: static; /* Cambiamos la posición a estática para que el sidebar fluya con el contenido */
+        position: static;
+        /* Cambiamos la posición a estática para que el sidebar fluya con el contenido */
         flex-basis: 100%;
         max-width: 100%;
         height: auto;
         margin: 0;
       }
-    
+
       .main-content {
         width: 100%;
         margin: 0;
         padding: 20px;
-        margin-left: 20px; 
+        margin-left: 20px;
         margin-right: 20px;
       }
-    
+
       /* Estilos para la barra de navegación en dispositivos móviles */
       ul.navbar {
         justify-content: center;
         padding: 10px;
       }
-    
+
       ul.navbar li {
         display: block;
         text-align: center;
         margin: 5px 0;
       }
-    
+
       ul.navbar li a {
-        font-size: 19px; /* Ajusta el tamaño del texto según sea necesario */
+        font-size: 19px;
+        /* Ajusta el tamaño del texto según sea necesario */
       }
-    
+
       /* Estilos para la imagen de perfil */
       img.profile-image {
         width: 100%;
         max-width: none;
         height: auto;
       }
-    
+
       /* Estilos para los enlaces de redes sociales en dispositivos móviles */
       .social-icons a {
         color: #06f2ca;
@@ -369,36 +379,40 @@
         font-size: 17px;
         transition: transform 0.3s ease;
       }
+
       /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
       .navbar-brand {
         font-weight: bold;
         margin-right: 0px;
       }
-  
+
       .navbar a.active {
         color: #04f4e8;
         /* Cambiar a tu color deseado */
         background-color: #6e6e80;
         font-weight: bold;
       }
+
       ul.navbar {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: auto;
+        /* Cambiamos el ancho a "auto" para que sea dinámico */
         background-color: #333;
         z-index: 1;
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: center;
       }
-    
+
       ul.navbar li {
         display: block;
       }
-    
+
       ul.navbar li a {
         display: block;
         color: white;
@@ -409,10 +423,11 @@
         font-size: 20px;
         transition: background-color 0.3s ease;
       }
-    
+
       ul.navbar li a:hover {
         background-color: #6e6e80;
       }
+
       /* Estilos para el nombre del perfil en dispositivos móviles */
       .profile-name {
         font-family: 'Zilla Slab';
@@ -429,14 +444,12 @@
         text-decoration: underline;
       }
     }
-    
-  
+
+
     ul:hover li {
       margin-bottom: 0px;
       transition: 500ms linear;
     }
-
-
   </style>
 </head>
 
