@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
@@ -81,6 +80,7 @@
       display: flex;
       position: relative;
       justify-content: center;
+      flex-direction: row;
     }
 
 
@@ -91,7 +91,7 @@
       /* Ancho inicial del sidebar al 30% del contenedor */
       min-width: 5%;
       /* Ancho mínimo del sidebar en píxeles */
-      max-width: 30%;
+      max-width: 20%;
       /* Ancho máximo del sidebar al 30% del contenedor */
       top: 0;
       left: 0;
@@ -157,7 +157,7 @@
       flex-grow: 1;
       max-width: 60%;
       margin-left: 30%;
-      margin-right: 2%;
+      margin-right: 10%;
       background-color: #f9f9f9;
     }
 
@@ -187,7 +187,7 @@
 
     .social-icons {
       list-style: none;
-      padding: 0;
+      padding: 0px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -197,13 +197,13 @@
     .social-icons li {
       align-items: center;
       transition: transform 0.3s ease;
-      padding-right: 15px;
+      padding-right: 0.75em;
     }
 
     .social-icons a {
       color: #06f2ca;
       text-decoration: none;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       transition: transform 0.3s ease;
     }
 
@@ -316,40 +316,41 @@
       text-decoration: underline;
     }
 
+    ul:hover li {
+      margin-bottom: 0px;
+      transition: 500ms linear;
+    }
+
     /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
     @media screen and (max-width: 768px) {
 
-      .main {
-        flex-wrap: nowrap;
+      body {
+        font-size: 16px;
       }
 
       /* Estilos para la estructura del contenedor */
       .container {
-        flex-direction: column-reverse;
-        ;
+        flex-direction: column;
       }
 
       .sidebar {
-        position: static;
-        /* Cambiamos la posición a estática para que el sidebar fluya con el contenido */
         flex-basis: 100%;
         max-width: 100%;
-        height: auto;
         margin: 0;
+        padding: 20px;
       }
 
       .main-content {
-        width: 100%;
+        max-width: 100%;
         margin: 0;
         padding: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 0;
+        margin-right: 0;
       }
-
-      /* Estilos para la barra de navegación en dispositivos móviles */
       ul.navbar {
+        /* Estilos adicionales para la barra de navegación en pantallas pequeñas */
         justify-content: center;
-        padding: 10px;
+        padding: 10px 0;
       }
 
       ul.navbar li {
@@ -360,94 +361,46 @@
 
       ul.navbar li a {
         font-size: 19px;
-        /* Ajusta el tamaño del texto según sea necesario */
       }
 
-      /* Estilos para la imagen de perfil */
-      img.profile-image {
+      .profile-image {
         width: 100%;
         max-width: none;
-        height: auto;
       }
 
-      /* Estilos para los enlaces de redes sociales en dispositivos móviles */
       .social-icons a {
-        color: #06f2ca;
-        text-decoration: none;
         font-size: 17px;
-        transition: transform 0.3s ease;
       }
 
-      /* Estilos para la barra de navegación fija en la parte superior en dispositivos móviles */
-      .navbar-brand {
-        font-weight: bold;
-        margin-right: 0px;
-      }
-
-      .navbar a.active {
-        color: #04f4e8;
-        /* Cambiar a tu color deseado */
-        background-color: #6e6e80;
-        font-weight: bold;
-      }
-
-      ul.navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: auto;
-        /* Cambiamos el ancho a "auto" para que sea dinámico */
-        background-color: #333;
-        z-index: 1;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      }
-
-      ul.navbar li {
-        display: block;
-      }
-
-      ul.navbar li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 10px 20px;
-        text-decoration: none;
-        font-family: 'Zilla Slab';
-        font-size: 20px;
-        transition: background-color 0.3s ease;
-      }
-
-      ul.navbar li a:hover {
-        background-color: #6e6e80;
-      }
-
-      /* Estilos para el nombre del perfil en dispositivos móviles */
       .profile-name {
-        font-family: 'Zilla Slab';
         font-size: 17px;
-        text-align: center;
         margin-top: 15px;
-        line-height: 0.5;
-        color: #04f4e8;
       }
 
       .cv-text {
-        font-family: 'Zilla Slab';
         font-size: 17px;
-        text-decoration: underline;
       }
     }
 
+    /* Estilos para pantallas extra pequeñas (hasta 480px) */
+    @media screen and (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
 
-    ul:hover li {
-      margin-bottom: 0px;
-      transition: 500ms linear;
+      ul.navbar li a {
+        font-size: 16px;
+      }
+
+      .profile-name {
+        font-size: 15px;
+      }
+
+      .cv-text {
+        font-size: 15px;
+      }
     }
+
   </style>
 </head>
 
@@ -560,7 +513,6 @@
       <section id="software" class="section">
       </section>
       <section id="teaching" class="section">
-
       </section>
 
     </div>
@@ -634,7 +586,5 @@
       });
     });
   </script>
-
 </body>
-
 </html>
