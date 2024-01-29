@@ -28,24 +28,89 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/42055755dc.js" crossorigin="anonymous"></script>
   <style>
-
-
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
       body {
-        font-size: 16px;
+          font-size: 11px;
       }
 
       .container {
-        flex-direction: column;
-        align-items: center; 
+          flex-direction: column;
       }
 
-    }
-    @media screen and (max-width: 480px) {
-      body {
-        font-size: 14px;
+      img.profile-image {
+          width: 80%;
+          height: auto;
+          border-radius: 50%;
+          object-fit: cover;
+          opacity: 1;
       }
-    }
+
+      
+      .social-icons {
+        list-style: none;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        font-size: 9px;
+      }
+  
+      .social-icons li {
+        align-items: center;
+        transition: transform 0.3s ease;
+        padding-right: 0.75em;
+      }
+  
+      .social-icons a {
+        color: #06f2ca;
+        text-decoration: none;
+        font-size: 2.3rem;
+        transition: transform 0.3s ease;
+      }
+  
+      .social-icons a:hover {
+        transform: scale(0.15);
+      }
+  
+      .social-icons li:hover {
+        transform: scale(0.15);
+      }
+      .profile-name {
+          font-size: 1.2rem; /* Ajustado el tamaño del nombre */
+          text-align: center;
+          margin-top: 10px; /* Ajustado el margen superior */
+          line-height: 1;
+          color: #04f4e8;
+      }
+
+      ul.navbar {
+          justify-content: center;
+          font-size: 0.8rem; /* Ajustado el tamaño del texto del navbar */
+      }
+
+      ul.navbar li {
+          display: inline-block;
+      }
+
+      ul.navbar li a {
+          font-size: 0.8rem; /* Ajustado el tamaño del texto del navbar */
+          padding: 8px 15px; /* Ajustado el espaciado del navbar */
+      }
+
+      .profile-image {
+          width: 80%; /* Ajustado el ancho de la imagen */
+          max-width: none;
+      }
+
+      .social-icons a {
+          font-size: 1.2rem; /* Ajustado el tamaño de los iconos */
+      }
+
+      .cv-text {
+          font-size: 1rem; /* Ajustado el tamaño del texto del CV */
+      }
+  }
     body {
       font-family: 'Roboto', sans-serif;
       font-size: 1rem;
@@ -147,6 +212,36 @@
       z-index: -1;
       /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
     }
+    ul.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1;
+      list-style-type: none;
+      margin: 0;
+      margin-top: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    ul.navbar li {
+      display: inline-block;
+    }
+
+    ul.navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
 
     h1 {
       color: #fff6f6;
@@ -196,15 +291,6 @@
       /* Otros estilos que desees aplicar */
     }
 
-    .counter-container {
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      width: fit-content;
-      background-color: #333333;
-      padding: 10px;
-      text-align: center;
-    }
 
     .social-icons {
       list-style: none;
@@ -254,6 +340,7 @@
 
     ul.navbar li {
       display: inline-block;
+      font-size: 1.2rem;
     }
 
     ul.navbar li a {
@@ -286,10 +373,10 @@
 
     .profile-name {
       font-family: 'Zilla Slab';
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-align: center;
       margin-top: 15px;
-      line-height: 0.5;
+      line-height: 1;
       color: #04f4e8;
 
     }
@@ -306,30 +393,6 @@
       color: #eeff00;
     }
 
-    .visit-counter {
-      display: block;
-      width: 250px;
-      text-align: center;
-      font-family: 'Press Start 2P';
-      padding: 10px;
-      border: 2px solid #333;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: bold;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .mol-container {
-      display: block;
-      width: 300px;
-      height: 215px;
-      position: absolute;
-      bottom: 0px;
-      margin-bottom: 0px;
-    }
 
     .cv-text {
       font-family: 'Zilla Slab';
@@ -342,96 +405,6 @@
       transition: 500ms linear;
     }
 
-    /* Media query para dispositivos con un ancho máximo de 768px (por ejemplo, smartphones) */
-    @media screen and (max-width: 768px) {
-
-      body {
-        font-size: 16px;
-      }
-
-      /* Estilos para la estructura del contenedor */
-      .container {
-        flex-direction: column;
-        
-      }
-
-      .sidebar {
-        flex-basis: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 20px;
-      }
-
-      .main-content {
-        max-width: 100%;
-        margin: 0;
-        padding: 20px;
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .profile-name {
-        font-family: 'Zilla Slab';
-        font-size: 1rem;
-        text-align: center;
-        margin-top: 15px;
-        line-height: 0.5;
-        color: #04f4e8;
-  
-      }
-      ul.navbar {
-        /* Estilos adicionales para la barra de navegación en pantallas pequeñas */
-        justify-content: center;
-        padding: 10px 0;
-      }
-
-      ul.navbar li {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
-      }
-
-      ul.navbar li a {
-        font-size: 19px;
-      }
-
-      .profile-image {
-        width: 100%;
-        max-width: none;
-      }
-
-      .social-icons a {
-        font-size: 17px;
-      }
-
-      .profile-name {
-        font-size: 1rem;
-        margin-top: 15px;
-      }
-
-      .cv-text {
-        font-size: 17px;
-      }
-    }
-
-    /* Estilos para pantallas extra pequeñas (hasta 480px) */
-    @media screen and (max-width: 480px) {
-      body {
-        font-size: 14px;
-      }
-
-      ul.navbar li a {
-        font-size: 16px;
-      }
-
-      .profile-name {
-        font-size: 1rem;
-      }
-
-      .cv-text {
-        font-size: 15px;
-      }
-    }
 
   </style>
 </head>
@@ -463,14 +436,20 @@
             <i class="fa-solid fa-envelope fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
           </a>
         </li>
+        </ul>
+        <ul class="social-icons">
         <li><a href="https://twitter.com/RUCO0713">
             <i class="fa-brands fa-twitter fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
           </a>
         </li>
+        </ul>
+        <ul class="social-icons">
         <li><a href="https://www.instagram.com/ruco0713/" style="--fa-animation-duration: 2s;">
             <i class="fa-brands fa-instagram fa-beat-fade"></i>
           </a>
         </li>
+      </ul>
+      <ul class="social-icons">
         <li><a href="https://github.com/RUCO13">
             <i class="fa-brands fa-github fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
           </a>
@@ -479,8 +458,9 @@
 
       <div class="social-icons">
         <a href="data/RUCO_CV_eng.pdf" target="_blank" alt="RUCO CV">
-          <span class="cv-text">Oscar's CV</span>
           <i class="fa-solid fa-file-pdf fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+          <br>
+          <span class="cv-text">CV</span>
         </a>
       </div>
 
