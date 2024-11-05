@@ -34,7 +34,9 @@
       }
 
       .container {
-          flex-direction: column;
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center;
       }
 
       img.profile-image {
@@ -173,11 +175,11 @@
     .sidebar {
       /* Ajusta las demás propiedades como lo desees */
       position: fixed;
-      flex-basis: 30%;
+      flex-basis: 100%;
       /* Ancho inicial del sidebar al 30% del contenedor */
-      min-width: 5%;
+      min-width: 1%;
       /* Ancho mínimo del sidebar en píxeles */
-      max-width: 20%;
+      max-width: 10%;
       /* Ancho máximo del sidebar al 30% del contenedor */
       top: 0;
       left: 0;
@@ -275,6 +277,9 @@
       margin-left: 30%;
       margin-right: 10%;
       background-color: #f9f9f9;
+        padding: 10px; /* Agrega un poco de relleno */
+        padding: 10px; /* Agrega un poco de relleno */
+
     }
 
     .main-content a:hover {
@@ -427,8 +432,8 @@
         <img
           src="https://avatars.githubusercontent.com/u/10236471?v=4"
           alt="Mi foto" class="profile-image">
-        <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
-        <h2 class="profile-name">Ph.D. Photonics</h2>
+        <h5 class="profile-name">Oscar Ruiz-Cigarrillo</h5>
+        <h5 class="profile-name">Ph.D. Photonics</h5>
       </div>
 
       <ul class="social-icons">
