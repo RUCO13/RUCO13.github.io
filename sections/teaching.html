@@ -1,46 +1,491 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-.teaching-section {
-  display: flex;
-  margin-top: 30px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  /* add this line */
-  border-radius: 5px;
-  /* optional, if you want rounded corners */
-  text-align: justify;
-}
-.teaching-section a {
-  color: rgb(239, 239, 3); /* Puedes cambiar "blue" al color que desees */
-  text-decoration: none; /* Elimina el subrayado predeterminado */
-}
-.teaching-section a:hover {
-  color: rgb(74, 236, 5); /* Puedes cambiar "red" al color que desees */
-}
-  </style>
-</head>
-<body>
-<h1>Welcome to the Teaching Section!</h1>
+<style>
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-<div class="teaching-section">
-    <p>
-      Dear students, I am delighted to welcome you to the Teaching Section,  Throughout this semester at IICO-UASLP I expalin one fundamental subject Modern Physics. This platform will serve as an invaluable resource, providing you with essential materials, engaging tasks, and a supportive environment to enhance your understanding and appreciation of these captivating disciplines.
-    </p>
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #04f4e8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-bottom: 3px solid #04f4e8;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .teaching-intro {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border-left: 4px solid #06f2ca;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .teaching-intro p {
+      color: #e2e8f0;
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .teaching-intro strong {
+      color: #04f4e8;
+      font-weight: 600;
+    }
+
+    .course-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(4, 244, 232, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, #04f4e8, transparent);
+    }
+
+    .course-header {
+      background: linear-gradient(135deg, rgba(4, 244, 232, 0.1), rgba(6, 242, 202, 0.05));
+      padding: 2rem;
+      border-bottom: 1px solid rgba(4, 244, 232, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .course-header:hover {
+      background: linear-gradient(135deg, rgba(4, 244, 232, 0.15), rgba(6, 242, 202, 0.08));
+    }
+
+    .course-title {
+      font-size: 2rem;
+      color: #04f4e8;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 600;
+    }
+
+    .course-toggle {
+      font-size: 1.5rem;
+      color: #06f2ca;
+      transition: transform 0.3s ease;
+      margin-left: auto;
+    }
+
+    .course-content {
+      padding: 2rem;
+      display: block;
+      animation: fadeInDown 0.5s ease;
+    }
+
+    .course-content.hidden {
+      display: none;
+    }
+
+    .content-section {
+      margin-bottom: 2rem;
+    }
+
+    .content-section h4 {
+      color: #06f2ca;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid rgba(6, 242, 202, 0.3);
+      padding-bottom: 0.5rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .link-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(110, 110, 128, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .link-card:hover::before {
+      left: 100%;
+    }
+
+    .link-card:hover {
+      border-color: #04f4e8;
+      background: rgba(4, 244, 232, 0.08);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(4, 244, 232, 0.2);
+    }
+
+    .link-card a {
+      color: #06f2ca;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .link-card a:hover {
+      color: #04f4e8;
+    }
+
+    .link-icon {
+      font-size: 1.5rem;
+      color: #04f4e8;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover .link-icon {
+      transform: scale(1.2);
+    }
+
+    .link-description {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      line-height: 1.5;
+      position: relative;
+      z-index: 2;
+    }
+
+    .academic-info {
+      background: rgba(6, 242, 202, 0.05);
+      border: 1px solid rgba(6, 242, 202, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .academic-info h4 {
+      color: #06f2ca;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .academic-info p {
+      color: #e2e8f0;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .institution-link {
+      color: #04f4e8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .institution-link:hover {
+      color: #06f2ca;
+      text-decoration: underline;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .teaching-intro {
+        padding: 2rem;
+      }
+
+      .course-header {
+        padding: 1.5rem;
+      }
+
+      .course-title {
+        font-size: 1.6rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+
+      .course-content {
+        padding: 1.5rem;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .link-card {
+        padding: 1.2rem;
+      }
+
+      .academic-info {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .teaching-intro {
+        padding: 1.5rem;
+      }
+
+      .teaching-intro p {
+        font-size: 1rem;
+      }
+
+      .course-header {
+        padding: 1.2rem;
+      }
+
+      .course-title {
+        font-size: 1.4rem;
+      }
+
+      .course-content {
+        padding: 1.2rem;
+      }
+
+      .content-section h4 {
+        font-size: 1.2rem;
+      }
+
+      .link-card a {
+        font-size: 1rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .teaching-intro,
+    .course-container {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .link-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .link-card:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+    .link-card:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+    .link-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+    .link-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+    .link-card:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+</style>
+
+<div class="section-header">
+  <h2 class="section-title">
+    <i class="fas fa-chalkboard-teacher"></i>
+    Teaching & Mentorship
+  </h2>
+  <p class="section-subtitle">
+    Sharing knowledge and inspiring the next generation of scientists
+  </p>
 </div>
-  <details class="teaching-section" open>
-    <summary>Modern Physics</summary>
-    <h4>Important Links</h4>
-      <ul>
-        <li> <a href="https://github.com/JuliaLang/julia"> Julia </a></li>
-        <li> <a href="https://juliapackages.com"> Julia Packages </a></li>
-        <li> <a href="https://www.anaconda.com/download"> Python distribution </a></li>
-        <li> <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi6t7D9vIOEAxXKl2oFHZNDAWEQFnoECBYQAQ&url=https%3A%2F%2Fanaconda.org%2Fanaconda%2Frepo&usg=AOvVaw3lVrkIMD28wvpSEAu2v2rM&opi=89978449"> Anaconda repository (conda packages) </a></li>
-        <li> <a href="https://pypi.org"> Pyhon packages (Pip packages)</a></li>
-      </ul>
-</details>
 
+<div class="teaching-intro">
+  <p>
+    Dear students, I am delighted to welcome you to the <strong>Teaching Section</strong>. Throughout this semester at <strong>IICO-UASLP</strong>, I explain one fundamental subject: <strong>Modern Physics</strong>. This platform will serve as an invaluable resource, providing you with essential materials, engaging tasks, and a supportive environment to enhance your understanding and appreciation of these captivating disciplines.
+  </p>
+</div>
 
-</body>
-</html>
+<div class="course-container">
+  <div class="course-header" onclick="toggleCourse()">
+    <h3 class="course-title">
+      <i class="fas fa-atom"></i>
+      Modern Physics
+      <span class="course-toggle" id="toggleIcon">
+        <i class="fas fa-chevron-down"></i>
+      </span>
+    </h3>
+  </div>
+  
+  <div class="course-content" id="courseContent">
+    <div class="content-section">
+      <h4>
+        <i class="fas fa-link"></i>
+        Essential Tools & Resources
+      </h4>
+      
+      <div class="links-grid">
+        <div class="link-card">
+          <a href="https://github.com/JuliaLang/julia" target="_blank">
+            <i class="fab fa-github link-icon"></i>
+            Julia Programming Language
+          </a>
+          <p class="link-description">
+            High-performance scientific computing language designed for numerical analysis and computational science.
+          </p>
+        </div>
+
+        <div class="link-card">
+          <a href="https://juliapackages.com" target="_blank">
+            <i class="fas fa-cube link-icon"></i>
+            Julia Packages
+          </a>
+          <p class="link-description">
+            Comprehensive ecosystem of Julia packages for scientific computing, data analysis, and visualization.
+          </p>
+        </div>
+
+        <div class="link-card">
+          <a href="https://www.anaconda.com/download" target="_blank">
+            <i class="fab fa-python link-icon"></i>
+            Python Distribution (Anaconda)
+          </a>
+          <p class="link-description">
+            Complete Python distribution with scientific libraries, package management, and development environment.
+          </p>
+        </div>
+
+        <div class="link-card">
+          <a href="https://anaconda.org/anaconda/repo" target="_blank">
+            <i class="fas fa-box link-icon"></i>
+            Anaconda Repository
+          </a>
+          <p class="link-description">
+            Central repository for conda packages including scientific computing libraries and tools.
+          </p>
+        </div>
+
+        <div class="link-card">
+          <a href="https://pypi.org" target="_blank">
+            <i class="fas fa-download link-icon"></i>
+            Python Package Index (PyPI)
+          </a>
+          <p class="link-description">
+            Official repository for Python packages, accessible via pip package manager.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="academic-info">
+      <h4>
+        <i class="fas fa-university"></i>
+        Academic Information
+      </h4>
+      <p>
+        This course is taught at the <a href="http://www.iico.uaslp.mx" class="institution-link" target="_blank">Instituto de Investigación en Comunicación Óptica (IICO)</a> of the <a href="https://www.uaslp.mx" class="institution-link" target="_blank">Universidad Autónoma de San Luis Potosí</a>.
+      </p>
+      <p>
+        The Modern Physics course covers fundamental concepts including quantum mechanics, relativity, atomic and nuclear physics, providing students with essential knowledge for advanced studies in physics and related fields.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleCourse() {
+    const content = document.getElementById('courseContent');
+    const icon = document.getElementById('toggleIcon');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.innerHTML = '<i class="fas fa-chevron-down"></i>';
+    } else {
+      content.classList.add('hidden');
+      icon.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    }
+  }
+
+  // Initialize animations on load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate link cards on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.link-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Add hover effects to link cards
+    document.querySelectorAll('.link-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  });
+</script>

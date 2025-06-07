@@ -46,88 +46,8 @@
     }
     ::-webkit-scrollbar-track { background-color: #353740; }
 
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(51, 51, 51, 0.95);
-      backdrop-filter: blur(15px);
-      z-index: 1000;
-      padding: 1rem 0;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(4, 244, 232, 0.1);
-    }
-
-    .navbar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .navbar-brand {
-      color: #04f4e8;
-      font-weight: bold;
-      font-size: 1.3rem;
-      text-decoration: none;
-      font-family: 'Zilla Slab', serif;
-    }
-
-    .navbar-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .navbar-menu a {
-      color: white;
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .navbar-menu a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .navbar-menu a:hover::before {
-      left: 100%;
-    }
-
-    .navbar-menu a:hover,
-    .navbar-menu a.active {
-      background: linear-gradient(135deg, rgba(4, 244, 232, 0.2), rgba(6, 242, 202, 0.1));
-      color: #04f4e8;
-      transform: translateY(-2px);
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
     /* Hero Section */
     .hero-section {
-      margin-top: 80px;
       padding: 4rem 0;
       background: linear-gradient(135deg, rgba(4, 244, 232, 0.05), rgba(6, 242, 202, 0.02));
       border-bottom: 1px solid rgba(4, 244, 232, 0.1);
@@ -205,12 +125,18 @@
 
     .social-icons a {
       color: #06f2ca;
-      font-size: 1.8rem;
-      transition: all 0.3s ease;
-      padding: 0.8rem;
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      padding: 0;
+      text-decoration: none; 
     }
 
     .social-icons a:hover {
@@ -351,188 +277,37 @@
       line-height: 1.6;
     }
 
-    /* Section Content Styling */
-    .section-content {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .content-card {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 2rem;
-      border-radius: 15px;
-      border-left: 4px solid #06f2ca;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .content-card:hover {
-      transform: translateY(-5px);
-      border-left-color: #04f4e8;
-      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
-    }
-
-    .content-card h3 {
-      color: #04f4e8;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .content-card h4 {
-      color: #06f2ca;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .content-card p {
-      color: #e2e8f0;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .content-card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .content-card li {
-      padding: 0.5rem 0;
-      color: #e2e8f0;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .content-card li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: #06f2ca;
-      font-weight: bold;
-    }
-
-    .highlight-box {
-      background: rgba(6, 242, 202, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(6, 242, 202, 0.1);
-      margin: 1rem 0;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* Loading animation */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      flex-direction: column;
       gap: 1rem;
-      margin-top: 1rem;
     }
 
-    .tech-item {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      transition: all 0.3s ease;
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(4, 244, 232, 0.3);
+      border-top: 3px solid #04f4e8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    .tech-item:hover {
-      background: rgba(4, 244, 232, 0.1);
-      transform: translateY(-2px);
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
-    .tech-item i {
-      font-size: 2rem;
-      color: #06f2ca;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .tech-item span {
+    .loading-text {
       color: #94a3b8;
       font-size: 0.9rem;
     }
 
-    .about-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, #04f4e8, transparent);
-    }
-
-    .about-section ul {
-      list-style: none;
-      display: grid;
-      gap: 2rem;
-    }
-
-    .about-section li {
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 15px;
-      border-left: 4px solid rgba(4, 244, 232, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-section li::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.05), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .about-section li:hover::before {
-      left: 100%;
-    }
-
-    .about-section li:hover {
-      transform: translateX(10px);
-      border-left-color: #04f4e8;
-      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
-    }
-
-    .about-section p {
-      text-align: justify;
-      line-height: 1.8;
-      color: #e2e8f0;
-      font-size: 1.1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-section a {
-      color: #06f2ca;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .about-section a:hover {
-      color: #04f4e8;
-      text-decoration: underline;
-    }
-
     /* Mobile Styles */
     @media screen and (max-width: 1200px) {
-      .navbar-container {
-        padding: 0 1rem;
-      }
-
       .hero-container {
         max-width: 1000px;
         gap: 3rem;
@@ -552,36 +327,6 @@
     }
 
     @media screen and (max-width: 768px) {
-      .navbar-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: rgba(51, 51, 51, 0.98);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 3rem;
-        transition: left 0.3s ease;
-        gap: 1rem;
-      }
-
-      .navbar-menu.active {
-        left: 0;
-      }
-
-      .navbar-menu a {
-        font-size: 1.3rem;
-        padding: 1rem 2rem;
-        width: 80%;
-        text-align: center;
-      }
-
-      .mobile-menu-toggle {
-        display: block;
-      }
-
       .hero-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -620,18 +365,6 @@
         gap: 0.5rem;
       }
 
-      .about-section {
-        padding: 2rem;
-      }
-
-      .about-section li {
-        padding: 1.5rem;
-      }
-
-      .about-section p {
-        font-size: 1rem;
-      }
-
       .hero-highlights {
         grid-template-columns: 1fr;
       }
@@ -640,18 +373,6 @@
     @media screen and (max-width: 480px) {
       body {
         font-size: 0.9rem;
-      }
-
-      .navbar {
-        padding: 0.8rem 0;
-      }
-
-      .navbar-container {
-        padding: 0 1rem;
-      }
-
-      .navbar-brand {
-        font-size: 1.1rem;
       }
 
       .hero-section {
@@ -686,14 +407,6 @@
 
       .section-title {
         font-size: 1.8rem;
-      }
-
-      .about-section {
-        padding: 1.5rem;
-      }
-
-      .about-section li {
-        padding: 1rem;
       }
 
       .highlight-item {
@@ -766,320 +479,12 @@
       }
     }
 
-
-        .r-interest-container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #06f2ca;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .r-interest-container ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .r-interest-container li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .r-interest-container li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #06f2ca;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .r-interest-container li:hover {
-            transform: translateX(10px);
-            color: #04f4e8;
-        }
-
-        /* New Publication Highlight */
-        .new-publication {
-            background: linear-gradient(135deg, rgba(4, 244, 232, 0.1), rgba(6, 242, 202, 0.05));
-            border: 2px solid #04f4e8;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .new-publication::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #04f4e8, #06f2ca, #04f4e8);
-            animation: shimmer 2s infinite;
-        }
-
-        .new-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #04f4e8, #06f2ca);
-            color: #1a1a1a;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            z-index: 10;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .publications-container {
-            max-width: 100%;
-            margin: 20px 0;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(110, 110, 128, 0.3);
-            display: flex;
-            align-items: flex-start;
-            transition: all 0.3s ease;
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-
-        .publications-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(4, 244, 232, 0.2);
-            border-color: rgba(4, 244, 232, 0.5);
-        }
-
-        .publication-details {
-            flex: 1;
-            padding-right: 20px;
-        }
-
-        .publications-container a {
-            text-decoration: none;
-            color: #06f2ca;
-            font-size: 1.2rem;
-            font-weight: 600;
-            line-height: 1.4;
-            transition: color 0.3s ease;
-        }
-
-        .publications-container a:hover {
-            color: #04f4e8;
-            text-decoration: underline;
-        }
-
-        .publications-container name {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-
-        .publications-container authors {
-            color: #94a3b8;
-            display: block;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .publications-container author {
-            color: #04f4e8;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .publications-container strong {
-            color: #e2e8f0;
-            font-weight: 600;
-        }
-
-        .publications-container img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid rgba(110, 110, 128, 0.3);
-            transition: all 0.3s ease;
-            /* CENTRAR IMAGEN */
-            display: block;
-            margin: 0 auto;
-        }
-
-        .publications-container:hover img {
-            border-color: #04f4e8;
-            transform: scale(1.05);
-        }
-
-        .publication-text {
-            max-width: calc(100% - 170px);
-        }
-
-        /* Abstract preview for new publication */
-        .abstract-preview {
-            background: rgba(6, 242, 202, 0.05);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            border-left: 3px solid #06f2ca;
-        }
-
-        .abstract-preview h4 {
-            color: #06f2ca;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .abstract-preview p {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .highlight {
-            color: #04f4e8;
-            font-weight: 600;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .publications-container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .publication-details {
-                padding-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .publication-text {
-                max-width: 100%;
-            }
-
-            .publications-container img {
-                width: 120px;
-                height: 120px;
-                align-self: center;
-            }
-
-            .new-badge {
-                position: static;
-                margin-bottom: 1rem;
-                align-self: flex-start;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            .publications-container {
-                padding: 0.8rem;
-            }
-
-            .publications-container a {
-                font-size: 1.1rem;
-            }
-
-            .publications-container img {
-                width: 100px;
-                height: 100px;
-            }
-        }
-
-        /* Loading animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .publications-container {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .publications-container:nth-child(even) {
-            animation-delay: 0.1s;
-        }
-
-        .publications-container:nth-child(odd) {
-            animation-delay: 0.2s;
-        }
-
-            .software-text {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 12px;
-      border-left: 4px solid #06f2ca;
-      margin-bottom: 3rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .software-text p {
-      color: #e2e8f0;
-      line-height: 1.8;
-      text-align: justify;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .software-text strong {
-      color: #04f4e8;
-      font-weight: 600;
-    }
-
-    .projects-title {
-      font-size: 2.2rem;
-      color: #04f4e8;
-      margin: 3rem 0 2rem 0;
-      text-align: center;
-      border-bottom: 3px solid #06f2ca;
-      padding-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .carousel-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 20px;
-      border: 1px solid rgba(4, 244, 232, 0.2);
-      backdrop-filter: blur(10px);
+    /* About section specific styles */
+    .about-section {
       position: relative;
-      overflow: hidden;
     }
 
-    .carousel-container::before {
+    .about-section::before {
       content: '';
       position: absolute;
       top: 0;
@@ -1089,402 +494,67 @@
       background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, #04f4e8, transparent);
     }
 
-    .slider-container {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
+    .about-section ul {
+      list-style: none;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .about-section li {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
       border-radius: 15px;
-    }
-
-    .slider-wrapper {
-      display: flex;
-      width: 600%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      width: 16.666%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .repo-card {
-      width: 280px;
-      height: 200px;
-      background: linear-gradient(135deg, rgba(110, 110, 128, 0.1), rgba(53, 55, 64, 0.3));
-      border: 2px solid rgba(4, 244, 232, 0.2);
-      border-radius: 15px;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.4s ease;
+      border-left: 4px solid rgba(4, 244, 232, 0.3);
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(5px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
-    .repo-card::before {
+    .about-section li::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.05), transparent);
       transition: left 0.6s ease;
     }
 
-    .repo-card:hover::before {
+    .about-section li:hover::before {
       left: 100%;
     }
 
-    .repo-card:hover {
-      transform: translateY(-8px) scale(1.05);
-      border-color: #04f4e8;
-      box-shadow: 0 15px 35px rgba(4, 244, 232, 0.3);
-      background: linear-gradient(135deg, rgba(4, 244, 232, 0.15), rgba(6, 242, 202, 0.08));
+    .about-section li:hover {
+      transform: translateX(10px);
+      border-left-color: #04f4e8;
+      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
     }
 
-    .repo-card a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: inherit;
-      position: relative;
-      z-index: 2;
-    }
-
-    .repo-card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
-
-    .repo-image {
-      width: 100%;
-      max-width: 220px;
-      height: auto;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      margin-bottom: 1rem;
-    }
-
-    .repo-card:hover .repo-image {
-      transform: scale(1.02);
-      filter: brightness(1.1) contrast(1.1);
-    }
-
-    .repo-name {
-      color: #06f2ca;
-      font-weight: 600;
+    .about-section p {
+      text-align: justify;
+      line-height: 1.8;
+      color: #e2e8f0;
       font-size: 1.1rem;
-      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .repo-description {
-      color: #94a3b8;
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-    }
-
-    .repo-card:hover .repo-description {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* GeTe special slide */
-    .gete-card {
-      background: linear-gradient(135deg, #04f4e8, #06f2ca) !important;
-      color: #1a1a1a !important;
-      border-color: #04f4e8 !important;
-    }
-
-    .gete-card .repo-card-content {
-      color: #1a1a1a;
-    }
-
-    .gete-card .repo-name {
-      color: #1a1a1a;
-    }
-
-    .gete-card .repo-description {
-      color: rgba(26, 26, 26, 0.8);
-    }
-
-    .coming-soon-badge {
-      background: rgba(26, 26, 26, 0.2);
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
+    .about-section a {
+      color: #06f2ca;
+      text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    .nav-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(4, 244, 232, 0.15);
-      border: 2px solid rgba(4, 244, 232, 0.3);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
+    .about-section a:hover {
       color: #04f4e8;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-button:hover {
-      background: rgba(4, 244, 232, 0.25);
-      border-color: #04f4e8;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .nav-prev {
-      left: 15px;
-    }
-
-    .nav-next {
-      right: 15px;
-    }
-
-    .slider-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .indicator {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(4, 244, 232, 0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .indicator.active {
-      background: #04f4e8;
-      transform: scale(1.3);
-      box-shadow: 0 0 10px rgba(4, 244, 232, 0.6);
-    }
-
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      background: rgba(6, 242, 202, 0.1);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      border: 1px solid rgba(6, 242, 202, 0.2);
-      text-align: center;
-      min-width: 120px;
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #06f2ca;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      margin-top: 0.5rem;
-    }
-
-    .tech-stack {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .tech-stack h3 {
-      color: #04f4e8;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .tech-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .tech-icon {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem;
-      border-radius: 10px;
-      border: 1px solid rgba(110, 110, 128, 0.3);
-      transition: all 0.3s ease;
-      min-width: 80px;
-      text-align: center;
-    }
-
-    .tech-icon:hover {
-      border-color: #04f4e8;
-      background: rgba(4, 244, 232, 0.1);
-      transform: translateY(-5px);
-    }
-
-    .tech-icon i {
-      font-size: 2.5rem;
-      color: #06f2ca;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .tech-icon span {
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .carousel-container {
-        padding: 1rem;
-        margin: 0 0.5rem;
-      }
-
-      .section-title,
-      .projects-title {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .software-text {
-        padding: 1.5rem;
-      }
-
-      .software-text p {
-        font-size: 1rem;
-      }
-
-      .slider-container {
-        height: 250px;
-      }
-
-      .repo-card {
-        width: 220px;
-        height: 170px;
-        padding: 15px;
-      }
-
-      .nav-button {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-      }
-
-      .stats-container {
-        gap: 1rem;
-      }
-
-      .stat-item {
-        padding: 0.8rem 1.5rem;
-        min-width: 100px;
-      }
-
-      .tech-icons {
-        gap: 1rem;
-      }
-
-      .tech-icon {
-        min-width: 60px;
-        padding: 0.8rem;
-      }
-
-      .tech-icon i {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .repo-card {
-        width: 200px;
-        height: 150px;
-        padding: 12px;
-      }
-
-      .slider-container {
-        height: 220px;
-      }
-
-      .nav-button {
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-      }
-
-      body {
-        padding: 10px;
-      }
-    }
-
-    /* Loading animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .carousel-container,
-    .software-text {
-      animation: fadeInUp 0.8s ease forwards;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <!-- <nav class="navbar">
-    <div class="navbar-container">
-      <a href="#home" class="navbar-brand">Oscar Ruiz-Cigarrillo</a>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="navbar-menu" id="navbarMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#software" class="nav-link">Software</a></li>
-        <li><a href="#teaching" class="nav-link">Teaching</a></li>
-      </ul>
-    </div>
-  </nav> -->
-
   <section class="hero-section" id="home">
     <div class="hero-container">
       <div class="profile-section">
@@ -1505,8 +575,8 @@
           <a href="https://github.com/RUCO13" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="data/RUCO_CV_eng.pdf" target="_blank" title="CV">
-            <i class="fas fa-file-pdf"></i>
+          <a href="https://scholar.google.es/citations?user=d5ygTH8AAAAJ&hl=es" target="_blank" title="Google Scholar">
+            <img src="./icons/gs.svg" alt="Google Scholar" style="width: 24px; height: 24px;">
           </a>
         </div>
       </div>
@@ -1544,7 +614,8 @@
   </section>
 
   <main class="main-container">
-    <section id="about" class="section">
+    <!-- About section with hardcoded content -->
+    <section id="about" class="section about-section">
       <div class="section-header">
         <h2 class="section-title">
           <i class="fas fa-user"></i>
@@ -1555,703 +626,136 @@
         </p>
       </div>
       
-      <div class="about-section">
-        <ul>
-          <li>
-            <p>I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
-            <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
-            <p>Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
-            <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
-            <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations. I am always open to exploring new opportunities and engaging in exciting scientific ventures.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="research" class="section loading">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-atom"></i>
-          Research
-        </h2>
-        <p class="section-subtitle">
-          Advancing the frontiers of computational physics and nanophotonics
-        </p>
-      </div>
       <div class="section-content">
-        <!-- Research content will be loaded here -->
         <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 15px; border-left: 4px solid #06f2ca; margin-bottom: 2rem;">
-          <h3 style="color: #04f4e8; margin-bottom: 1rem;">Research Interests</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="padding: 0.5rem 0; color: #e2e8f0;">▸ Solid State Experimental Physics</li>
-            <li style="padding: 0.5rem 0; color: #e2e8f0;">▸ Computational Calculation of Semiconductor Bandstructures</li>
-            <li style="padding: 0.5rem 0; color: #e2e8f0;">▸ Density Functional Theory (DFT) and Band Structure Packages</li>
-            <li style="padding: 0.5rem 0; color: #e2e8f0;">▸ Nanophotonics</li>
-          </ul>
+          <p style="text-align: justify;">I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
+          <br> 
+          <p style="text-align: justify;">As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
+          <br> 
+          <p style="text-align: justify;">Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
+          <br>
+          <p style="text-align: justify;">I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
+          <p style="text-align: justify;">Feel free to ask me anything related to my areas of expertise or discuss potential collaborations. I am always open to exploring new opportunities and engaging in exciting scientific ventures.</p>
         </div>
-            <!-- NEW PUBLICATION -->
-    <div class="publications-container new-publication">
-        <div class="new-badge">
-            <i class="fas fa-star"></i>
-            NEW
-        </div>
-        <div class="publication-details publication-text">
-            <a href="https://pubs.aip.org/aip/adv/issue/15/1">
-                <name>Optical properties of 2D GeTe under strain: A DFT study </name>
-            </a><br>
-            <authors>
-                <author>O. Ruiz-Cigarrillo</author>,  G. Flores-Rangel,U. Zavala-Moran, J. Puebla, R. E. Balderas-Navarro and B. Mizaikoff 
-            </authors>
-            <br>
-            <strong>AIP Advances</strong>
-            <br>
-            <div class="abstract-preview">
-                <h4><i class="fas fa-file-alt"></i> Abstract Summary</h4>
-                <p>
-                    Monolayer germanium telluride (GeTe) exhibits tunable electronic and optical properties, making it promising for device applications. Using Density Functional Theory (DFT), we investigate the impact of uniaxial strain, ϵ, on its band structure and dielectric function (DF),𝛆. Tensile strain along the —zigzag direction induces a direct-to-indirect bandgap transition at ϵ = 2%, reducing the gap from 1.80 to 1.62 eV. Compressive strain narrows the gap while maintaining its indirect nature. Strain also induces in-plane anisotropy in the DF and shifts the optical absorption spectrum. We determine a deformation potential (DP) of −6.45 eV for the bandgap under tensile strain and DPs for other above bandgap high-symmetry points. These findings highlight the potential of strain engineering for tuning GeTe’s properties in devices.
-                </p>
-            </div>
-        </div>
-        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/adv/15/1/10.1063_5.0243213/1/s_015135_1_5.0243213.figures.online.highlight_f1.jpeg?Expires=1752347547&Signature=gnPl-B~LDa-v2Yn-RNYgYxtRG3kcfERZJ6IgwNk1ZxXcIY4XH4YNzmo8OAfybArNmxj7XacKU8UMy5QznkABHlxPCbT4ic8~TNxHmYlg82dOIm99Py~NJ8zh8~sca80YvqWeY-BsWgiq6sywfkfeX7nZKqDJmQ8OahEU7XIwMg-TNjaoTh8IKYcLy~AGRK4uTe2SIMNar-sDfTswMQMBICeihSlGKl0M6wGFyv5VP~GQkIkDjJaOa7JpxaoFVt8I6kQB8~i-Hr8U4mvC57GahhO-oz4xKUKqg5ozwJPpCezvxll9L0qhVB0Tyn9LzeGNWbYKI~oorwYjWkt8EzkWcw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="GeTe Strain Engineering">
-    </div>
-
-    <!-- EXISTING PUBLICATIONS -->
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.045306">
-                <name>Spin relaxation of conduction electrons in coupled quantum wells</name>
-            </a><br>
-            <authors>C. A. Bravo-Velázquez, L.F Lastras-Martínez, <author>O. Ruiz-Cigarrillo</author>, G. Flores-Rangel, L. E Tapia-Rodríguez, K. Biermann, and P. V. Santos</authors>
-            <br>
-            <strong>Physical Review B</strong> 108 (4), 045306
-            <br>
-        </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.108.045306/figures/1/medium" alt="Spin relaxation study">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://onlinelibrary.wiley.com/doi/10.1002/pssb.202100612">
-                <name>Photoluminescence of double quantum wells: Asymmetry and excitation laser wavelength effects</name>
-            </a><br>
-            <authors>
-            Carlos Alberto Bravo-Velázquez, Luis Felipe Lastras-Martínez, <author>Oscar Ruiz-Cigarrillo</author>, Gabriela Flores-Rangel, Lucy Estefania Tapia-Rodríguez, Klaus Biermann, Paulo Ventura Santos
-            </authors>
-            <br>
-             <strong>physica status solidi (b)</strong> 259 (4), 2100612
-            <br>
-        </div>
-        <img src="https://onlinelibrary.wiley.com/cms/asset/69caf0e6-a99f-432c-ab80-75e7844e497e/pssb.v259.4.cover.jpg" alt="Quantum wells study">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.035309">
-                <name>Optical anisotropies of asymmetric double GaAs (001) quantum wells</name>
-            </a><br>
-            <authors>
-                <author>O. Ruiz-Cigarrillo</author>, L. F. Lastras-Martínez, E. A. Cerda-Méndez, G. Flores-Rangel, C. A. Bravo-Velazquez, R. E. Balderas-Navarro, A. Lastras-Martínez, N. A. Ulloa-Castillo, K. Biermann, and P. V. Santos
-            </authors>
-            <br>
-            <strong>Physical Review B</strong> 103 (3), 035309
-            <br>
-        </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.103.035309/figures/3/medium" alt="GaAs quantum wells">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://scholar.google.es/citations?view_op=view_citation&hl=es&user=d5ygTH8AAAAJ&sortby=pubdate&citation_for_view=d5ygTH8AAAAJ:2osOgNQ5qMEC">
-                <name>Optical contrast in the near-field limit for structural characterization of graphene nanoribbons</name>
-            </a><br>
-            <authors>
-                G. Flores-Rangel, L.F. Lastras-Martinez, R. Castro-Garcia, <author>O. Ruiz-Cigarrillo</author>, R.E. Balderas-Navarro, L.D. Espinosa-Cuellar, A. Lastras-Martinez, J.M.J. Lopes
-            </authors>
-            <br>
-            <strong>Applied Surface Science</strong> 536, 147710
-            <br>
-        </div>
-        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169433220324673-ga1.jpg" alt="Graphene nanoribbons">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://pubs.aip.org/aip/adv/article/9/4/045309/1076620/Differential-reflectance-contrast-technique-in">
-                <name>Differential reflectance contrast technique in near field limit: Application to graphene</name>
-            </a><br>
-            <authors>
-                L.F. Lastras-Martínez, D. Medina-Escobedo, G. Flores-Rangel, R.E. Balderas-Navarro, <author>O. Ruiz-Cigarrillo</author>, R. Castro-García, M. del P. Morales-Morelos, J. Ortega-Gallegos, M. Losurdo
-            </authors>
-            <br>
-            <strong>AIP Advances</strong> 9 (4)
-            <br>
-        </div>
-        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/adv/9/4/10.1063_1.5092339/3/m_045309_1_f3.jpeg?Expires=1693518295&Signature=w7XtgRzpp8kKpTCYltxhagwJOwf-cZ~RGQnZts9VRe0MnStjbwSdKyi1TQW5i5oIRkecufypCWQaf9lB~kRwcu9Y~yYHay7kynhZtZ3BKxWVx~3WOWXzF5-KWIu3fOFYTdxgksMOwwTTyfgzOqlHrDZaMnl2ro0zOJKr8WOgZp-3l68abF1HAKLlt39CDiNufs0oUbrjatuZ~xMzZw-2E3rtx1oQQIgUsYQ4O-ci7jhOL-o1mutBHum~jUEpsQxTO8ER4LX4opO5Qg6SvHaio-pxVHCfEX4sBQ0xj1PBYCJIc3JMra8rFGkJxSlNFdUIDkxmoilyatN2xuLocgBY5A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="Graphene differential reflectance">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.235306">
-                <name>Microscopic optical anisotropy of exciton-polaritons in a GaAs-based semiconductor microcavity</name>
-            </a><br>
-            <authors>
-                L. F. Lastras-Martínez, E. Cerda-Méndez, N. Ulloa-Castillo, R. Herrera-Jasso, L. E. Rodríguez-Tapia, <author>O. Ruiz-Cigarrillo</author>, R. Castro-García, K. Biermann, and P. V. Santos
-            </authors>
-            <br>
-            <strong>Physical Review B</strong> 96 (23), 235306
-            <br>
-        </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.96.235306/figures/3/medium" alt="Microcavity polaritons">
-    </div>
-
-    <div class="publications-container">
-        <div class="publication-details publication-text">
-            <a href="https://pubs.aip.org/aip/jap/article/122/3/035701/154962">
-                <name>Optical detection of graphene nanoribbons synthesized on stepped SiC surfaces</name>
-            </a><br>
-            <authors>
-                L.F. Lastras-Martínez, J. Almendarez-Rodríguez, G. Flores-Rangel, N.A. Ulloa-Castillo, <author>O. Ruiz-Cigarrillo</author>, C.A. Ibarra-Becerra, R. Castro-García, R.E. Balderas-Navarro, M.H. Oliveira, J.M.J. Lopes
-            </authors>
-            <br>
-            <strong>Journal of Applied Physics</strong> 122 (3)
-            <br>
-        </div>
-        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/jap/122/3/10.1063_1.4993453/4/m_035701_1_f3.jpeg?Expires=1693519466&Signature=YjQHb4Pm-VpxnaW6hYy~9kivOJiH7MwL3KXxK7bozGZs12v1dZDrv1tVfjKrt5aoBDpmvEV0pFx8XCjmzwWFbBBpjq4Mlr4tQK~ze4kJNnhSyGl4EQrBKODgceQKc4R~ZES-LE2nplSPx755r0StcIH3vZ06BtzgwCxtdsxEDWSXvkCe9Mcjnf9hpf886hYSG80g3CdzYfHC-CkCRYgB5mb~9dqQqSvczT2E2nBim7jMXhHR2NJZFG~8vRwMrUW-ug5WzZ5e7b1o2I-nzjeECO3R94fTPGsbGuK6QcpSr3-z7n3R8PjJz7orrk2G74Cuj8JMdGKcEBDUb~9VKSeiXA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="SiC graphene nanoribbons">
-    </div>
-
-    <script>
-        // Add smooth scroll and animation effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const publications = document.querySelectorAll('.publications-container');
-            
-            publications.forEach((pub, index) => {
-                pub.style.animationDelay = `${index * 0.1}s`;
-                
-                pub.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                });
-                
-                pub.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Intersection Observer for scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            publications.forEach(pub => {
-                observer.observe(pub);
-            });
-        });
-    </script>
+      </div>
     </section>
 
-<section id="software" class="section">
-<div class="section-header">
-    <h1 class="section-title">
-      <i class="fas fa-code"></i>
-      Software
-    </h1>
-  </div>
+    
+    <!-- Dynamic sections that will load content from external files -->
 
-  <div class="software-text">
-    <p>
-      Greetings! As part of my work, I specialize in developing software with two primary purposes. The first
-      focus is on the development and utilization of <strong>DFT</strong> (Density Functional Theory) code calculators
-      to investigate the electronic, magnetic, and optical properties of semiconductors. My expertise in
-      <strong>Python</strong>, <strong>Julia</strong>, and <strong>Fortran</strong> allows me to create powerful and efficient computational
-      tools for these purposes.
-    </p>
-    <p>
-      The second aspect of my work involves creating codes for experimental endeavors, including instrumentation
-      interfaces and the analysis of experimental results. This enables me to bridge the gap between theoretical
-      simulations and practical laboratory work, enhancing the overall research process.
-    </p>
-    <p>
-      With a strong background in programming and a passion for scientific computing, I continuously strive to
-      push the boundaries of what is possible in the realms of computational physics and experimental research. My
-      aim is to contribute significantly to the advancement of knowledge in these fields and to provide valuable
-      tools for researchers and scientists alike.
-    </p>
-    <p>
-      If you are interested in collaborating or would like to know more about my projects and contributions, feel
-      free to reach out. I am always open to exploring new opportunities and engaging in exciting scientific
-      ventures. <strong>Let's push the boundaries of scientific exploration together!</strong>
-    </p>
-  </div>
-
-  <div class="carousel-container">
-    <div class="slider-container">
-      <div class="slider-wrapper" id="slider">
-        <!-- Slide 1: cqws-codes -->
-        <div class="slide">
-          <div class="repo-card">
-            <a href="https://github.com/NanophotonIICOs/cqws-codes" target="_blank">
-              <div class="repo-card-content">
-                <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="CQWS Codes" class="repo-image">
-                <div class="repo-name">cqws-codes</div>
-                <div class="repo-description">Coupled Quantum Wells Simulation Tools</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 2: bash-scripts -->
-        <div class="slide">
-          <div class="repo-card">
-            <a href="https://github.com/NanophotonIICOs/bash-scripts" target="_blank">
-              <div class="repo-card-content">
-                <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="Bash Scripts" class="repo-image">
-                <div class="repo-name">bash-scripts</div>
-                <div class="repo-description">Automation Scripts for Physics Workflows</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 3: iico-spectra -->
-        <div class="slide">
-          <div class="repo-card">
-            <a href="https://github.com/NanophotonIICOs/iico-spectra" target="_blank">
-              <div class="repo-card-content">
-                <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="IICO Spectra" class="repo-image">
-                <div class="repo-name">iico-spectra</div>
-                <div class="repo-description">Optical Spectroscopy Analysis Tools</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 4: atomistiico -->
-        <div class="slide">
-          <div class="repo-card">
-            <a href="https://github.com/NanophotonIICOs/atomistiico" target="_blank">
-              <div class="repo-card-content">
-                <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="Atomistiico" class="repo-image">
-                <div class="repo-name">atomistiico</div>
-                <div class="repo-description">Atomistic Simulation Framework</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 5: ruco-phd-project -->
-        <div class="slide">
-          <div class="repo-card">
-            <a href="https://github.com/RUCO13/ruco-phd-project" target="_blank">
-              <div class="repo-card-content">
-                <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="PhD Project" class="repo-image">
-                <div class="repo-name">ruco-phd-project</div>
-                <div class="repo-description">PhD Research Project Repository</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 6: GeTe DFT (Coming Soon) -->
-        <div class="slide">
-          <div class="repo-card gete-card">
-            <a href="#gete-dft-repo">
-              <div class="repo-card-content">
-                <i class="fas fa-atom" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                <div class="repo-name">GeTe-DFT</div>
-                <div class="repo-description">Strain Engineering DFT Calculations</div>
-                <div class="coming-soon-badge">Coming Soon</div>
-              </div>
-            </a>
-          </div>
-        </div>
+    <section id="new-releases" class="section">
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading New Releases...</div>
       </div>
-
-      <!-- Navigation buttons -->
-      <button class="nav-button nav-prev" onclick="previousSlide()">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="nav-button nav-next" onclick="nextSlide()">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-
-    <!-- Indicators -->
-    <div class="slider-indicators">
-      <div class="indicator active" onclick="currentSlide(1)"></div>
-      <div class="indicator" onclick="currentSlide(2)"></div>
-      <div class="indicator" onclick="currentSlide(3)"></div>
-      <div class="indicator" onclick="currentSlide(4)"></div>
-      <div class="indicator" onclick="currentSlide(5)"></div>
-      <div class="indicator" onclick="currentSlide(6)"></div>
-    </div>
-
-    <div class="stats-container">
-      <div class="stat-item">
-        <span class="stat-number">6</span>
-        <span class="stat-label">Active Repos</span>
+    </section>
+    <section id="research" class="section">
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading Research...</div>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">Python</span>
-        <span class="stat-label">Primary Language</span>
+    </section>
+
+    <section id="software" class="section">
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading Software...</div>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">DFT</span>
-        <span class="stat-label">Specialization</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">Open</span>
-        <span class="stat-label">Source</span>
-      </div>
-    </div>
+    </section>
 
-    <div class="tech-stack">
-      <h3><i class="fas fa-tools"></i> Technologies & Tools</h3>
-      <div class="tech-icons">
-        <div class="tech-icon">
-          <i class="fab fa-python"></i>
-          <span>Python</span>
-        </div>
-        <div class="tech-icon">
-          <img src="./icons/fortran.svg"/> 
-        <span>Fortran</span>
-        </div>
-        <div class="tech-icon">
-          <i class="fas fa-terminal"></i>
-          <span>Bash</span>
-        </div>
-        <div class="tech-icon">
-          <i class="fas fa-cube"></i>
-          <span>Quantum Espresso</span>
-        </div>
-        <div class="tech-icon">
-          <i class="fas fa-cube"></i>
-          <span> GPAW</span>
-        </div>
-         <div class="tech-icon">
-          <i class="fas fa-cube"></i>
-          <span> YAMBO</span>
-        </div>
-        <div class="tech-icon">
-          <i class="fas fa-cube"></i>
-          <span>ASE</span>
-        </div>
-        <div class="tech-icon">
-          <i class="fab fa-git-alt"></i>
-          <span>Git</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    let slideIndex = 1;
-    const totalSlides = 6;
-    let autoSlideInterval;
-
-    function showSlide(n) {
-      const slider = document.getElementById('slider');
-      const indicators = document.querySelectorAll('.indicator');
-      
-      if (n > totalSlides) { slideIndex = 1; }
-      if (n < 1) { slideIndex = totalSlides; }
-      
-      const translateX = -(slideIndex - 1) * (100 / totalSlides);
-      slider.style.transform = `translateX(${translateX}%)`;
-      
-      // Update indicators
-      indicators.forEach((indicator, index) => {
-        indicator.classList.remove('active');
-        if (index === slideIndex - 1) {
-          indicator.classList.add('active');
-        }
-      });
-    }
-
-    function nextSlide() {
-      slideIndex++;
-      showSlide(slideIndex);
-      resetAutoSlide();
-    }
-
-    function previousSlide() {
-      slideIndex--;
-      showSlide(slideIndex);
-      resetAutoSlide();
-    }
-
-    function currentSlide(n) {
-      slideIndex = n;
-      showSlide(slideIndex);
-      resetAutoSlide();
-    }
-
-    function autoSlide() {
-      slideIndex++;
-      showSlide(slideIndex);
-    }
-
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(autoSlide, 4000);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(autoSlideInterval);
-    }
-
-    function resetAutoSlide() {
-      stopAutoSlide();
-      startAutoSlide();
-    }
-
-    // Initialize slider
-    document.addEventListener('DOMContentLoaded', function() {
-      showSlide(slideIndex);
-      startAutoSlide();
-      
-      // Pause auto-slide on hover
-      const sliderContainer = document.querySelector('.slider-container');
-      sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-      sliderContainer.addEventListener('mouseleave', startAutoSlide);
-      
-      // Animation on scroll
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.stat-item, .tech-icon').forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease';
-        el.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(el);
-      });
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowLeft') {
-        previousSlide();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-      }
-    });
-  </script>
-</section>
     <section id="teaching" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-chalkboard-teacher"></i>
-          Teaching & Mentorship
-        </h2>
-        <p class="section-subtitle">
-          Sharing knowledge and inspiring the next generation of scientists
-        </p>
-      </div>
-      <div class="section-content">
-        <!-- Teaching content will be loaded here -->
-        <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 15px; border-left: 4px solid #04f4e8; margin-bottom: 2rem;">
-          <h3 style="color: #06f2ca; margin-bottom: 1rem;">Academic Commitment</h3>
-          <p style="color: #e2e8f0; line-height: 1.6; margin-bottom: 1rem;">As a postdoc at Universidad Autonoma de San Luis Potosi, I am dedicated to sharing knowledge and mentoring students in computational physics and experimental research methods.</p>
-          <p style="color: #e2e8f0; line-height: 1.6;">My teaching philosophy centers on making complex concepts accessible while encouraging hands-on learning through practical applications of DFT calculations and experimental techniques.</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div style="background: rgba(6, 242, 202, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(6, 242, 202, 0.1);">
-            <h4 style="color: #06f2ca; margin-bottom: 1rem;"><i class="fas fa-university"></i> Areas of Expertise</h4>
-            <ul style="list-style: none; padding: 0;">
-              <li style="padding: 0.5rem 0; color: #e2e8f0;">• Computational Physics Methods</li>
-              <li style="padding: 0.5rem 0; color: #e2e8f0;">• Density Functional Theory</li>
-              <li style="padding: 0.5rem 0; color: #e2e8f0;">• Scientific Programming</li>
-              <li style="padding: 0.5rem 0; color: #e2e8f0;">• Experimental Techniques</li>
-              <li style="padding: 0.5rem 0; color: #e2e8f0;">• Data Analysis & Visualization</li>
-            </ul>
-          </div>
-          
-          <div style="background: rgba(4, 244, 232, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(4, 244, 232, 0.1);">
-            <h4 style="color: #04f4e8; margin-bottom: 1rem;"><i class="fas fa-handshake"></i> Collaboration</h4>
-            <p style="color: #e2e8f0; line-height: 1.6; margin-bottom: 1rem;">Always open to discussing potential collaborations and new research opportunities.</p>
-            <p style="color: #e2e8f0; line-height: 1.6;">Feel free to reach out for academic partnerships, student mentorship, or exciting scientific ventures!</p>
-          </div>
-        </div>
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading Teaching...</div>
       </div>
     </section>
   </main>
 
   <script>
-    // Mobile menu toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navbarMenu = document.getElementById('navbarMenu');
-    const menuIcon = mobileMenuToggle.querySelector('i');
+    // Configuration for sections to load
+    const sectionsToLoad = [
+      { id: 'new-releases', path: './sections/new_releases.html' },
+      { id: 'research', path: './sections/research.html' },
+      { id: 'software', path: './sections/software.html' },
+      { id: 'teaching', path: './sections/teaching.html' }
+    ];
 
-    mobileMenuToggle.addEventListener('click', () => {
-      navbarMenu.classList.toggle('active');
+    async function loadSection(sectionId, sectionPath) {
+      const sectionElement = document.getElementById(sectionId);
       
-      // Toggle menu icon
-      if (navbarMenu.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-      } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-      }
-    });
-
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarMenu.classList.remove('active');
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-      });
-    });
-
-    // Active link functionality
-    function setActiveLink(clickedLink) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-      });
-      clickedLink.classList.add('active');
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetHref = link.getAttribute('href');
-        let targetId = targetHref;
+      try {
+        const response = await fetch(sectionPath);
         
-        // Map home to hero section or about section
-        if (targetId === '#home') {
-          targetId = '#about'; // or keep as #home if you prefer hero section
-        }
-        
-        setActiveLink(link);
-        
-        // Smooth scroll to section
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          const offsetTop = targetSection.offsetTop - 100; // Account for fixed navbar
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Intersection Observer for scroll animations and active links
-    const sections = document.querySelectorAll('.section, .hero-section');
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '-80px 0px -50% 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Add visible class for animation
-          entry.target.classList.add('visible');
+        if (response.ok) {
+          const html = await response.text();
           
-          // Update active link
-          let id = entry.target.getAttribute('id');
-          if (id === 'about') id = 'home'; // Map about section to home link
+          // Parse the HTML to extract content and styles
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
           
-          const correspondingLink = document.querySelector(`a[href="#${id}"]`);
-          if (correspondingLink) {
-            setActiveLink(correspondingLink);
-          }
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-
-    // Also observe the hero section for home navigation
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-      observer.observe(heroSection);
-    }
-
-    // Scroll-triggered animations
-    function handleScrollAnimations() {
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.5;
-
-      // Parallax effect for hero background (only on large screens)
-      if (window.innerWidth >= 1400) {
-        const heroBackground = document.querySelector('.hero-section::before');
-        if (heroBackground) {
-          heroBackground.style.transform = `translate3d(0, ${rate}px, 0)`;
-        }
-      }
-
-      // Navbar background opacity
-      const navbar = document.querySelector('.navbar');
-      if (scrolled > 50) {
-        navbar.style.backgroundColor = 'rgba(51, 51, 51, 0.98)';
-      } else {
-        navbar.style.backgroundColor = 'rgba(51, 51, 51, 0.95)';
-      }
-    }
-
-    window.addEventListener('scroll', handleScrollAnimations);
-
-    // Load external content
-    function loadSection(sectionId, sectionPath) {
-      if (typeof fetch !== 'undefined') {
-        fetch(sectionPath)
-          .then(response => response.text())
-          .then(content => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-              const contentDiv = section.querySelector('.section-content') || section;
-              contentDiv.innerHTML = contentDiv.innerHTML + content;
+          // Extract and apply styles from the loaded document
+          const styles = doc.querySelectorAll('style');
+          styles.forEach(style => {
+            if (!document.querySelector(`style[data-section="${sectionId}"]`)) {
+              const newStyle = document.createElement('style');
+              newStyle.textContent = style.textContent;
+              newStyle.setAttribute('data-section', sectionId);
+              document.head.appendChild(newStyle);
             }
-          })
-          .catch(error => {
-            console.error('Error loading section:', error);
           });
+
+          // Get content from body or entire document
+          const content = doc.body ? doc.body.innerHTML : html;
+          
+          // Replace the loading animation with the actual content
+          sectionElement.innerHTML = content;
+
+          // Execute any scripts in the loaded content
+          const scripts = sectionElement.querySelectorAll('script');
+          scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            if (script.src) {
+              newScript.src = script.src;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            document.head.appendChild(newScript);
+          });
+
+          console.log(`✅ Loaded section: ${sectionId}`);
+        } else {
+          throw new Error(`HTTP ${response.status}`);
+        }
+      } catch (error) {
+        console.warn(`⚠️ Could not load section ${sectionId} from ${sectionPath}:`, error);
+        
+        // Show a fallback message instead of loading animation
+        sectionElement.innerHTML = `
+          <div class="section-header">
+            <h2 class="section-title">
+              <i class="fas fa-exclamation-triangle"></i>
+              ${sectionId.charAt(0).toUpperCase() + sectionId.slice(1).replace('-', ' ')}
+            </h2>
+            <p class="section-subtitle">Content will be available soon</p>
+          </div>
+        `;
       }
     }
 
-    // Load new releases content
-    function loadNewReleasesContent() {
-      const aboutSection = document.getElementById('about');
-      if (aboutSection && typeof fetch !== 'undefined') {
-        fetch('sections/new_releases.html')
-          .then(response => response.text())
-          .then(content => {
-            // Add new releases after about section
-            const newReleasesDiv = document.createElement('div');
-            newReleasesDiv.innerHTML = content;
-            aboutSection.appendChild(newReleasesDiv);
-          })
-          .catch(error => {
-            console.error('Error loading new releases content:', error);
-          });
-      }
-    }
-
-    // Initialize on DOM load
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load sections if files exist
-      loadSection('research', 'sections/research.html');
-      loadSection('software', 'sections/software.html');
-      loadSection('teaching', 'sections/teaching.html');
-      loadNewReleasesContent();
+    // Load all sections when DOM is ready
+    document.addEventListener('DOMContentLoaded', async function() {
+      console.log('🚀 Starting to load sections...');
       
-      // Initialize animations
+      // Load all sections in parallel
+      const loadPromises = sectionsToLoad.map(section => 
+        loadSection(section.id, section.path)
+      );
+      
+      await Promise.allSettled(loadPromises);
+      console.log('✨ All sections loaded');
+
+      // Initialize animations after a short delay
       setTimeout(() => {
         const heroContent = document.querySelector('.hero-content');
         if (heroContent) {
@@ -2260,19 +764,32 @@
       }, 100);
     });
 
-    // Google Analytics visit data (if needed)
-    function showVisitData() {
-      if (window.dataLayer && window.dataLayer.get) {
-        var visitData = window.dataLayer.get("gaData");
-        var html = "";
-        for (var property in visitData) {
-          for (var metric in visitData[property]) {
-            html += "<p>" + property + ": " + visitData[property][metric] + "</p>";
-          }
+    // Intersection Observer for scroll animations
+    const sections = document.querySelectorAll('.section, .hero-section');
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
-        const visitDataElement = document.getElementById("visitData");
-        if (visitDataElement) {
-          visitDataElement.innerHTML = html;
-        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Initialize animations on load
+    setTimeout(() => {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        heroContent.style.opacity = '1';
       }
-    }
+    }, 100);
+  </script>
+</body>
+</html>
