@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NE33R61XSF"></script>
-/media/rbnfiles/ruco/repos/pyband  <script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
@@ -14,188 +14,111 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
   <meta name="author" content="Oscar Ruiz Cigarrillo">
-  <!-- Google tag (gtag.js) -->
   <title>Oscar's web page</title>
   <link rel="icon" href="data/images/logo.png" type="image/icon type">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Zilla+Slab|Montserrat:400,700,900|Roboto:400,700|Playfair+Display|Press+Start+2P&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600&family=Montserrat:wght@400;700;900&family=Roboto:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <script src="scripts/navbar.js"></script>
-  <script src="scripts/sectionToggle.js"></script>
   <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://kit.fontawesome.com/42055755dc.js" crossorigin="anonymous"></script>
+
   <style>
-    @media screen and (max-width: 780px) {
-      body {
-          font-size: 11px;
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .container {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-        justify-content: center;
-      }
-
-      img.profile-image {
-          width: 80%;
-          height: auto;
-          border-radius: 50%;
-          object-fit: cover;
-          opacity: 1;
-      }
-
-      
-      .social-icons {
-        list-style: none;
-        padding: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0px;
-        font-size: 9px;
-      }
-  
-      .social-icons li {
-        align-items: center;
-        transition: transform 0.3s ease;
-        padding-right: 0.75em;
-      }
-  
-      .social-icons a {
-        color: #06f2ca;
-        text-decoration: none;
-        font-size: 2.3rem;
-        transition: transform 0.3s ease;
-      }
-  
-      .social-icons a:hover {
-        transform: scale(0.15);
-      }
-  
-      .social-icons li:hover {
-        transform: scale(0.15);
-      }
-      .profile-name {
-          font-size: 1rem; /* Ajustado el tamaño del nombre */
-          text-align: center;
-          margin-top: 10px; /* Ajustado el margen superior */
-          line-height: 1;
-          color: #04f4e8;
-      }
-
-      ul.navbar {
-          justify-content: center;
-          font-size: 0.8rem; /* Ajustado el tamaño del texto del navbar */
-      }
-
-      ul.navbar li {
-          display: inline-block;
-      }
-
-      ul.navbar li a {
-          font-size: 0.8rem; /* Ajustado el tamaño del texto del navbar */
-          padding: 8px 15px; /* Ajustado el espaciado del navbar */
-      }
-
-      .profile-image {
-          width: 80%; /* Ajustado el ancho de la imagen */
-          max-width: none;
-      }
-
-      .social-icons a {
-          font-size: 1.2rem; /* Ajustado el tamaño de los iconos */
-      }
-
-      .cv-text {
-          font-size: 1rem; /* Ajustado el tamaño del texto del CV */
-      }
-  }
     body {
       font-family: 'Roboto', sans-serif;
       font-size: 1rem;
       background-color: #353740;
       color: #f8f9fc;
-      padding: 0em;
-      line-height: 1.5;
+      line-height: 1.6;
       scrollbar-width: thin;
-      justify-content: space-between;
     }
 
-    ::-webkit-scrollbar {
-      width: 7px;
+    /* Scrollbar styles */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-thumb { 
+      background-color: #6e6e80; 
+      border-radius: 3px; 
     }
+    ::-webkit-scrollbar-track { background-color: #353740; }
 
-    ::-webkit-scrollbar-thumb {
-      background-color: #6e6e80;
-      border-radius: 3px;
-    }
-
-    ::-webkit-scrollbar-corner,
-    ::-webkit-scrollbar-thumb {
-      height: 3px;
-    }
-
-    body::-webkit-scrollbar-thumb {
-      background-color: #6e6e80;
-      /* Color del scroll */
-      border-radius: 3px;
-      /* Radio de las esquinas del scroll */
-    }
-
-    body::-webkit-scrollbar-track {
-      background-color: #353740;
-      /* Color de la línea del scrollbar */
-    }
-
-    .column {
-      flex-grow: 1;
-      padding: 0px;
-    }
-
-    .column:nth-child(1) {
-      background-color: #6e6e80;
-    }
-
-    .column:nth-child(2) {
-      background-color: #353740;
-      /* Color de fondo para la segunda columna */
-    }
-
-    .container {
-      display: flex;
-      position: relative;
-      justify-content: center;
-      flex-direction: row;
-    }
-
-
-    .sidebar {
-      /* Ajusta las demás propiedades como lo desees */
+    /* Navigation */
+    .navbar {
       position: fixed;
-      flex-basis: 100%;
-      /* Ancho inicial del sidebar al 30% del contenedor */
-      min-width: 1%;
-      /* Ancho mínimo del sidebar en píxeles */
-      max-width: 10%;
-      /* Ancho máximo del sidebar al 30% del contenedor */
       top: 0;
       left: 0;
-      height: 100%;
-      z-index: 1;
-      list-style-type: none;
-      margin: 0;
-      padding: 0%;
-      display: flex;
-      flex-direction: column;
-      background-color: #f9f9f9;
-      transition: flex-basis 0.3s;
-      /* Transición suave al cambiar el ancho */
+      width: 100%;
+      background-color: rgba(51, 51, 51, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
     }
 
-    /* Agrega un pseudo-elemento ::before para aplicar la imagen de fondo y la opacidad */
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar-brand {
+      color: #04f4e8;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    .navbar-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-menu a:hover,
+    .navbar-menu a.active {
+      background-color: #6e6e80;
+      color: #04f4e8;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Main Layout */
+    .main-container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 100vh;
+      margin-top: 60px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: linear-gradient(135deg, #6e6e80, #5a5a6b);
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
     .sidebar::before {
       content: "";
       position: absolute;
@@ -204,403 +127,513 @@
       width: 100%;
       height: 100%;
       background: url('data/images/sidebar-atoms-p3.png');
-      /* Ruta de la imagen de fondo */
       background-size: 300%;
-      /* O utiliza otra opción de escala si lo prefieres */
       background-position: center;
-      /* O ajusta la posición según tus preferencias */
-      opacity: 0.15;
-      /* Ajusta este valor para cambiar la transparencia (0.0 a 1.0) */
-      z-index: -1;
-      /* Asegura que el pseudo-elemento esté detrás del contenido del sidebar */
+      opacity: 0.1;
+      z-index: 0;
     }
-    ul.navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
+
+    .sidebar-content {
+      position: relative;
       z-index: 1;
-      list-style-type: none;
-      margin: 0;
-      margin-top: 0;
-      padding: 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    ul.navbar li {
-      display: inline-block;
-    }
-
-    ul.navbar li a {
-      display: block;
-      color: white;
       text-align: center;
-      padding: 0px 0px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-family: 'Roboto', sans-serif;
-      transition: background-color 0.3s ease;
     }
 
-
-    h1 {
-      color: #fff6f6;
-    }
-
-    img.profile-image {
-      width: 70%;
-      height: auto;
+    .profile-image {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      opacity: 1;
+      border: 4px solid #04f4e8;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
     }
 
-    .about-section {
-      margin-bottom: 30px;
-      margin: 0px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #353740;
-      text-align: justify;
+    .profile-image:hover {
+      transform: scale(1.05);
     }
 
-    .about-section p {
-      text-align: justify;
+    .profile-name {
+      font-family: 'Zilla Slab', serif;
+      font-size: 1.3rem;
+      color: #04f4e8;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
 
-    .main-content {
-      flex-grow: 1;
-      max-width: 60%;
-      margin-left: 30%;
-      margin-right: 10%;
-      background-color: #f9f9f9;
-        padding: 10px; /* Agrega un poco de relleno */
-        padding: 10px; /* Agrega un poco de relleno */
-
+    .profile-title {
+      font-size: 1rem;
+      color: #82e6d9;
+      margin-bottom: 2rem;
     }
-
-    .main-content a:hover {
-      color: #00c3ff;
-
-    }
-
-    a:visited {
-      color: #0073ff;
-    }
-
-    a.link {
-      color: rgb(238, 234, 13);
-      /* Otros estilos que desees aplicar */
-    }
-
 
     .social-icons {
-      list-style: none;
-      padding: 0px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin-top: 5px;
-    }
-
-    .social-icons li {
-      align-items: center;
-      transition: transform 0.3s ease;
-      padding-right: 0.75em;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
 
     .social-icons a {
       color: #06f2ca;
-      text-decoration: none;
-      font-size: 4rem;
-      transition: transform 0.3s ease;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-icons a:hover {
-      transform: scale(1.2);
+      transform: translateY(-2px);
+      background: rgba(6, 242, 202, 0.2);
     }
 
-    .social-icons li:hover {
-      transform: scale(1.5);
+    /* Main Content */
+    .main-content {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    ul.navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      z-index: 1;
-      list-style-type: none;
-      margin: 0;
-      margin-top: 0;
-      padding: 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    .section {
+      margin-bottom: 3rem;
     }
 
-    ul.navbar li {
-      display: inline-block;
-      font-size: 1.2rem;
+    .section h1 {
+      color: #f6f2f2;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #04f4e8;
+      padding-bottom: 0.5rem;
     }
 
-    ul.navbar li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 10px 20px;
+    .about-section {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #04f4e8;
+    }
+
+    .about-section ul {
+      list-style: none;
+    }
+
+    .about-section li {
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(4, 244, 232, 0.3);
+    }
+
+    .about-section p {
+      text-align: justify;
+      line-height: 1.8;
+    }
+
+    .about-section a {
+      color: #06f2ca;
       text-decoration: none;
-      font-size: 1.2rem;
-      font-family: 'Roboto', sans-serif;
-      transition: background-color 0.3s ease;
-
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    ul.navbar li a:hover {
-      background-color: #6e6e80;
-    }
-
-    .navbar-brand {
-      font-weight: bold;
-      margin-right: 0px;
-    }
-
-    .navbar a.active {
+    .about-section a:hover {
       color: #04f4e8;
-      /* Cambiar a tu color deseado */
-      background-color: #6e6e80;
-      font-weight: bold;
-    }
-
-    .profile-name {
-      font-family: 'Zilla Slab';
-      font-size: 1.45rem;
-      text-align: center;
-      margin-top: 15px;
-      line-height: 1;
-      color: #04f4e8;
-
-    }
-
-    .title {
-      color: rgb(82, 226, 149);
-    }
-
-    .author {
-      color: rgb(16, 220, 227);
-    }
-
-    .custom-icon {
-      color: #eeff00;
-    }
-
-
-    .cv-text {
-      font-family: 'Zilla Slab';
-      font-size: 2rem;
       text-decoration: underline;
     }
 
-    ul:hover li {
-      margin-bottom: 0px;
-      transition: 500ms linear;
+    /* Mobile Styles */
+    @media screen and (max-width: 768px) {
+      .navbar-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: rgba(51, 51, 51, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+      }
+
+      .navbar-menu.active {
+        left: 0;
+      }
+
+      .navbar-menu a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 80%;
+        text-align: center;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .main-container {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+      }
+
+      .sidebar {
+        padding: 1.5rem 1rem;
+        order: 2;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      .profile-name {
+        font-size: 1.2rem;
+      }
+
+      .profile-title {
+        font-size: 0.9rem;
+      }
+
+      .social-icons {
+        gap: 0.8rem;
+      }
+
+      .social-icons a {
+        font-size: 1.3rem;
+        padding: 0.4rem;
+      }
+
+      .main-content {
+        padding: 1.5rem 1rem;
+        order: 1;
+      }
+
+      .section h1 {
+        font-size: 2rem;
+      }
+
+      .about-section {
+        padding: 1.5rem;
+      }
+
+      .about-section li {
+        padding-left: 0.5rem;
+        margin-bottom: 1rem;
+      }
     }
 
+    @media screen and (max-width: 480px) {
+      body {
+        font-size: 0.9rem;
+      }
 
+      .navbar {
+        padding: 0.4rem 1rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .main-content {
+        padding: 1rem 0.8rem;
+      }
+
+      .section h1 {
+        font-size: 1.8rem;
+      }
+
+      .about-section {
+        padding: 1rem;
+      }
+
+      .profile-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      .profile-name {
+        font-size: 1.1rem;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Loading animation */
+    .loading {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover effects */
+    .about-section li {
+      transition: all 0.3s ease;
+    }
+
+    .about-section li:hover {
+      transform: translateX(5px);
+      border-left-color: #04f4e8;
+    }
   </style>
 </head>
 
 <body>
-  <header class="sticky-header">
-  <nav>
-    <ul class="navbar">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#software">Software</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <div class="container">
-    <div class="sidebar column sidebar-bg">
-      <div style="text-align: center;">
-        <img
-          src="https://avatars.githubusercontent.com/u/10236471?v=4"
-          alt="Mi foto" class="profile-image">
-        <h5 class="profile-name">Oscar Ruiz-Cigarrillo</h5>
-        <h5 class="profile-name">Ph.D. Photonics</h5>
-      </div>
-
-      <ul class="social-icons">
-        <li><a href="mailto:ruizoscar.1393@gmail.com">
-            <i class="fa-solid fa-envelope fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
-          </a>
-        </li>
-        </ul>
-        <ul class="social-icons">
-        <li><a href="https://twitter.com/RUCO0713">
-            <i class="fa-brands fa-twitter fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
-          </a>
-        </li>
-        </ul>
-        <ul class="social-icons">
-        <li><a href="https://www.instagram.com/ruco0713/" style="--fa-animation-duration: 2s;">
-            <i class="fa-brands fa-instagram fa-beat-fade"></i>
-          </a>
-        </li>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-brand">Oscar Ruiz-Cigarrillo</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#software" class="nav-link">Software</a></li>
+        <li><a href="#teaching" class="nav-link">Teaching</a></li>
       </ul>
-      <ul class="social-icons">
-        <li><a href="https://github.com/RUCO13">
-            <i class="fa-brands fa-github fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
-          </a>
-        </li>
-      </ul>
-
-      <div class="social-icons">
-        <a href="data/RUCO_CV_eng.pdf" target="_blank" alt="RUCO CV">
-          <i class="fa-solid fa-file-pdf fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
-        </a>
-      </div>
-
-      <!-- <div id="container-01" class="mol-container"></div>
-      <script src="scripts/cs3dmol.js"></script>
-      <style>
-        .visit-count {
-          font-size: 30px;
-          font-weight: bold;
-        }
-      </style> -->
-      <div id="visitData"></div>
-      <script>
-        function showVisitData() {
-          var visitData = window.dataLayer.get("gaData");
-          var html = "";
-          for (var property in visitData) {
-            for (var metric in visitData[property]) {
-              html += "<p>" + property + ": " + visitData[property][metric] + "</p>";
-            }
-          }
-          document.getElementById("visitData").innerHTML = html;
-        }
-      </script>
     </div>
+  </nav>
 
-    <div class="main-content column">
-      <section id="home" class="section">
-        <h1 style="color: #f6f2f2;">About me</h1>
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Oscar Ruiz-Cigarrillo" class="profile-image">
+        <h2 class="profile-name">Oscar Ruiz-Cigarrillo</h2>
+        <p class="profile-title">Ph.D. Photonics</p>
+        
+        <div class="social-icons">
+          <a href="mailto:ruizoscar.1393@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://twitter.com/RUCO0713" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/ruco0713/" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/RUCO13" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="data/RUCO_CV_eng.pdf" target="_blank" title="CV">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section id="home" class="section loading">
+        <h1>About me</h1>
         <div class="about-section">
           <ul>
             <li>
-              <p>I hold a PhD in Photonics (Applied Sciences) from <a class="link" href="http://www.iico.uaslp.mx">IICO-UASLP</a> and
-                currently work as a Associate Professor at <a class="link"
-                  href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
+              <p>I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Posdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
             </li>
             <li>
-              <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.
-    
-                Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids..</p>
+              <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
             </li>
             <li>
-              <p>I take pride in being the founder of <a class="link"
-                  href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated
-                to advancing research in the field of nanophotonics. </p>
+              <p>Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
+            </li>
+            <li>
+              <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
             </li>
             <li>
               <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
             </li>
-            <li>
-              <!-- <p> My GitHub contribution</p>
-              <div style="display: flex; justify-content: center;">
-                <img src="https://github.com/RUCO13/RUCO13/raw/main/profile-3d-contrib/profile-night-rainbow.svg"
-                  style="max-width: 70%;" />
-              </div> -->
-            </li>
           </ul>
         </div>
-        <div id="newReleasesContainer">
-      </section>
-      <section id="research" class="section">
-      </section>
-      <section id="software" class="section">
-      </section>
-      <section id="teaching" class="section">
+        <div id="newReleasesContainer"></div>
       </section>
 
-    </div>
+      <section id="research" class="section loading">
+        <!-- Research content will be loaded here -->
+      </section>
+
+      <section id="software" class="section loading">
+        <!-- Software content will be loaded here -->
+      </section>
+
+      <section id="teaching" class="section loading">
+        <!-- Teaching content will be loaded here -->
+      </section>
+    </main>
   </div>
+
   <script>
-    // Function to fetch and insert new releases content
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+    const menuIcon = mobileMenuToggle.querySelector('i');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+      
+      // Toggle menu icon
+      if (navbarMenu.classList.contains('active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+      } else {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // Active link functionality
+    function setActiveLink(clickedLink) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+      clickedLink.classList.add('active');
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href');
+        setActiveLink(link);
+        
+        // Smooth scroll to section
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for active link on scroll
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '-100px 0px -50% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          const correspondingLink = document.querySelector(`a[href="#${id}"]`);
+          if (correspondingLink) {
+            setActiveLink(correspondingLink);
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Loading animation
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.loading');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.animationDelay = '0.1s';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run on page load
+
+    // Load external content (if needed)
+    function loadSection(sectionId, sectionPath) {
+      if (typeof fetch !== 'undefined') {
+        fetch(sectionPath)
+          .then(response => response.text())
+          .then(content => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+              section.innerHTML = content;
+            }
+          })
+          .catch(error => {
+            console.error('Error loading section:', error);
+          });
+      }
+    }
+
+    // Load new releases content
     function loadNewReleasesContent() {
       const newReleasesContainer = document.getElementById('newReleasesContainer');
-
-      // Fetch the content from new_releases.html
-      fetch('sections/new_releases.html')
-        .then(response => response.text())
-        .then(content => {
-          // Insert the content into the container
-          newReleasesContainer.innerHTML = content;
-        })
-        .catch(error => {
-          console.error('Error loading new releases content:', error);
-        });
+      if (newReleasesContainer && typeof fetch !== 'undefined') {
+        fetch('sections/new_releases.html')
+          .then(response => response.text())
+          .then(content => {
+            newReleasesContainer.innerHTML = content;
+          })
+          .catch(error => {
+            console.error('Error loading new releases content:', error);
+          });
+      }
     }
 
-    // Call the function to load new releases content when the page is loaded
-    document.addEventListener('DOMContentLoaded', loadNewReleasesContent);
-  </script>
-  <script>
-    function loadSection(sectionId, sectionPath) {
-      fetch(sectionPath)
-        .then(response => response.text())
-        .then(content => {
-          document.getElementById(sectionId).innerHTML = content;
-        })
-        .catch(error => {
-          console.error('Error loading section:', error);
-        });
-    }
-    document.addEventListener('DOMContentLoaded', function () {
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load sections if files exist
       loadSection('research', 'sections/research.html');
       loadSection('software', 'sections/software.html');
       loadSection('teaching', 'sections/teaching.html');
-    });
-  </script>
-
-  <script>
-    // Función para cambiar el color del enlace en el navbar
-    function setActiveLink(link) {
-      const navLinks = document.querySelectorAll('nav a');
-
-      // Remover la clase "active" de todos los enlaces del navbar
-      navLinks.forEach(navLink => {
-        navLink.classList.remove('active');
-      });
-
-      // Agregar la clase "active" al enlace clicado
-      link.classList.add('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const navLinks = document.querySelectorAll('nav a');
-      // Añadir un event listener a cada enlace del navbar
-      navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-          // Prevenir el comportamiento predeterminado del enlace
-          event.preventDefault();
-          // Obtener el ID de la sección a la que se dirige el enlace
-          const targetId = link.getAttribute('href');
-          // Cambiar el color del enlace activo en el navbar
-          setActiveLink(link);
-          // Opcional: Scroll hasta la sección activa para asegurarse de que sea visible en pantalla
-          document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+      loadNewReleasesContent();
+      
+      // Initial animation
+      setTimeout(() => {
+        document.querySelectorAll('.loading').forEach((el, index) => {
+          el.style.animationDelay = `${index * 0.1}s`;
         });
-      });
+      }, 100);
     });
+
+    // Google Analytics visit data (if needed)
+    function showVisitData() {
+      if (window.dataLayer && window.dataLayer.get) {
+        var visitData = window.dataLayer.get("gaData");
+        var html = "";
+        for (var property in visitData) {
+          for (var metric in visitData[property]) {
+            html += "<p>" + property + ": " + visitData[property][metric] + "</p>";
+          }
+        }
+        const visitDataElement = document.getElementById("visitData");
+        if (visitDataElement) {
+          visitDataElement.innerHTML = html;
+        }
+      }
+    }
   </script>
 </body>
 </html>
