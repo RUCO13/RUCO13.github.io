@@ -1,177 +1,762 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <!-- <link rel="stylesheet" href="styles/soft-car.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #353740;
+      color: #f8f9fc;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #04f4e8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-bottom: 3px solid #04f4e8;
+      padding-bottom: 0.5rem;
+    }
+
+    .software-text {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #06f2ca;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .software-text p {
+      color: #e2e8f0;
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .software-text strong {
+      color: #04f4e8;
+      font-weight: 600;
+    }
+
+    .projects-title {
+      font-size: 2.2rem;
+      color: #04f4e8;
+      margin: 3rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 3px solid #06f2ca;
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .carousel-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(4, 244, 232, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, #04f4e8, transparent);
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      width: 600%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 16.666%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .repo-card {
+      width: 280px;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(110, 110, 128, 0.1), rgba(53, 55, 64, 0.3));
+      border: 2px solid rgba(4, 244, 232, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .repo-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .repo-card:hover::before {
+      left: 100%;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      border-color: #04f4e8;
+      box-shadow: 0 15px 35px rgba(4, 244, 232, 0.3);
+      background: linear-gradient(135deg, rgba(4, 244, 232, 0.15), rgba(6, 242, 202, 0.08));
+    }
+
+    .repo-card a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      z-index: 2;
+    }
+
+    .repo-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .repo-image {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    .repo-card:hover .repo-image {
+      transform: scale(1.02);
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    .repo-name {
+      color: #06f2ca;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .repo-description {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .repo-card:hover .repo-description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* GeTe special slide */
+    .gete-card {
+      background: linear-gradient(135deg, #04f4e8, #06f2ca) !important;
+      color: #1a1a1a !important;
+      border-color: #04f4e8 !important;
+    }
+
+    .gete-card .repo-card-content {
+      color: #1a1a1a;
+    }
+
+    .gete-card .repo-name {
+      color: #1a1a1a;
+    }
+
+    .gete-card .repo-description {
+      color: rgba(26, 26, 26, 0.8);
+    }
+
+    .coming-soon-badge {
+      background: rgba(26, 26, 26, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(4, 244, 232, 0.15);
+      border: 2px solid rgba(4, 244, 232, 0.3);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #04f4e8;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-button:hover {
+      background: rgba(4, 244, 232, 0.25);
+      border-color: #04f4e8;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .nav-prev {
+      left: 15px;
+    }
+
+    .nav-next {
+      right: 15px;
+    }
+
+    .slider-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(4, 244, 232, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      background: #04f4e8;
+      transform: scale(1.3);
+      box-shadow: 0 0 10px rgba(4, 244, 232, 0.6);
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: rgba(6, 242, 202, 0.1);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(6, 242, 202, 0.2);
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #06f2ca;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
+    }
+
+    .tech-stack {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .tech-stack h3 {
+      color: #04f4e8;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tech-icon {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(110, 110, 128, 0.3);
+      transition: all 0.3s ease;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .tech-icon:hover {
+      border-color: #04f4e8;
+      background: rgba(4, 244, 232, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .tech-icon i {
+      font-size: 2.5rem;
+      color: #06f2ca;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .tech-icon span {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .carousel-container {
+        padding: 1rem;
+        margin: 0 0.5rem;
+      }
+
+      .section-title,
+      .projects-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .software-text {
+        padding: 1.5rem;
+      }
+
+      .software-text p {
+        font-size: 1rem;
+      }
+
+      .slider-container {
+        height: 250px;
+      }
+
+      .repo-card {
+        width: 220px;
+        height: 170px;
+        padding: 15px;
+      }
+
+      .nav-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+      }
+
+      .stats-container {
+        gap: 1rem;
+      }
+
+      .stat-item {
+        padding: 0.8rem 1.5rem;
+        min-width: 100px;
+      }
+
+      .tech-icons {
+        gap: 1rem;
+      }
+
+      .tech-icon {
+        min-width: 60px;
+        padding: 0.8rem;
+      }
+
+      .tech-icon i {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .repo-card {
+        width: 200px;
+        height: 150px;
+        padding: 12px;
+      }
+
+      .slider-container {
+        height: 220px;
+      }
+
+      .nav-button {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+      }
+
+      body {
+        padding: 10px;
+      }
+    }
+
+    /* Loading animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .carousel-container,
+    .software-text {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+  </style>
 </head>
-<style>
-  .software-text {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: justify;
-  }
-
-  .repo-container {
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 5px;
-    background-color: #6e6e80;
-    display: flex;
-    align-items: center;
-    /* Alinear verticalmente el contenido */
-    transform: translateY(-10px);
-    /* Desplazamiento hacia arriba para la animación */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Transiciones suaves */
-  }
-
-  .repo-details {
-    flex: 1;
-    padding-left: 0px;
-    text-align: right;
-    display: flex; /* Agregar display flex para centrar verticalmente */
-    align-items: center; /* Alinear verticalmente el contenido */
-  }
-
-  .repo-container a {
-    text-decoration: none;
-    color: #f6ff00;
-    font-size: 1.25rem;
-  }
-
-  .repo-container:hover {
-    transform: scale(1.05);
-    /* Escalar ligeramente el contenedor al hacer hover */
-  }
-
-  .repo-container a:hover {
-    text-decoration: underline;
-  }
-
-  .repo-container name {
-    font-weight: bold;
-  }
-
-  .repo-container authors {
-    color: #00d0fa;
-  }
-
-  .repo-container img {
-    max-width: 90%;
-    height: auto;
-    max-height: 30%;
-    float: left;
-    margin-right: 0px;
-  }
-
-  .repo-text {
-    max-width: calc(100% + 300px);
-    text-align: right;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-</style>
 
 <body>
-  <h1>Software</h1>
+  <div class="section-header">
+    <h1 class="section-title">
+      <i class="fas fa-code"></i>
+      Software
+    </h1>
+  </div>
+
   <div class="software-text">
     <p>
       Greetings! As part of my work, I specialize in developing software with two primary purposes. The first
       focus is on the development and utilization of <strong>DFT</strong> (Density Functional Theory) code calculators
-      to
-      investigate the electronic, magnetic, and optical properties of semiconductors. My expertise in
-      <strong>Python</strong>,
-      <strong>Julia</strong>, and <strong>Fortran</strong> allows me to create powerful and efficient computational
+      to investigate the electronic, magnetic, and optical properties of semiconductors. My expertise in
+      <strong>Python</strong>, <strong>Julia</strong>, and <strong>Fortran</strong> allows me to create powerful and efficient computational
       tools for these purposes.
-
+    </p>
+    <p>
       The second aspect of my work involves creating codes for experimental endeavors, including instrumentation
       interfaces and the analysis of experimental results. This enables me to bridge the gap between theoretical
       simulations and practical laboratory work, enhancing the overall research process.
-
+    </p>
+    <p>
       With a strong background in programming and a passion for scientific computing, I continuously strive to
       push the boundaries of what is possible in the realms of computational physics and experimental research. My
       aim is to contribute significantly to the advancement of knowledge in these fields and to provide valuable
       tools for researchers and scientists alike.
-
+    </p>
+    <p>
       If you are interested in collaborating or would like to know more about my projects and contributions, feel
       free to reach out. I am always open to exploring new opportunities and engaging in exciting scientific
-      ventures. Let's push the boundaries of scientific exploration together!
+      ventures. <strong>Let's push the boundaries of scientific exploration together!</strong>
     </p>
   </div>
 
-  <h1>My Projects</h1>
+  <h2 class="projects-title">
+    <i class="fas fa-project-diagram"></i>
+    My Projects
+  </h2>
 
-
-  <div class="repo-container">
-    <div class="repo-details">
-      <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="cqws-codes">
-      <a href="https://github.com/NanophotonIICOs/cqws-codes">
-        <div class="repo-text">
-        <name>
-          cqws-codes
-        </name>
+  <div class="carousel-container">
+    <div class="slider-container">
+      <div class="slider-wrapper" id="slider">
+        <!-- Slide 1: cqws-codes -->
+        <div class="slide">
+          <div class="repo-card">
+            <a href="https://github.com/NanophotonIICOs/cqws-codes" target="_blank">
+              <div class="repo-card-content">
+                <img src="https://gh-card.dev/repos/NanophotonIICOs/cqws-codes.svg" alt="CQWS Codes" class="repo-image">
+                <div class="repo-name">cqws-codes</div>
+                <div class="repo-description">Coupled Quantum Wells Simulation Tools</div>
+              </div>
+            </a>
+          </div>
         </div>
-      </a><br>
+
+        <!-- Slide 2: bash-scripts -->
+        <div class="slide">
+          <div class="repo-card">
+            <a href="https://github.com/NanophotonIICOs/bash-scripts" target="_blank">
+              <div class="repo-card-content">
+                <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="Bash Scripts" class="repo-image">
+                <div class="repo-name">bash-scripts</div>
+                <div class="repo-description">Automation Scripts for Physics Workflows</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 3: iico-spectra -->
+        <div class="slide">
+          <div class="repo-card">
+            <a href="https://github.com/NanophotonIICOs/iico-spectra" target="_blank">
+              <div class="repo-card-content">
+                <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="IICO Spectra" class="repo-image">
+                <div class="repo-name">iico-spectra</div>
+                <div class="repo-description">Optical Spectroscopy Analysis Tools</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 4: atomistiico -->
+        <div class="slide">
+          <div class="repo-card">
+            <a href="https://github.com/NanophotonIICOs/atomistiico" target="_blank">
+              <div class="repo-card-content">
+                <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="Atomistiico" class="repo-image">
+                <div class="repo-name">atomistiico</div>
+                <div class="repo-description">Atomistic Simulation Framework</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 5: ruco-phd-project -->
+        <div class="slide">
+          <div class="repo-card">
+            <a href="https://github.com/RUCO13/ruco-phd-project" target="_blank">
+              <div class="repo-card-content">
+                <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="PhD Project" class="repo-image">
+                <div class="repo-name">ruco-phd-project</div>
+                <div class="repo-description">PhD Research Project Repository</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 6: GeTe DFT (Coming Soon) -->
+        <div class="slide">
+          <div class="repo-card gete-card">
+            <a href="#gete-dft-repo">
+              <div class="repo-card-content">
+                <i class="fas fa-atom" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                <div class="repo-name">GeTe-DFT</div>
+                <div class="repo-description">Strain Engineering DFT Calculations</div>
+                <div class="coming-soon-badge">Coming Soon</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button class="nav-button nav-prev" onclick="previousSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="nav-button nav-next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Indicators -->
+    <div class="slider-indicators">
+      <div class="indicator active" onclick="currentSlide(1)"></div>
+      <div class="indicator" onclick="currentSlide(2)"></div>
+      <div class="indicator" onclick="currentSlide(3)"></div>
+      <div class="indicator" onclick="currentSlide(4)"></div>
+      <div class="indicator" onclick="currentSlide(5)"></div>
+      <div class="indicator" onclick="currentSlide(6)"></div>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Active Repos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Python</span>
+        <span class="stat-label">Primary Language</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">DFT</span>
+        <span class="stat-label">Specialization</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Open</span>
+        <span class="stat-label">Source</span>
+      </div>
+    </div>
+
+    <div class="tech-stack">
+      <h3><i class="fas fa-tools"></i> Technologies & Tools</h3>
+      <div class="tech-icons">
+        <div class="tech-icon">
+          <i class="fab fa-python"></i>
+          <span>Python</span>
+        </div>
+        <div class="tech-icon">
+          <i class="fas fa-terminal"></i>
+          <span>Bash</span>
+        </div>
+        <div class="tech-icon">
+          <i class="fas fa-calculator"></i>
+          <span>VASP</span>
+        </div>
+        <div class="tech-icon">
+          <i class="fas fa-chart-line"></i>
+          <span>Matplotlib</span>
+        </div>
+        <div class="tech-icon">
+          <i class="fas fa-cube"></i>
+          <span>ASE</span>
+        </div>
+        <div class="tech-icon">
+          <i class="fab fa-git-alt"></i>
+          <span>Git</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="repo-container">
-    <div class="repo-details">
-      <img src="https://gh-card.dev/repos/NanophotonIICOs/bash-scripts.svg" alt="bash-scripts">
-      <a href="https://github.com/NanophotonIICOs/bash-scripts">
-        <div class="repo-text">
-        <name>
-          bash-scripts
-        </name>
-        </div>
-      </a><br>
-    </div>
-  </div>
+  <script>
+    let slideIndex = 1;
+    const totalSlides = 6;
+    let autoSlideInterval;
 
+    function showSlide(n) {
+      const slider = document.getElementById('slider');
+      const indicators = document.querySelectorAll('.indicator');
+      
+      if (n > totalSlides) { slideIndex = 1; }
+      if (n < 1) { slideIndex = totalSlides; }
+      
+      const translateX = -(slideIndex - 1) * (100 / totalSlides);
+      slider.style.transform = `translateX(${translateX}%)`;
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.remove('active');
+        if (index === slideIndex - 1) {
+          indicator.classList.add('active');
+        }
+      });
+    }
 
-  <div class="repo-container">
-    <div class="repo-details">
-      <img src="https://gh-card.dev/repos/NanophotonIICOs/iico-spectra.svg" alt="iico-spectra">
-      <a href="https://github.com/NanophotonIICOs/iico-spectra">
-        <div class="repo-text">
-        <name>
-          iico-spectra
-        </name>
-        </div>
-      </a><br>
-    </div>
-  </div>
+    function nextSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
 
+    function previousSlide() {
+      slideIndex--;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
 
-  <div class="repo-container">
-    <div class="repo-details">
-      <img src="https://gh-card.dev/repos/NanophotonIICOs/atomistiico.svg" alt="atomistiico">
-      <a href="https://github.com/NanophotonIICOs/atomistiico">
-        <div class="repo-text">
-        <name>
-          atomistiico
-        </name>
-        </div>
-      </a><br>
-    </div>
-  </div>
+    function currentSlide(n) {
+      slideIndex = n;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
 
-  <div class="repo-container">
-    <div class="repo-details">
-      <img src="https://gh-card.dev/repos/RUCO13/ruco-phd-project.svg" alt="ruco-phd-project">
-      <a href="https://github.com/RUCO13/ruco-phd-project">
-        <div class="repo-text" style=" margin-left: 30px;">
-        <name>
-          ruco-phd-project
-        </name>
-        </div>
-      </a><br>
-    </div>
-  </div>
+    function autoSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+    }
 
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(autoSlide, 4000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    // Initialize slider
+    document.addEventListener('DOMContentLoaded', function() {
+      showSlide(slideIndex);
+      startAutoSlide();
+      
+      // Pause auto-slide on hover
+      const sliderContainer = document.querySelector('.slider-container');
+      sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+      sliderContainer.addEventListener('mouseleave', startAutoSlide);
+      
+      // Animation on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.stat-item, .tech-icon').forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        el.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(el);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        previousSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    });
+  </script>
 </body>
-
 </html>
