@@ -368,6 +368,16 @@
       .hero-highlights {
         grid-template-columns: 1fr;
       }
+
+      .about-content-card {
+        padding: 2rem;
+      }
+
+      .about-content-card p {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.7;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -411,6 +421,17 @@
 
       .highlight-item {
         padding: 1rem;
+      }
+
+      .about-content-card {
+        padding: 1.5rem;
+      }
+
+      .about-content-card p {
+        font-size: 0.95rem;
+        text-align: left;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
       }
     }
 
@@ -484,6 +505,47 @@
       position: relative;
     }
 
+    .about-content-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2.5rem;
+      border-radius: 15px;
+      border-left: 4px solid #06f2ca;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .about-content-card:hover {
+      transform: translateY(-2px);
+      border-left-color: #04f4e8;
+      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
+    }
+
+    .about-content-card p {
+      color: #e2e8f0;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .about-content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-content-card a {
+      color: #06f2ca;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .about-content-card a:hover {
+      color: #04f4e8;
+      text-decoration: underline;
+    }
+
     .about-section::before {
       content: '';
       position: absolute;
@@ -492,64 +554,6 @@
       right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, #04f4e8, transparent);
-    }
-
-    .about-section ul {
-      list-style: none;
-      display: grid;
-      gap: 2rem;
-    }
-
-    .about-section li {
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 15px;
-      border-left: 4px solid rgba(4, 244, 232, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-section li::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(4, 244, 232, 0.05), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .about-section li:hover::before {
-      left: 100%;
-    }
-
-    .about-section li:hover {
-      transform: translateX(10px);
-      border-left-color: #04f4e8;
-      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
-    }
-
-    .about-section p {
-      text-align: justify;
-      line-height: 1.8;
-      color: #e2e8f0;
-      font-size: 1.1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-section a {
-      color: #06f2ca;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .about-section a:hover {
-      color: #04f4e8;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -627,28 +631,21 @@
       </div>
       
       <div class="section-content">
-        <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 15px; border-left: 4px solid #06f2ca; margin-bottom: 2rem;">
-          <p style="text-align: justify;">I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
-          <br> 
-          <p style="text-align: justify;">As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
-          <br> 
-          <p style="text-align: justify;">Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
-          <br>
-          <p style="text-align: justify;">I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
-          <p style="text-align: justify;">Feel free to ask me anything related to my areas of expertise or discuss potential collaborations. I am always open to exploring new opportunities and engaging in exciting scientific ventures.</p>
+        <div class="about-content-card">
+          <p>I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
+          
+          <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
+          
+          <p>Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
+          
+          <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
+          
+          <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations. I am always open to exploring new opportunities and engaging in exciting scientific ventures.</p>
         </div>
       </div>
     </section>
 
-    
     <!-- Dynamic sections that will load content from external files -->
-
-    <section id="new-releases" class="section">
-      <div class="loading">
-        <div class="spinner"></div>
-        <div class="loading-text">Loading New Releases...</div>
-      </div>
-    </section>
     <section id="research" class="section">
       <div class="loading">
         <div class="spinner"></div>
@@ -663,6 +660,12 @@
       </div>
     </section>
 
+    <section id="new-releases" class="section">
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading New Releases...</div>
+      </div>
+    </section>
 
     <section id="teaching" class="section">
       <div class="loading">
@@ -675,9 +678,9 @@
   <script>
     // Configuration for sections to load
     const sectionsToLoad = [
-      { id: 'new-releases', path: './sections/new_releases.html' },
       { id: 'research', path: './sections/research.html' },
       { id: 'software', path: './sections/software.html' },
+      { id: 'new-releases', path: './sections/new-releases.html' },
       { id: 'teaching', path: './sections/teaching.html' }
     ];
 
