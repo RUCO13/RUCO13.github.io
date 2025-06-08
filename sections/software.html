@@ -25,24 +25,36 @@
       line-height: 1.6;
     }
 
-    .software-text {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 12px;
+    .software-content-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2.5rem;
+      border-radius: 15px;
       border-left: 4px solid #06f2ca;
       margin-bottom: 3rem;
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
     }
 
-    .software-text p {
+    .software-content-card:hover {
+      transform: translateY(-2px);
+      border-left-color: #04f4e8;
+      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
+    }
+
+    .software-content-card p {
       color: #e2e8f0;
       line-height: 1.8;
-      text-align: justify;
+      text-align: left;
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
 
-    .software-text strong {
+    .software-content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .software-content-card strong {
       color: #04f4e8;
       font-weight: 600;
     }
@@ -362,12 +374,15 @@
         gap: 0.5rem;
       }
 
-      .software-text {
-        padding: 1.5rem;
+      .software-content-card {
+        padding: 2rem;
       }
 
-      .software-text p {
+      .software-content-card p {
         font-size: 1rem;
+        text-align: left;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
       }
 
       .slider-container {
@@ -440,7 +455,7 @@
     }
 
     .carousel-container,
-    .software-text {
+    .software-content-card {
       animation: fadeInUp 0.8s ease forwards;
     }
 </style>
@@ -455,7 +470,7 @@
   </p>
 </div>
 
-<div class="software-text">
+<div class="software-content-card">
   <p>
     Greetings! As part of my work, I specialize in developing software with two primary purposes. The first
     focus is on the development and utilization of <strong>DFT</strong> (Density Functional Theory) code calculators

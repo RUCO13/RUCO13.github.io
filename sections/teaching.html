@@ -343,6 +343,36 @@
     .link-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
     .link-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
     .link-card:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+
+
+.content-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border-left: 4px solid #06f2ca;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-2px);
+  border-left-color: #04f4e8;
+  box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
+}
+
+.content-card p {
+  color: #e2e8f0;
+  line-height: 1.8;
+  text-align: left;
+  font-size: 1.1rem;
+  margin-bottom: 1.8rem;
+}
+
+
+
+
 </style>
 
 <div class="section-header">
@@ -355,7 +385,7 @@
   </p>
 </div>
 
-<div class="teaching-intro">
+<div class="content-card">
   <p>
     Dear students, I am delighted to welcome you to the <strong>Teaching Section</strong>. Throughout this semester at <strong>IICO-UASLP</strong>, I explain one fundamental subject: <strong>Modern Physics</strong>. This platform will serve as an invaluable resource, providing you with essential materials, engaging tasks, and a supportive environment to enhance your understanding and appreciation of these captivating disciplines.
   </p>
