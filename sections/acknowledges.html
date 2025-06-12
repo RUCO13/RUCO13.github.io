@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #04f4e8;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border-bottom: 3px solid #04f4e8;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #353740;
+            color: #f8f9fc;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #04f4e8;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #04f4e8;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h1 i {
+            font-size: 1.8rem;
+        }
+
+        .acknowledgment-intro {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #06f2ca;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .acknowledgment-intro p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .acknowledgment-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .institutions-container {
+            max-width: 100%;
+            margin: 20px 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(110, 110, 128, 0.3);
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .institutions-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(4, 244, 232, 0.2);
+            border-color: rgba(4, 244, 232, 0.5);
+        }
+
+        .institution-details {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .institution-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #06f2ca;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .institution-name:hover {
+            color: #04f4e8;
+            text-decoration: underline;
+        }
+
+        .institution-full-name {
+            color: #04f4e8;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .institution-description {
+            color: #e2e8f0;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .institution-icon {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(4, 244, 232, 0.1), rgba(6, 242, 202, 0.05));
+            border-radius: 50%;
+            border: 2px solid rgba(6, 242, 202, 0.3);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .institution-icon a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .institution-icon a:hover {
+            transform: scale(1.1);
+        }
+
+        .institution-icon i {
+            font-size: 3rem;
+            color: #06f2ca;
+            transition: all 0.3s ease;
+        }
+
+        .institutions-container:hover .institution-icon {
+            border-color: #04f4e8;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(4, 244, 232, 0.3);
+        }
+
+        .institutions-container:hover .institution-icon i {
+            color: #04f4e8;
+            transform: scale(1.1);
+        }
+
+        .highlight {
+            color: #04f4e8;
+            font-weight: 600;
+        }
+
+        /* Special styling for featured institutions */
+        .featured-institution {
+            background: linear-gradient(135deg, rgba(4, 244, 232, 0.08), rgba(6, 242, 202, 0.03));
+            border: 2px solid rgba(4, 244, 232, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-institution::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #04f4e8, #06f2ca, #04f4e8);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .institutions-container {
+                flex-direction: column;
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .institution-details {
+                padding-right: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .institution-icon {
+                width: 100px;
+                height: 100px;
+                align-self: center;
+            }
+
+            .institution-icon i {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .acknowledgment-intro {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .institutions-container {
+                padding: 1rem;
+            }
+
+            .institution-name {
+                font-size: 1.2rem;
+            }
+
+            .institution-full-name {
+                font-size: 1rem;
+            }
+
+            .institution-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .institution-icon i {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .institutions-container {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .institutions-container:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        .institutions-container:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        .acknowledgment-intro {
+            animation: fadeInUp 0.4s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section-header">
+        <h2 class="section-title">
+            <i class="fas fa-handshake"></i>
+            Acknowledgments
+        </h2>
+        <p class="section-subtitle">
+            Recognizing the invaluable support from institutions that make scientific research possible
+        </p>
+    </div>
+
+    <div class="acknowledgment-intro">
+        <p>
+            I would like to express my sincere gratitude to the institutions that have provided invaluable support throughout my research journey. Their commitment to scientific advancement and their investment in computational infrastructure have been fundamental to the development of my work in solid state physics and nanophotonics.
+        </p>
+        <p>
+            The collaborative environment fostered by these institutions has enabled me to pursue cutting-edge research in <span class="highlight">Density Functional Theory</span> and computational modeling of nanostructures, contributing significantly to our understanding of quantum mechanical phenomena at the nanoscale.
+        </p>
+    </div>
+
+    <h1>
+        <i class="fas fa-building-columns"></i>
+        Supporting Institutions
+    </h1>
+
+    <!-- SECIHTI -->
+    <div class="institutions-container featured-institution">
+        <div class="institution-details">
+            <a href="https://secihti.mx/" target="_blank" class="institution-name">SECIHTI</a>
+            <span class="institution-full-name">Secretaría de Ciencia, Humanidades, Tecnología e Innovación</span>
+            <div class="institution-description">
+                I am deeply grateful to SECIHTI for their <span class="highlight">financial support</span> and unwavering commitment to promoting scientific research and technological innovation. Their funding has been crucial for advancing computational physics research and fostering the development of advanced materials science projects.
+            </div>
+        </div>
+        <div class="institution-icon">
+            <a href="https://secihti.mx/" target="_blank">
+                <i class="fas fa-flask"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- UASLP -->
+    <div class="institutions-container featured-institution">
+        <div class="institution-details">
+            <a href="https://www.uaslp.mx/" target="_blank" class="institution-name">UASLP</a>
+            <span class="institution-full-name">Universidad Autónoma de San Luis Potosí</span>
+            <div class="institution-description">
+                My heartfelt appreciation goes to UASLP for providing exceptional <span class="highlight">institutional support</span>.
+            </div>
+        </div>
+        <div class="institution-icon">
+            <a href="https://www.uaslp.mx/" target="_blank">
+                <i class="fas fa-university"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- LNS -->
+    <div class="institutions-container featured-institution">
+        <div class="institution-details">
+            <a href="https://lns.buap.mx/" target="_blank" class="institution-name">LNS</a>
+            <span class="institution-full-name">Laboratorio Nacional de Supercómputo del Sureste de México</span>
+            <div class="institution-description">
+                Special recognition to LNS for providing access to <span class="highlight">high-performance computing infrastructure</span> essential for advanced computational modeling and DFT calculations. Their supercomputing resources have been indispensable for performing complex band structure calculations and studying the electronic properties of nanostructures.
+            </div>
+        </div>
+        <div class="institution-icon">
+            <a href="https://lns.buap.mx/" target="_blank">
+                <i class="fas fa-server"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll and animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const institutions = document.querySelectorAll('.institutions-container');
+            
+            institutions.forEach((inst, index) => {
+                inst.style.animationDelay = `${index * 0.15}s`;
+                
+                inst.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                inst.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            institutions.forEach(inst => {
+                observer.observe(inst);
+            });
+
+            // Add special hover effects for icons
+            const institutionIcons = document.querySelectorAll('.institution-icon');
+            institutionIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

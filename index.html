@@ -472,6 +472,7 @@
         <li><a href="#" class="nav-link" data-section="research">Research</a></li>
         <li><a href="#" class="nav-link" data-section="code">Code</a></li>
         <li><a href="#" class="nav-link" data-section="teaching">Teaching</a></li>
+        <li><a href="#" class="nav-link" data-section="aknowledges">Acknowledges</a></li>
       </ul>
     </div>
   </nav>
@@ -537,6 +538,12 @@
                 <h3>Academic Research</h3>
                 <p>Postdoc at Universidad Autonoma de San Luis Potosi</p>
               </div>
+                <div class="highlight-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Acknowledges</h3>
+                <p>Grateful to SECIHTI, UASLP, and LNS for their invaluable support</p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -592,6 +599,16 @@
       </div>
     </section>
   </div>
+  
+    <section class="section" id="acknowledges">
+      <div class="section-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <div class="loading-text">Loading Acknowledges...</div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <script>
     // Simple navigation system
@@ -601,7 +618,8 @@
     const sectionPaths = {
       'research': './sections/research.html',
       'code': './sections/software.html',
-      'teaching': './sections/teaching.html'
+      'teaching': './sections/teaching.html',
+      'acknowledges': './sections/acknowledges.html'
     };
 
     async function loadSection(sectionId) {
