@@ -3,8 +3,23 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- MathJax Configuration ANTES de cargar el script -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
          .section-header {
       text-align: center;
@@ -235,6 +250,17 @@
             line-height: 1.6;
         }
 
+        /* MathJax Styling */
+        .abstract-preview mjx-container {
+            display: inline-block;
+            margin: 0 0.2em;
+        }
+
+        .abstract-preview mjx-container > svg {
+            margin: 0 !important;
+            vertical-align: middle !important;
+        }
+
         .highlight {
             color: #04f4e8;
             font-weight: 600;
@@ -359,18 +385,18 @@
         </div>
         <div class="publication-details publication-text">
             <a href="https://pubs.aip.org/aip/adv/issue/15/1">
-                <name>Linear optical response of monolayer  Sb\(_2\)Te\(_3\) under uniaxial strain assessed by Time-Dependent Density Functional Theory  </name>
+                <name>Linear optical response of monolayer Sb\(_2\)Te\(_3\) under uniaxial strain assessed by Time-Dependent Density Functional Theory</name>
             </a><br>
             <authors>
                 <author>Oscar Ruiz-Cigarrillo</author>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García, David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores Rangel, Boris Mizaikoff
             </authors>
             <br>
-            <strong>2D Materials</strong>
+            <strong>AIP Advances</strong> 15 (1), 015135 (2025)
             <br>
             <div class="abstract-preview">
                 <h4><i class="fas fa-file-alt"></i> Abstract Summary</h4>
                 <p>
-                   Strain engineering enables control over the optical properties of 2D materials, but systematic theoretical studies are computationally demanding. By using Time-Dependent Density Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected kernel (LRC), we study strain-tunable optical properties in monolayer Sb\(_2\)Te\(_3\). Uniaxial tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating our predictions. The TDDFT-LRC approach captures the essential physics, as validated through this comparison with more robust reference calculations, while enabling computationally tractable systematic studies for several strain configurations. Strain-induced anisotropy (\(\varepsilon_{xx}/\varepsilon_{yy}\) ratios of 1.4-3 eV) suggests applications in polarization-sensitive photodetectors and strain sensors. This work presents a computational framework for strain-engineered optical properties in Sb\(_2\)Te\(_3\) and related chalcogenides, helping in the development of next-generation optoelectronic devices where mechanical deformation modulates optical response.
+                   Strain engineering enables control over the optical properties of 2D materials, but systematic theoretical studies are computationally demanding. By using Time-Dependent Density Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected kernel (LRC), we study strain-tunable optical properties in monolayer Sb\(_2\)Te\(_3\). Uniaxial tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating our predictions. The TDDFT-LRC approach captures the essential physics, validating through this comparison with more robust reference calculations. Strain-induced anisotropy with \(\varepsilon_{xx}/\varepsilon_{yy}\) ratios of 1.4-3 eV suggests applications in polarization-sensitive photodetectors and strain sensors. This work presents a computational framework for strain-engineered optical properties in Sb\(_2\)Te\(_3\) and related chalcogenides, helping in the development of next-generation optoelectronic devices where mechanical deformation modulates optical response.
                 </p>
             </div>
         </div>
@@ -404,7 +430,7 @@
             <strong>Physical Review B</strong> 108 (4), 045306
             <br>
         </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.108.045306/figures/1/medium" alt="Spin relaxation study">
+        <img src="https://cdn.journals.aps.org/development/journals/images/tailwind/footer-logo.png" alt="Spin relaxation study">
     </div>
 
     <div class="publications-container">
@@ -434,7 +460,7 @@
             <strong>Physical Review B</strong> 103 (3), 035309
             <br>
         </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.103.035309/figures/3/medium" alt="GaAs quantum wells">
+        <img src="https://cdn.journals.aps.org/development/journals/images/tailwind/footer-logo.png" alt="GaAs quantum wells">
     </div>
 
     <div class="publications-container">
@@ -479,7 +505,7 @@
             <strong>Physical Review B</strong> 96 (23), 235306
             <br>
         </div>
-        <img src="https://journals.aps.org/prb/article/10.1103/PhysRevB.96.235306/figures/3/medium" alt="Microcavity polaritons">
+        <img src="https://cdn.journals.aps.org/development/journals/images/tailwind/footer-logo.png" alt="Microcavity polaritons">
     </div>
 
     <div class="publications-container">
@@ -527,6 +553,11 @@
             publications.forEach(pub => {
                 observer.observe(pub);
             });
+
+            // Trigger MathJax rendering
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise().catch(err => console.log('MathJax error:', err));
+            }
         });
     </script>
 </body>
