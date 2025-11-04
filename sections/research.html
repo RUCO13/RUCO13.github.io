@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
          .section-header {
       text-align: center;
@@ -335,10 +337,12 @@
     </h1>
     <div class="r-interest-container">
         <ul>
-            <li>Solid State Experimental Physics</li>
-            <li>Computational Calculation of Semiconductor Bandstructures</li>
-            <li>Density Functional Theory (DFT) and Band Structure Packages</li>
-            <li>Nanophotonics</li>
+        <li>Two-Dimensional Materials (2D): Electronic and Optical Properties</li>
+        <li>Condensed Matter Physics & Solid State Physics</li>
+        <li>Computational Methods: Band Structure Engineering</li>
+        <li>Many-Body Perturbation Theory (MBPT): GW Approximation and Bethe-Salpeter Equation</li>
+        <li>Density Functional Theory (DFT) and First-Principles Simulations</li>
+        <li>Nanophotonics and Optoelectronic Properties</li>
         </ul>
     </div>
 
@@ -355,25 +359,41 @@
         </div>
         <div class="publication-details publication-text">
             <a href="https://pubs.aip.org/aip/adv/issue/15/1">
-                <name>Optical properties of 2D GeTe under strain: A DFT study </name>
+                <name>Linear optical response of monolayer  Sb\(_2\)Te\(_3\) under uniaxial strain assessed by Time-Dependent Density Functional Theory  </name>
             </a><br>
             <authors>
+                <author>Oscar Ruiz-Cigarrillo</author>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García, David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores Rangel, Boris Mizaikoff
+            </authors>
+            <br>
+            <strong>2D Materials</strong>
+            <br>
+            <div class="abstract-preview">
+                <h4><i class="fas fa-file-alt"></i> Abstract Summary</h4>
+                <p>
+                   Strain engineering enables control over the optical properties of 2D materials, but systematic theoretical studies are computationally demanding. By using Time-Dependent Density Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected kernel (LRC), we study strain-tunable optical properties in monolayer Sb\(_2\)Te\(_3\). Uniaxial tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating our predictions. The TDDFT-LRC approach captures the essential physics, as validated through this comparison with more robust reference calculations, while enabling computationally tractable systematic studies for several strain configurations. Strain-induced anisotropy (\(\varepsilon_{xx}/\varepsilon_{yy}\) ratios of 1.4-3 eV) suggests applications in polarization-sensitive photodetectors and strain sensors. This work presents a computational framework for strain-engineered optical properties in Sb\(_2\)Te\(_3\) and related chalcogenides, helping in the development of next-generation optoelectronic devices where mechanical deformation modulates optical response.
+                </p>
+            </div>
+        </div>
+        <img src="https://cms.iopscience.org/25885147-ec1f-11e5-b0b6-759f86a2008e/journal_cover?guest=true" alt="Sb2Te3 Strain">
+    </div>
+
+    <!-- EXISTING PUBLICATIONS -->
+
+ <div class="publications-container">
+        <div class="publication-details publication-text">
+            <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.045306">
+                   <name>Optical properties of 2D GeTe under strain: A DFT study </name>
+            </a><br>
+           <authors>
                 <author>O. Ruiz-Cigarrillo</author>,  G. Flores-Rangel,U. Zavala-Moran, J. Puebla, R. E. Balderas-Navarro and B. Mizaikoff 
             </authors>
             <br>
             <strong>AIP Advances</strong>
             <br>
-            <div class="abstract-preview">
-                <h4><i class="fas fa-file-alt"></i> Abstract Summary</h4>
-                <p>
-                    Monolayer germanium telluride (GeTe) exhibits tunable electronic and optical properties, making it promising for device applications. Using Density Functional Theory (DFT), we investigate the impact of uniaxial strain, ϵ, on its band structure and dielectric function (DF),𝛆. Tensile strain along the —zigzag direction induces a direct-to-indirect bandgap transition at ϵ = 2%, reducing the gap from 1.80 to 1.62 eV. Compressive strain narrows the gap while maintaining its indirect nature. Strain also induces in-plane anisotropy in the DF and shifts the optical absorption spectrum. We determine a deformation potential (DP) of −6.45 eV for the bandgap under tensile strain and DPs for other above bandgap high-symmetry points. These findings highlight the potential of strain engineering for tuning GeTe’s properties in devices.
-                </p>
-            </div>
         </div>
-        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/adv/15/1/10.1063_5.0243213/1/s_015135_1_5.0243213.figures.online.highlight_f1.jpeg?Expires=1752347547&Signature=gnPl-B~LDa-v2Yn-RNYgYxtRG3kcfERZJ6IgwNk1ZxXcIY4XH4YNzmo8OAfybArNmxj7XacKU8UMy5QznkABHlxPCbT4ic8~TNxHmYlg82dOIm99Py~NJ8zh8~sca80YvqWeY-BsWgiq6sywfkfeX7nZKqDJmQ8OahEU7XIwMg-TNjaoTh8IKYcLy~AGRK4uTe2SIMNar-sDfTswMQMBICeihSlGKl0M6wGFyv5VP~GQkIkDjJaOa7JpxaoFVt8I6kQB8~i-Hr8U4mvC57GahhO-oz4xKUKqg5ozwJPpCezvxll9L0qhVB0Tyn9LzeGNWbYKI~oorwYjWkt8EzkWcw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="GeTe Strain Engineering">
+        <img src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/adv/15/1/10.1063_5.0243213/1/m_015135_1_5.0243213.figures.online.f1.jpeg?Expires=1765229337&Signature=VyjLxQO~Pj1SbWeS-oOWMKazCzXQ1CnRBlfZxkoud4enEpiXgHCDXAdyHS6hSC0kWkMnXjIyMU~TIser5M1Zn1mox9GcompgfJSUeBMW-nESXnvM594rMe0Wqy6uqUzch20Pcezy4doscPEOw-w9jp7tBGG9aP2q4KzApgZ0rZ16pujEtMw7YvJMF428zTyzdg1ylqdYwPOZUdc4sF~iOWP-5QE9JpNW5pi8f7IjxVYOpOsVJLtdlGwFGlIhj29LticdgMGvMfsdrTgQdfcQvEm2VbvHRVr-iWLFsN1Rp6t~1rkk6ZjbUAHzLUZPhmrhYvNcbI4pCS1xEVrd7qudqw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="GeTe DFT">
     </div>
 
-    <!-- EXISTING PUBLICATIONS -->
     <div class="publications-container">
         <div class="publication-details publication-text">
             <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.045306">
