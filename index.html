@@ -22,13 +22,8 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Roboto', sans-serif;
@@ -39,15 +34,13 @@
       scrollbar-width: thin;
     }
 
-    /* Scrollbar styles */
     ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-thumb { 
-      background-color: #6e6e80; 
-      border-radius: 3px; 
+    ::-webkit-scrollbar-thumb {
+      background-color: #6e6e80;
+      border-radius: 3px;
     }
     ::-webkit-scrollbar-track { background-color: #353740; }
 
-    /* Simple Navigation */
     .navbar {
       position: fixed;
       top: 0;
@@ -99,7 +92,6 @@
       cursor: pointer;
     }
 
-    /* Content Sections */
     .main-container {
       margin-top: 80px;
       min-height: calc(100vh - 80px);
@@ -111,9 +103,7 @@
       padding: 2rem;
     }
 
-    .section.active {
-      display: block;
-    }
+    .section.active { display: block; }
 
     .section-content {
       max-width: 1200px;
@@ -156,9 +146,7 @@
       z-index: 1;
     }
 
-    .profile-section {
-      text-align: center;
-    }
+    .profile-section { text-align: center; }
 
     .profile-image {
       width: 200px;
@@ -211,7 +199,7 @@
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
       padding: 0;
-      text-decoration: none; 
+      text-decoration: none;
     }
 
     .social-icons a:hover {
@@ -220,9 +208,7 @@
       box-shadow: 0 10px 25px rgba(6, 242, 202, 0.3);
     }
 
-    .hero-content {
-      padding: 2rem 0;
-    }
+    .hero-content { padding: 2rem 0; }
 
     .hero-title {
       font-size: 3.5rem;
@@ -284,10 +270,7 @@
       line-height: 1.5;
     }
 
-    /* About Content */
-    .about-content {
-      padding: 4rem 0;
-    }
+    .about-content { padding: 4rem 0; }
 
     .about-title {
       text-align: center;
@@ -324,10 +307,7 @@
       margin-bottom: 1.8rem;
       text-align: left;
     }
-
-    .about-content-card p:last-child {
-      margin-bottom: 0;
-    }
+    .about-content-card p:last-child { margin-bottom: 0; }
 
     .about-content-card a {
       color: #06f2ca;
@@ -341,7 +321,7 @@
       text-decoration: underline;
     }
 
-    /* Logos Section */
+    /* Logos */
     .logos-section {
       padding: 4rem 0;
       background: linear-gradient(135deg, rgba(4, 244, 232, 0.03), rgba(6, 242, 202, 0.01));
@@ -368,71 +348,42 @@
       gap: 2rem;
       margin-top: 2rem;
     }
-.logo-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 3rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 200px;
-  justify-content: center;
-}
 
-.logo-item a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.logo-item img {
-  max-width: 100%;
-  max-height: 80px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.logo-item:hover img {
-  transform: scale(1.05);
-}
-
-    .logo-placeholder {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, rgba(4, 244, 232, 0.1), rgba(6, 242, 202, 0.05));
-      border-radius: 50%;
+    .logo-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
       display: flex;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
+      min-height: 200px;
       justify-content: center;
-      margin: 0 auto 1rem;
-      border: 2px solid rgba(6, 242, 202, 0.3);
+    }
+
+    .logo-item a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo-item img {
+      max-width: 100%;
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 1rem;
       transition: all 0.3s ease;
     }
-
-    .logo-placeholder i {
-      font-size: 3rem;
-      color: #06f2ca;
-    }
-
-    .logo-item:hover .logo-placeholder {
-      border-color: #04f4e8;
-      transform: scale(1.05);
-    }
-
-    .logo-item:hover .logo-placeholder i {
-      color: #04f4e8;
-    }
+    .logo-item:hover img { transform: scale(1.05); }
 
     .logo-name {
       font-size: 1.2rem;
@@ -447,7 +398,6 @@
       line-height: 1.4;
     }
 
-    /* Loading */
     .loading {
       display: flex;
       justify-content: center;
@@ -471,12 +421,8 @@
       100% { transform: rotate(360deg); }
     }
 
-    .loading-text {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
+    .loading-text { color: #94a3b8; font-size: 0.9rem; }
 
-    /* Mobile Styles */
     @media screen and (max-width: 768px) {
       .nav-links {
         position: fixed;
@@ -492,9 +438,7 @@
         transition: left 0.3s ease;
       }
 
-      .nav-links.active {
-        left: 0;
-      }
+      .nav-links.active { left: 0; }
 
       .nav-link {
         font-size: 1.2rem;
@@ -503,9 +447,7 @@
         text-align: center;
       }
 
-      .mobile-toggle {
-        display: block;
-      }
+      .mobile-toggle { display: block; }
 
       .hero-container {
         grid-template-columns: 1fr;
@@ -513,603 +455,58 @@
         text-align: center;
       }
 
-      .profile-image {
-        width: 150px;
-        height: 150px;
-      }
-
-      .profile-name {
-        font-size: 1.5rem;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .hero-highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .about-title {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .about-content-card {
-        padding: 2rem;
-      }
-
-      .about-content-card p {
-        font-size: 1rem;
-      }
-
-      .logos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .logos-title {
-        font-size: 1.5rem;
-      }
-
-      .logo-placeholder {
-        width: 100px;
-        height: 100px;
-      }
-
-      .logo-placeholder i {
-        font-size: 2.5rem;
-      }
+      .profile-image { width: 150px; height: 150px; }
+      .profile-name { font-size: 1.5rem; }
+      .hero-title { font-size: 2.5rem; }
+      .hero-highlights { grid-template-columns: 1fr; }
+      .about-title { font-size: 2rem; flex-direction: column; gap: 0.5rem; }
+      .about-content-card { padding: 2rem; }
+      .about-content-card p { font-size: 1rem; }
+      .logos-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .logos-title { font-size: 1.5rem; }
+      .logo-item { padding: 1.5rem; }
     }
 
     @media screen and (max-width: 480px) {
-      .nav-container {
-        padding: 0 1rem;
-      }
-
-      .section {
-        padding: 1rem;
-      }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .about-content-card {
-        padding: 1.5rem;
-      }
-
-      .about-content-card p {
-        font-size: 0.95rem;
-      }
-
-      .logos-section {
-        padding: 2rem 0;
-      }
-
-      .logo-item {
-        padding: 1.5rem;
-      }
+      .nav-container { padding: 0 1rem; }
+      .section { padding: 1rem; }
+      .hero-title { font-size: 2rem; }
+      .about-content-card { padding: 1.5rem; }
+      .about-content-card p { font-size: 0.95rem; }
+      .logos-section { padding: 2rem 0; }
     }
-  /* Latest Publication Section */
-  .latest-publication-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(6, 242, 202, 0.03), rgba(4, 244, 232, 0.01));
-    border-top: 1px solid rgba(4, 244, 232, 0.1);
-    border-bottom: 1px solid rgba(4, 244, 232, 0.1);
-  }
-
-  .latest-pub-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .latest-pub-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #04f4e8;
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    font-weight: 600;
-  }
-
-  .latest-pub-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(4, 244, 232, 0.2);
-    border-radius: 15px;
-    padding: 2.5rem;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 2.5rem;
-    align-items: start;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .latest-pub-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #04f4e8, #06f2ca, #04f4e8);
-    animation: shimmer-pub 2s infinite;
-  }
-
-  @keyframes shimmer-pub {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-
-  .latest-pub-card:hover {
-    border-color: rgba(4, 244, 232, 0.5);
-    box-shadow: 0 15px 40px rgba(4, 244, 232, 0.15);
-    transform: translateY(-5px);
-  }
-
-  .latest-pub-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #04f4e8, #06f2ca);
-    color: #1a1a1a;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    z-index: 10;
-  }
-
-  .latest-pub-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid rgba(4, 244, 232, 0.3);
-    transition: all 0.3s ease;
-    object-fit: cover;
-  }
-
-  .latest-pub-card:hover .latest-pub-image {
-    border-color: #04f4e8;
-    box-shadow: 0 10px 25px rgba(4, 244, 232, 0.2);
-  }
-
-  .latest-pub-info h3 {
-    font-size: 1.6rem;
-    color: #04f4e8;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-    margin-top: 1.5rem;
-  }
-
-  .latest-pub-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(4, 244, 232, 0.2);
-  }
-
-  .latest-pub-meta-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .latest-pub-meta-item i {
-    color: #06f2ca;
-    margin-top: 0.2rem;
-    min-width: 20px;
-    text-align: center;
-  }
-
-  .latest-pub-meta-label {
-    font-weight: 600;
-    color: #82e6d9;
-    min-width: 85px;
-  }
-
-  .latest-pub-meta-value {
-    color: #e2e8f0;
-    line-height: 1.5;
-  }
-
-  .latest-pub-meta-value a {
-    color: #06f2ca;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .latest-pub-meta-value a:hover {
-    color: #04f4e8;
-  }
-
-  .latest-pub-abstract {
-    color: #94a3b8;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    background: rgba(6, 242, 202, 0.05);
-    padding: 1.2rem;
-    border-radius: 8px;
-    border-left: 3px solid #06f2ca;
-  }
-
-  .latest-pub-abstract strong {
-    color: #e2e8f0;
-  }
-
-  .latest-pub-abstract mjx-container {
-    color: #06f2ca;
-    font-weight: 500;
-  }
-
-  .latest-pub-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .latest-pub-tag {
-    background: rgba(4, 244, 232, 0.15);
-    color: #06f2ca;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(4, 244, 232, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .latest-pub-tag:hover {
-    background: rgba(4, 244, 232, 0.25);
-    border-color: #04f4e8;
-  }
-
-  .latest-pub-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .latest-pub-btn {
-    padding: 0.7rem 1.5rem;
-    border: 2px solid;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-  }
-
-  .latest-pub-btn-primary {
-    background: rgba(4, 244, 232, 0.2);
-    color: #04f4e8;
-    border-color: #04f4e8;
-  }
-
-  .latest-pub-btn-primary:hover {
-    background: rgba(4, 244, 232, 0.3);
-    box-shadow: 0 8px 20px rgba(4, 244, 232, 0.25);
-  }
-
-  .latest-pub-btn-secondary {
-    background: transparent;
-    color: #82e6d9;
-    border-color: #82e6d9;
-  }
-
-  .latest-pub-btn-secondary:hover {
-    background: rgba(130, 230, 217, 0.1);
-    border-color: #04f4e8;
-    color: #04f4e8;
-  }
-
-  @media screen and (max-width: 768px) {
-    .latest-pub-card {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding: 1.5rem;
-    }
-
-    .latest-pub-info h3 {
-      font-size: 1.2rem;
-      margin-top: 0;
-    }
-
-    .latest-pub-image {
-      max-width: 200px;
-      margin: 0 auto;
-    }
-
-    .latest-pub-buttons {
-      flex-direction: column;
-    }
-
-    .latest-pub-btn {
-      justify-content: center;
-      width: 100%;
-    }
-
-    .latest-pub-title {
-      font-size: 1.5rem;
-    }
-
-    .latest-pub-badge {
-      position: static;
-      margin-bottom: 1rem;
-      align-self: flex-start;
-      width: fit-content;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .latest-publication-section {
-      padding: 2rem 0;
-    }
-
-    .latest-pub-container {
-      padding: 0 1rem;
-    }
-
-    .latest-pub-card {
-      padding: 1rem;
-    }
-
-    .latest-pub-info h3 {
-      font-size: 1.1rem;
-    }
-
-    .latest-pub-abstract {
-      font-size: 0.9rem;
-      padding: 0.8rem;
-    }
-  }
 
   </style>
 </head>
 
 <body>
-  <!-- Simple Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <button class="mobile-toggle" id="mobileToggle">
         <i class="fas fa-bars"></i>
       </button>
-     <ul class="nav-links" id="navLinks">
-  <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
-  <li><a href="#" class="nav-link" data-section="research">Research</a></li>
-  <li><a href="#" class="nav-link" data-section="code">Code</a></li>
-  <li><a href="#" class="nav-link" data-section="teaching">Teaching</a></li>
-  <li><a href="#" class="nav-link" data-section="acknowledges">Acknowledges</a></li>
-</ul>
+
+      <!-- 🔥 Cambié href="#" por href="#section" para link directo -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#research" class="nav-link" data-section="research">Research</a></li>
+        <li><a href="#code" class="nav-link" data-section="code">Code</a></li>
+        <li><a href="#teaching" class="nav-link" data-section="teaching">Teaching</a></li>
+        <li><a href="#acknowledges" class="nav-link" data-section="acknowledges">Acknowledges</a></li>
+      </ul>
     </div>
   </nav>
 
   <div class="main-container">
     <!-- Home Section -->
-    <section class="section active" id="home">
-      <div class="hero-section">
-        <div class="hero-container">
-          <div class="profile-section">
-            <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Oscar Ruiz-Cigarrillo" class="profile-image">
-            <h1 class="profile-name">Oscar Ruiz-Cigarrillo</h1>
-            <p class="profile-title">Ph.D. Photonics</p>
-            
-            <div class="social-icons">
-              <a href="mailto:ruizoscar.1393@gmail.com" title="Email">
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a href="https://twitter.com/RUCO0713" title="Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/ruco0713/" title="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://github.com/RUCO13" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://scholar.google.es/citations?user=d5ygTH8AAAAJ&hl=es" target="_blank" title="Google Scholar">
-                <!-- <img src="./icons/gs.svg" alt="Google Scholar" style="width: 24px; height: 24px;"> -->
-              <i class="ai ai-google-scholar-square"></i>
-              </a>
-               <a href="https://orcid.org/0000-0002-2203-8195" target="_blank" title="Google Scholar">
-                <!-- <img src="./icons/gs.svg" alt="Google Scholar" style="width: 24px; height: 24px;"> -->
-              <i class="fa-brands fa-orcid"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-content">
-            <h2 class="hero-title">Solid State and Condensed Matter Physicist: From Experimental to Computational Approaches</h2>
-            <p class="hero-subtitle">
-              Exploring the quantum world through advanced computational methods, focusing on electronic and optical properties of nanostructures using Density Functional Theory (DFT) and Many-Body Perturbation Theory (MBPT).
-            </p>
-            
-            <div class="hero-highlights">
-              <div class="highlight-item">
-                <i class="fas fa-atom"></i>
-                <h3>DFT Work</h3>
-                <p>Advanced computational modeling for electronic and optical properties of nanostructures</p>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-microscope"></i>
-                <h3>Experimental Physics</h3>
-                <p>Solid state physics and nanophotonics research</p>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-code"></i>
-                <h3>Software Development</h3>
-                <p>Python, Julia, and Fortran scientific computing</p>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Academic Research</h3>
-                <p>Postdoc at Universidad Autonoma de San Luis Potosi</p>
-              </div>
-                <div class="highlight-item">
-                <i class="fas fa-handshake"></i>
-                <h3>Acknowledges</h3>
-                <p>Grateful to SECIHTI, UASLP, and LNS for their invaluable support</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-content">
-        <h2 class="about-title">
-          <i class="fas fa-user"></i>
-          About Me
-        </h2>
-        
-        <div class="about-content-card">
-          <p>I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0">Universidad Autonoma de San Luis Potosi.</a></p>
-          
-          <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures. My journey in this field is driven by a relentless quest for knowledge and a profound interest in the intricate behaviors and capabilities of nano-scale materials.</p>
-          
-          <p>Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), a powerful computational modeling method that provides deep insights into the electronic properties of materials. This pursuit is complemented by my active engagement with advanced band structure packages, which are essential tools for understanding the electronic states in solids.</p>
-          
-          <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in the field of nanophotonics.</p>
-          
-          <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations. I am always open to exploring new opportunities and engaging in exciting scientific ventures.</p>
-        </div>
-      </div>
-
-<!-- Latest Publication Section -->
-<div class="latest-publication-section">
-  <div class="latest-pub-container">
-    <h2 class="latest-pub-title">
-      <i class="fas fa-newspaper"></i>
-      Latest Publication
-    </h2>
-    
-    <div class="latest-pub-card">
-      <div class="latest-pub-badge">
-        <i class="fas fa-star"></i>
-        NEW 2025
-      </div>
-
-      <img src="https://cms.iopscience.org/25885147-ec1f-11e5-b0b6-759f86a2008e/journal_cover?guest=true" alt="Publication Cover" class="latest-pub-image">
-      
-      <div class="latest-pub-info">
-        <h3>Linear optical response of monolayer \(\mathrm{Sb_2Te_3}\) under uniaxial strain assessed by Time-Dependent Density Functional Theory</h3>
-        
-        <div class="latest-pub-meta">
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-users"></i>
-            <span class="latest-pub-meta-label">Authors:</span>
-            <span class="latest-pub-meta-value"><strong>Oscar Ruiz-Cigarrillo</strong>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García, David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores Rangel, Boris Mizaikoff</span>
-          </div>
-          
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-journal-whills"></i>
-            <span class="latest-pub-meta-label">Journal:</span>
-            <span class="latest-pub-meta-value"><strong>2D Materials</strong> </span>
-          </div>
-          
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-link"></i>
-            <span class="latest-pub-meta-label">DOI:</span>
-            <span class="latest-pub-meta-value"><a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank">10.1063/5.0243213</a></span>
-          </div>
-        </div>
-        
-        <p class="latest-pub-abstract">
-          <strong>Abstract:</strong> Strain engineering enables control over the optical properties of 2D materials, but systematic theoretical studies are computationally demanding. By using Time-Dependent Density Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected kernel (LRC), we study strain-tunable optical properties in monolayer \(\mathrm{Sb_2Te_3}\). Uniaxial tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating our predictions. The TDDFT-LRC approach captures the essential physics, validating through this comparison with more robust reference calculations. Strain-induced anisotropy with \(\varepsilon_{xx}/\varepsilon_{yy}\) ratios of 1.4-3 eV suggests applications in polarization-sensitive photodetectors and strain sensors. This work presents a computational framework for strain-engineered optical properties in \(\mathrm{Sb_2Te_3}\) and related chalcogenides, helping in the development of next-generation optoelectronic devices where mechanical deformation modulates optical response.
-        </p>
-        
-        <div class="latest-pub-tags">
-          <span class="latest-pub-tag">2D Materials</span>
-          <span class="latest-pub-tag">TDDFT</span>
-          <span class="latest-pub-tag">Strain Engineering</span>
-          <span class="latest-pub-tag">Optical Properties</span>
-          <span class="latest-pub-tag">\(\mathrm{Sb_2Te_3}\)</span>
-        </div>
-        
-        <div class="latest-pub-buttons">
-          <a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" class="latest-pub-btn latest-pub-btn-primary">
-            <i class="fas fa-external-link-alt"></i>
-            Read Paper
-          </a>
-          <a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" class="latest-pub-btn latest-pub-btn-secondary">
-            <i class="fas fa-download"></i>
-            More Info
-          </a>
-        </div>
-      </div>
+   <section class="section active" id="home">
+  <div class="section-content">
+    <div class="loading">
+      <div class="spinner"></div>
+      <div class="loading-text">Loading Home...</div>
     </div>
   </div>
-</div>
-
-
-      <!-- Logos Section -->
-      <div class="logos-section">
-        <div class="logos-container">
-          <h2 class="logos-title">Supported by</h2>
-          <div class="logos-grid">
-            <div class="logo-item">
-              <a href="https://secihti.mx/" target="_blank">
-                <!-- <div class="logo-placeholder">
-                  <i class="fas fa-flask"></i>
-                </div> -->
-                 <img src="https://secihti.mx/wp-content/uploads/2024/12/logotipo_SCyT_color_803x97px_v02.svg" alt="SECIHTI"/> 
-                <div class="logo-name">SECIHTI</div>
-                <div class="logo-description">Secretaría de Ciencia, Humanidades, Tecnología e Innovación</div>
-              </a>
-            </div>
-            
-            <div class="logo-item">
-              <a href="https://www.uaslp.mx/" target="_blank">
-                <!-- <div class="logo-placeholder">
-                </div> -->
-                 <img src="https://wp.uaslp.mx/noticias/wp-content/uploads/sites/5/2022/01/UASLP.png" alt="UASLP"/> 
-                <div class="logo-name">UASLP</div>
-                <div class="logo-description">Universidad Autónoma de San Luis Potosí</div>
-              </a>
-            </div>
-            <div class="logo-item">
-              <a href="https://www.iico.uaslp.mx/#gsc.tab=0" target="_blank">
-                <!-- <div class="logo-placeholder">
-                  <i class="fas fa-server"></i>
-                </div> -->
-                <img src="https://adminportal.uaslp.mx/ImgEntidad/50/Paginas/19-07-2022_84_Investigacion-UASLP-24.jpg" alt="IICO"/> 
-                <div class="logo-name">IICO</div>
-                <div class="logo-description">Instituto de Investigación en Comunicación Óptica</div>
-              </a>
-            </div>
-            <div class="logo-item">
-              <a href="https://lns.buap.mx/" target="_blank">
-                <!-- <div class="logo-placeholder">
-                  <i class="fas fa-server"></i>
-                </div> -->
-                <img src="https://lh6.googleusercontent.com/proxy/WlYAbhxsWt91y4uOsZndw5rbi3wORmlAOWhX1b1LYy9Ut4Wd-qDWtGQbLLfEIrfNBP7QZVnSCKlwLrBnaF6R6w"  alt="LNS"/> 
-                <div class="logo-name">LNS</div>
-                <div class="logo-description">Laboratorio Nacional de Supercómputo del Sureste de México</div>
-              </a>
-            </div>
-        
-          </div>
-        </div>
-      </div>
-    </section>
+</section>
 
     <!-- Research Section -->
     <section class="section" id="research">
@@ -1141,6 +538,7 @@
       </div>
     </section>
 
+    <!-- Acknowledges Section -->
     <section class="section" id="acknowledges">
       <div class="section-content">
         <div class="loading">
@@ -1152,135 +550,150 @@
   </div>
 
   <script>
-    // Simple navigation system
-    let loadedSections = new Set(['home']);
+  // Simple navigation system
+  let loadedSections = new Set(); // ya NO pre-cargamos home
 
-    // Section loading configuration
-    const sectionPaths = {
-      'research': './sections/research.html',
-      'code': './sections/software.html',
-      'teaching': './sections/teaching.html',
-      'acknowledges': './sections/acknowledges.html'
-    };
+  // Section loading configuration
+  const sectionPaths = {
+    'home': './sections/home.html',
+    'research': './sections/research.html',
+    'code': './sections/software.html',
+    'teaching': './sections/teaching.html',
+    'acknowledges': './sections/acknowledges.html'
+  };
 
-    async function loadSection(sectionId) {
-      if (loadedSections.has(sectionId) || !sectionPaths[sectionId]) {
-        return;
-      }
+  async function loadSection(sectionId) {
+    if (loadedSections.has(sectionId) || !sectionPaths[sectionId]) return;
 
-      const sectionElement = document.getElementById(sectionId);
-      const contentDiv = sectionElement.querySelector('.section-content');
+    const sectionElement = document.getElementById(sectionId);
+    const contentDiv = sectionElement.querySelector('.section-content');
 
-      try {
-        const response = await fetch(sectionPaths[sectionId]);
-        
-        if (response.ok) {
-          const html = await response.text();
-          
-          // Parse and inject content
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          
-          // Extract styles
-          const styles = doc.querySelectorAll('style');
-          styles.forEach(style => {
-            if (!document.querySelector(`style[data-section="${sectionId}"]`)) {
-              const newStyle = document.createElement('style');
-              newStyle.textContent = style.textContent;
-              newStyle.setAttribute('data-section', sectionId);
-              document.head.appendChild(newStyle);
-            }
-          });
+    try {
+      const response = await fetch(sectionPaths[sectionId], { cache: "no-store" });
 
-          // Get content
-          const content = doc.body ? doc.body.innerHTML : html;
-          contentDiv.innerHTML = content;
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-          // Execute scripts
-          const scripts = contentDiv.querySelectorAll('script');
-          scripts.forEach(script => {
-            const newScript = document.createElement('script');
-            if (script.src) {
-              newScript.src = script.src;
-            } else {
-              newScript.textContent = script.textContent;
-            }
-            document.head.appendChild(newScript);
-          });
+      const html = await response.text();
 
-          loadedSections.add(sectionId);
-          console.log(`✅ Loaded section: ${sectionId}`);
-        } else {
-          throw new Error(`HTTP ${response.status}`);
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Extract styles ONLY if they exist (home.html no tiene style)
+      const styles = doc.querySelectorAll('style');
+      styles.forEach(style => {
+        if (!document.querySelector(`style[data-section="${sectionId}"]`)) {
+          const newStyle = document.createElement('style');
+          newStyle.textContent = style.textContent;
+          newStyle.setAttribute('data-section', sectionId);
+          document.head.appendChild(newStyle);
         }
-      } catch (error) {
-        console.warn(`⚠️ Could not load section ${sectionId}:`, error);
-        contentDiv.innerHTML = `
-          <div style="text-align: center; padding: 4rem; color: #94a3b8;">
-            <h2>Coming Soon</h2>
-            <p>This section is under development.</p>
-          </div>
-        `;
+      });
+
+      // Inject content (body.innerHTML si existe)
+      const content = doc.body ? doc.body.innerHTML : html;
+      contentDiv.innerHTML = content;
+
+      // Execute scripts inside section (si hay)
+      const scripts = contentDiv.querySelectorAll('script');
+      scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        if (script.src) newScript.src = script.src;
+        else newScript.textContent = script.textContent;
+        document.head.appendChild(newScript);
+      });
+
+      loadedSections.add(sectionId);
+      console.log(`✅ Loaded section: ${sectionId}`);
+
+      // Re-typeset MathJax after content injection
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise().catch(err => console.log('MathJax error:', err));
       }
+
+    } catch (error) {
+      console.warn(`⚠️ Could not load section ${sectionId}:`, error);
+      contentDiv.innerHTML = `
+        <div style="text-align: center; padding: 4rem; color: #94a3b8;">
+          <h2>Coming Soon</h2>
+          <p>This section is under development.</p>
+        </div>
+      `;
     }
+  }
 
-    function showSection(sectionId) {
-      // Hide all sections
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
+  function setActiveLink(sectionId) {
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    const link = document.querySelector(`[data-section="${sectionId}"]`);
+    if (link) link.classList.add('active');
+  }
 
-      // Show target section
-      const targetSection = document.getElementById(sectionId);
-      if (targetSection) {
-        targetSection.classList.add('active');
-      }
+  function showSection(sectionId, updateHash = true) {
+    // Hide all
+    document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
 
-      // Update active link
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-      });
-      document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+    // Show target
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) targetSection.classList.add('active');
 
-      // Load section if needed
-      if (!loadedSections.has(sectionId)) {
-        loadSection(sectionId);
-      }
+    setActiveLink(sectionId);
+
+    // Load if needed
+    if (!loadedSections.has(sectionId)) loadSection(sectionId);
+
+    // Update hash for direct links
+    if (updateHash) {
+      history.replaceState(null, '', `#${sectionId}`);
     }
+  }
 
-    // Initialize navigation
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const mobileToggle = document.getElementById('mobileToggle');
-      const navLinksContainer = document.getElementById('navLinks');
+  function getSectionFromHash() {
+    const h = (window.location.hash || '').replace('#', '').trim();
+    return h && document.getElementById(h) ? h : 'home';
+  }
 
-      // Navigation click handlers
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const sectionId = this.getAttribute('data-section');
-          showSection(sectionId);
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinksContainer = document.getElementById('navLinks');
 
-          // Close mobile menu
-          navLinksContainer.classList.remove('active');
-          mobileToggle.querySelector('i').classList.remove('fa-times');
-          mobileToggle.querySelector('i').classList.add('fa-bars');
-        });
-      });
+    // Click handlers
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        showSection(sectionId);
 
-      // Mobile menu toggle
-      mobileToggle.addEventListener('click', function() {
-        navLinksContainer.classList.toggle('active');
-        const icon = this.querySelector('i');
-        if (navLinksContainer.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+        // Close mobile menu
+        navLinksContainer.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       });
     });
-  </script>
+
+    // Mobile toggle
+    mobileToggle.addEventListener('click', function() {
+      navLinksContainer.classList.toggle('active');
+      const icon = this.querySelector('i');
+      if (navLinksContainer.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Initial route
+    const initial = getSectionFromHash();
+    showSection(initial, false);
+
+    // React to manual hash changes (back/forward, typing hash)
+    window.addEventListener('hashchange', () => {
+      const target = getSectionFromHash();
+      showSection(target, false);
+    });
+  });
+</script>
 </body>
 </html>
