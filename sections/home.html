@@ -1,301 +1,287 @@
+<!-- ===================== HOME (FULL) ===================== -->
 <style>
-  /* Home Section Styles */
-    .hero-section {
-      padding: 4rem 0;
-      background: linear-gradient(135deg, rgba(4, 244, 232, 0.05), rgba(6, 242, 202, 0.02));
-      border-bottom: 1px solid rgba(4, 244, 232, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data/images/sidebar-atoms-p3.png');
-      background-size: 1200px;
-      background-position: center;
-      opacity: 0.03;
-      z-index: 0;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 4rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .profile-section { text-align: center; }
-
-    .profile-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #04f4e8;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 30px rgba(4, 244, 232, 0.3);
-    }
-
-    .profile-image:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(4, 244, 232, 0.5);
-    }
-
-    .profile-name {
-      font-family: 'Zilla Slab', serif;
-      font-size: 1.8rem;
-      color: #04f4e8;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .profile-title {
-      font-size: 1.2rem;
-      color: #82e6d9;
-      margin-bottom: 2rem;
-      font-weight: 500;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .social-icons a {
-      color: #06f2ca;
-      font-size: 1.5rem;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-      padding: 0;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover {
-      transform: translateY(-5px) scale(1.1);
-      background: rgba(6, 242, 202, 0.2);
-      box-shadow: 0 10px 25px rgba(6, 242, 202, 0.3);
-    }
-
-    .hero-content { padding: 2rem 0; }
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #f6f2f2;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #f6f2f2, #04f4e8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.2;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .highlight-item {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 4px solid #06f2ca;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .highlight-item:hover {
-      transform: translateY(-5px);
-      border-left-color: #04f4e8;
-      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
-    }
-
-    .highlight-item i {
-      font-size: 2rem;
-      color: #06f2ca;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .highlight-item h3 {
-      color: #04f4e8;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .highlight-item p {
-      color: #94a3b8;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .about-content { padding: 4rem 0; }
-
-    .about-title {
-      text-align: center;
-      font-size: 3rem;
-      color: #04f4e8;
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .about-content-card {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 2.5rem;
-      border-radius: 15px;
-      border-left: 4px solid #06f2ca;
-      margin-bottom: 2rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .about-content-card:hover {
-      transform: translateY(-2px);
-      border-left-color: #04f4e8;
-      box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
-    }
-
-    .about-content-card p {
-      color: #e2e8f0;
-      line-height: 1.8;
-      font-size: 1.1rem;
-      margin-bottom: 1.8rem;
-      text-align: left;
-    }
-    .about-content-card p:last-child { margin-bottom: 0; }
-
-    .about-content-card a {
-      color: #06f2ca;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .about-content-card a:hover {
-      color: #04f4e8;
-      text-decoration: underline;
-    }
-
-    /* Logos */
-    .logos-section {
-      padding: 4rem 0;
-      background: linear-gradient(135deg, rgba(4, 244, 232, 0.03), rgba(6, 242, 202, 0.01));
-      border-top: 1px solid rgba(4, 244, 232, 0.1);
-    }
-
-    .logos-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .logos-title {
-      font-size: 2rem;
-      color: #04f4e8;
-      margin-bottom: 2rem;
-      font-weight: 600;
-    }
-
-    .logos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .logo-item {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 3rem;
-      border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-height: 200px;
-      justify-content: center;
-    }
-
-    .logo-item a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .logo-item img {
-      max-width: 100%;
-      max-height: 80px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      margin-bottom: 1rem;
-      transition: all 0.3s ease;
-    }
-    .logo-item:hover img { transform: scale(1.05); }
-
-    .logo-name {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #04f4e8;
-      margin-bottom: 0.5rem;
-    }
-
-    .logo-description {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      line-height: 1.4;
-    }
-  .latest-publication-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(6, 242, 202, 0.03), rgba(4, 244, 232, 0.01));
-    border-top: 1px solid rgba(4, 244, 232, 0.1);
-    border-bottom: 1px solid rgba(4, 244, 232, 0.1);
+  /* --- HARD FIX: evita que CSS global recorte el Home --- */
+  .home-root {
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .latest-pub-container {
+  .home-root .hero-section,
+  .home-root .about-content,
+  .home-root .latest-publication-section,
+  .home-root .logos-section {
+    width: 100%;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Contenedores internos con ancho bonito (centrados) */
+  .home-root .hero-container,
+  .home-root .about-container,
+  .home-root .latest-pub-container,
+  .home-root .logos-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+  }
+
+  /* ===================== Home Section Styles ===================== */
+  .hero-section {
+    padding: 4rem 0;
+    background: linear-gradient(
+      135deg,
+      rgba(4, 244, 232, 0.05),
+      rgba(6, 242, 202, 0.02)
+    );
+    border-bottom: 1px solid rgba(4, 244, 232, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data/images/sidebar-atoms-p3.png");
+    background-size: 1200px;
+    background-position: center;
+    opacity: 0.03;
+    z-index: 0;
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-section {
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #04f4e8;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(4, 244, 232, 0.3);
+  }
+
+  .profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(4, 244, 232, 0.5);
+  }
+
+  .profile-name {
+    font-family: "Zilla Slab", serif;
+    font-size: 1.8rem;
+    color: #04f4e8;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .profile-title {
+    font-size: 1.2rem;
+    color: #82e6d9;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-icons a {
+    color: #06f2ca;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(6, 242, 202, 0.2);
+    box-shadow: 0 10px 25px rgba(6, 242, 202, 0.3);
+  }
+
+  /* Visit counter */
+  .home-visit-counter {
+    margin: 1.2rem auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    background: rgba(4, 244, 232, 0.08);
+    border: 1px solid rgba(4, 244, 232, 0.25);
+    color: #e2e8f0;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+  }
+
+  .home-visit-counter i {
+    color: #04f4e8;
+  }
+
+  .home-visit-counter span {
+    color: #06f2ca;
+    font-weight: 900;
+  }
+
+  .hero-content {
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #f6f2f2, #04f4e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .highlight-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #06f2ca;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .highlight-item:hover {
+    transform: translateY(-5px);
+    border-left-color: #04f4e8;
+    box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
+  }
+
+  .highlight-item i {
+    font-size: 2rem;
+    color: #06f2ca;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .highlight-item h3 {
+    color: #04f4e8;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .highlight-item p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* About */
+  .about-content {
+    padding: 4rem 0;
+  }
+
+  .about-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #04f4e8;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .about-content-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #06f2ca;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .about-content-card:hover {
+    transform: translateY(-2px);
+    border-left-color: #04f4e8;
+    box-shadow: 0 10px 30px rgba(4, 244, 232, 0.1);
+  }
+
+  .about-content-card p {
+    color: #e2e8f0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+    text-align: left;
+  }
+
+  .about-content-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-content-card a {
+    color: #06f2ca;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .about-content-card a:hover {
+    color: #04f4e8;
+    text-decoration: underline;
+  }
+
+  /* Latest Publication */
+  .latest-publication-section {
+    padding: 4rem 0;
+    background: linear-gradient(
+      135deg,
+      rgba(6, 242, 202, 0.03),
+      rgba(4, 244, 232, 0.01)
+    );
+    border-top: 1px solid rgba(4, 244, 232, 0.1);
+    border-bottom: 1px solid rgba(4, 244, 232, 0.1);
   }
 
   .latest-pub-title {
@@ -326,7 +312,7 @@
   }
 
   .latest-pub-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -337,8 +323,12 @@
   }
 
   @keyframes shimmer-pub {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 
   .latest-pub-card:hover {
@@ -443,11 +433,6 @@
     color: #e2e8f0;
   }
 
-  .latest-pub-abstract mjx-container {
-    color: #06f2ca;
-    font-weight: 500;
-  }
-
   .latest-pub-tags {
     display: flex;
     flex-wrap: wrap;
@@ -512,155 +497,426 @@
     border-color: #04f4e8;
     color: #04f4e8;
   }
+
+  /* Logos */
+  .logos-section {
+    padding: 4rem 0;
+    background: linear-gradient(
+      135deg,
+      rgba(4, 244, 232, 0.03),
+      rgba(6, 242, 202, 0.01)
+    );
+    border-top: 1px solid rgba(4, 244, 232, 0.1);
+  }
+
+  .logos-title {
+    font-size: 2rem;
+    color: #04f4e8;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .logo-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+    justify-content: center;
+  }
+
+  .logo-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-item img {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .logo-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #04f4e8;
+    margin-bottom: 0.5rem;
+  }
+
+  .logo-description {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      text-align: center;
+    }
+
+    .hero-subtitle {
+      text-align: center;
+    }
+
+    .hero-content {
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-root .hero-container,
+    .home-root .about-container,
+    .home-root .latest-pub-container,
+    .home-root .logos-container {
+      padding: 0 1.2rem;
+    }
+
+    .latest-pub-card {
+      grid-template-columns: 1fr;
+    }
+
+    .latest-pub-image {
+      max-width: 320px;
+      justify-self: center;
+    }
+
+    .about-title {
+      font-size: 2.2rem;
+      flex-direction: column;
+    }
+  }
 </style>
 
-<div class="hero-section">
-  <div class="hero-container">
-    <div class="profile-section">
-      <img src="https://avatars.githubusercontent.com/u/10236471?v=4" alt="Oscar Ruiz-Cigarrillo" class="profile-image">
-      <h1 class="profile-name">Oscar Ruiz-Cigarrillo</h1>
-      <p class="profile-title">Ph.D. Photonics</p>
+<div class="home-root">
+  <div class="hero-section">
+    <div class="hero-container">
+      <div class="profile-section">
+        <img
+          src="https://avatars.githubusercontent.com/u/10236471?v=4"
+          alt="Oscar Ruiz-Cigarrillo"
+          class="profile-image"
+        />
+        <h1 class="profile-name">Oscar Ruiz-Cigarrillo</h1>
+        <p class="profile-title">Ph.D. Photonics</p>
 
-      <div class="social-icons">
-        <a href="mailto:ruizoscar.1393@gmail.com" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://twitter.com/RUCO0713" target="_blank" rel="noopener" title="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://www.instagram.com/ruco0713/" target="_blank" rel="noopener" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://github.com/RUCO13" target="_blank" rel="noopener" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://scholar.google.es/citations?user=d5ygTH8AAAAJ&hl=es" target="_blank" rel="noopener" title="Google Scholar">
-          <i class="ai ai-google-scholar-square"></i>
-        </a>
-        <a href="https://orcid.org/0000-0002-2203-8195" target="_blank" rel="noopener" title="ORCID">
-          <i class="fa-brands fa-orcid"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-content">
-      <h2 class="hero-title">Solid State and Condensed Matter Physicist: From Experimental to Computational Approaches</h2>
-      <p class="hero-subtitle">
-        Exploring the quantum world through advanced computational methods, focusing on electronic and optical properties of nanostructures using Density Functional Theory (DFT) and Many-Body Perturbation Theory (MBPT).
-      </p>
-
-      <div class="hero-highlights">
-        <div class="highlight-item">
-          <i class="fas fa-atom"></i>
-          <h3>DFT Work</h3>
-          <p>Advanced computational modeling for electronic and optical properties of nanostructures</p>
+        <div class="social-icons">
+          <a href="mailto:ruizoscar.1393@gmail.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://twitter.com/RUCO0713"
+            target="_blank"
+            rel="noopener"
+            title="Twitter"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/ruco0713/"
+            target="_blank"
+            rel="noopener"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://github.com/RUCO13"
+            target="_blank"
+            rel="noopener"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://scholar.google.es/citations?user=d5ygTH8AAAAJ&hl=es"
+            target="_blank"
+            rel="noopener"
+            title="Google Scholar"
+          >
+            <i class="ai ai-google-scholar-square"></i>
+          </a>
+          <a
+            href="https://orcid.org/0000-0002-2203-8195"
+            target="_blank"
+            rel="noopener"
+            title="ORCID"
+          >
+            <i class="fa-brands fa-orcid"></i>
+          </a>
         </div>
 
-        <div class="highlight-item">
-          <i class="fas fa-microscope"></i>
-          <h3>Experimental Physics</h3>
-          <p>Solid state physics and nanophotonics research</p>
-        </div>
-
-        <div class="highlight-item">
-          <i class="fas fa-code"></i>
-          <h3>Software Development</h3>
-          <p>Python, Julia, and Fortran scientific computing</p>
-        </div>
-
-        <div class="highlight-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Academic Research</h3>
-          <p>Postdoc at Universidad Autonoma de San Luis Potosi</p>
-        </div>
-
-        <div class="highlight-item">
-          <i class="fas fa-handshake"></i>
-          <h3>Acknowledges</h3>
-          <p>Grateful to SECIHTI, UASLP, and LNS for their invaluable support</p>
+        <!-- Visit counter (HOME) -->
+        <div class="home-visit-counter" title="Total visits">
+          <i class="fas fa-eye"></i>
+          Visits: <span id="homeVisitCount">...</span>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="about-content">
-  <h2 class="about-title">
-    <i class="fas fa-user"></i>
-    About Me
-  </h2>
-
-  <div class="about-content-card">
-    <p>I hold a PhD in Photonics (Applied Sciences) from <a href="http://www.iico.uaslp.mx" target="_blank" rel="noopener">IICO-UASLP</a> and currently work as Postdoc at <a href="https://www.uaslp.mx/#gsc.tab=0" target="_blank" rel="noopener">Universidad Autonoma de San Luis Potosi.</a></p>
-
-    <p>As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic Properties of Nanostructures.</p>
-
-    <p>Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT), complemented by my active engagement with advanced band structure packages.</p>
-
-    <p>I take pride in being the founder of <a href="https://github.com/NanophotonIICOs" target="_blank" rel="noopener">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in nanophotonics.</p>
-
-    <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
-  </div>
-</div>
-<!-- Latest Publication Section -->
-<div class="latest-publication-section">
-  <div class="latest-pub-container">
-    <h2 class="latest-pub-title">
-      <i class="fas fa-newspaper"></i>
-      Latest Publication
-    </h2>
-    
-    <div class="latest-pub-card">
-      <div class="latest-pub-badge">
-        <i class="fas fa-star"></i>
-        NEW 2025
-      </div>
-
-      <img src="https://cms.iopscience.org/25885147-ec1f-11e5-b0b6-759f86a2008e/journal_cover?guest=true" alt="Publication Cover" class="latest-pub-image">
-      
-      <div class="latest-pub-info">
-        <h3>Linear optical response of monolayer \(\mathrm{Sb_2Te_3}\) under uniaxial strain assessed by Time-Dependent Density Functional Theory</h3>
-        
-        <div class="latest-pub-meta">
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-users"></i>
-            <span class="latest-pub-meta-label">Authors:</span>
-            <span class="latest-pub-meta-value"><strong>Oscar Ruiz-Cigarrillo</strong>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García, David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores Rangel, Boris Mizaikoff</span>
-          </div>
-          
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-journal-whills"></i>
-            <span class="latest-pub-meta-label">Journal:</span>
-            <span class="latest-pub-meta-value"><strong>2D Materials</strong> </span>
-          </div>
-          
-          <div class="latest-pub-meta-item">
-            <i class="fas fa-link"></i>
-            <span class="latest-pub-meta-label">DOI:</span>
-            <span class="latest-pub-meta-value"><a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank">10.1063/5.0243213</a></span>
-          </div>
-        </div>
-        
-        <p class="latest-pub-abstract">
-          <strong>Abstract:</strong> Strain engineering enables control over the optical properties of 2D materials, but systematic theoretical studies are computationally demanding. By using Time-Dependent Density Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected kernel (LRC), we study strain-tunable optical properties in monolayer \(\mathrm{Sb_2Te_3}\). Uniaxial tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating our predictions. The TDDFT-LRC approach captures the essential physics, validating through this comparison with more robust reference calculations. Strain-induced anisotropy with \(\varepsilon_{xx}/\varepsilon_{yy}\) ratios of 1.4-3 eV suggests applications in polarization-sensitive photodetectors and strain sensors. This work presents a computational framework for strain-engineered optical properties in \(\mathrm{Sb_2Te_3}\) and related chalcogenides, helping in the development of next-generation optoelectronic devices where mechanical deformation modulates optical response.
+      <div class="hero-content">
+        <h2 class="hero-title">
+          Solid State and Condensed Matter Physicist: From Experimental to Computational Approaches
+        </h2>
+        <p class="hero-subtitle">
+          Exploring the quantum world through advanced computational methods, focusing on electronic and optical
+          properties of nanostructures using Density Functional Theory (DFT) and Many-Body Perturbation Theory
+          (MBPT).
         </p>
-        
-        <div class="latest-pub-tags">
-          <span class="latest-pub-tag">2D Materials</span>
-          <span class="latest-pub-tag">TDDFT</span>
-          <span class="latest-pub-tag">Strain Engineering</span>
-          <span class="latest-pub-tag">Optical Properties</span>
-          <span class="latest-pub-tag">\(\mathrm{Sb_2Te_3}\)</span>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-atom"></i>
+            <h3>DFT Work</h3>
+            <p>Advanced computational modeling for electronic and optical properties of nanostructures</p>
+          </div>
+
+          <div class="highlight-item">
+            <i class="fas fa-microscope"></i>
+            <h3>Experimental Physics</h3>
+            <p>Solid state physics and nanophotonics research</p>
+          </div>
+
+          <div class="highlight-item">
+            <i class="fas fa-code"></i>
+            <h3>Software Development</h3>
+            <p>Python, Julia, and Fortran scientific computing</p>
+          </div>
+
+          <div class="highlight-item">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Academic Research</h3>
+            <p>Postdoc at Universidad Autonoma de San Luis Potosi</p>
+          </div>
+
+          <div class="highlight-item">
+            <i class="fas fa-handshake"></i>
+            <h3>Acknowledges</h3>
+            <p>Grateful to SECIHTI, UASLP,  LNS and CNS for their invaluable support</p>
+          </div>
         </div>
-        
-        <div class="latest-pub-buttons">
-          <a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" class="latest-pub-btn latest-pub-btn-primary">
-            <i class="fas fa-external-link-alt"></i>
-            Read Paper
+      </div>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="about-container">
+      <h2 class="about-title">
+        <i class="fas fa-user"></i>
+        About Me
+      </h2>
+
+      <div class="about-content-card">
+        <p>
+          I hold a PhD in Photonics (Applied Sciences) from
+          <a href="http://www.iico.uaslp.mx" target="_blank" rel="noopener">IICO-UASLP</a>
+          and currently work as Postdoc at
+          <a href="https://www.uaslp.mx/#gsc.tab=0" target="_blank" rel="noopener">Universidad Autonoma de San Luis Potosi.</a>
+        </p>
+
+        <p>
+          As a dedicated professional, I am deeply passionate about exploring the innovative realms of Solid State
+          Experimental Physics, with a particular emphasis on the Computational Calculation of Optical and Magnetic
+          Properties of Nanostructures.
+        </p>
+
+        <p>
+          Currently, my focus is intensely centered on expanding my expertise in Density Functional Theory (DFT),
+          complemented by my active engagement with advanced band structure packages.
+        </p>
+
+        <p>
+          I take pride in being the founder of
+          <a href="https://github.com/NanophotonIICOs" target="_blank" rel="noopener">NanophotonIICOs</a>, an institutional repository dedicated to advancing research in nanophotonics.
+        </p>
+
+        <p>Feel free to ask me anything related to my areas of expertise or discuss potential collaborations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Publication Section -->
+  <div class="latest-publication-section">
+    <div class="latest-pub-container">
+      <h2 class="latest-pub-title">
+        <i class="fas fa-newspaper"></i>
+        Latest Publication
+      </h2>
+
+      <div class="latest-pub-card">
+        <div class="latest-pub-badge">
+          <i class="fas fa-star"></i>
+          NEW 2025
+        </div>
+
+        <img
+          src="https://cms.iopscience.org/25885147-ec1f-11e5-b0b6-759f86a2008e/journal_cover?guest=true"
+          alt="Publication Cover"
+          class="latest-pub-image"
+        />
+
+        <div class="latest-pub-info">
+          <h3>
+            Linear optical response of monolayer \(\mathrm{Sb_2Te_3}\) under uniaxial strain assessed by Time-Dependent
+            Density Functional Theory
+          </h3>
+
+          <div class="latest-pub-meta">
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-users"></i>
+              <span class="latest-pub-meta-label">Authors:</span>
+              <span class="latest-pub-meta-value"
+                ><strong>Oscar Ruiz-Cigarrillo</strong>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García,
+                David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores
+                Rangel, Boris Mizaikoff</span
+              >
+            </div>
+
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-journal-whills"></i>
+              <span class="latest-pub-meta-label">Journal:</span>
+              <span class="latest-pub-meta-value"><strong>2D Materials</strong></span>
+            </div>
+
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-link"></i>
+              <span class="latest-pub-meta-label">DOI:</span>
+              <span class="latest-pub-meta-value"
+                ><a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" rel="noopener"
+                  >10.1063/5.0243213</a
+                ></span
+              >
+            </div>
+          </div>
+
+          <p class="latest-pub-abstract">
+            <strong>Abstract:</strong> Strain engineering enables control over the optical properties of 2D materials,
+            but systematic theoretical studies are computationally demanding. By using Time-Dependent Density
+            Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected
+            kernel (LRC), we study strain-tunable optical properties in monolayer \(\mathrm{Sb_2Te_3}\). Uniaxial
+            tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and
+            modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating
+            our predictions. The TDDFT-LRC approach captures the essential physics, validating through this comparison
+            with more robust reference calculations. Strain-induced anisotropy with \(\varepsilon_{xx}/\varepsilon_{yy}\)
+            ratios of 1.4-3 eV suggests applications in polarization-sensitive photodetectors and strain sensors. This
+            work presents a computational framework for strain-engineered optical properties in \(\mathrm{Sb_2Te_3}\)
+            and related chalcogenides, helping in the development of next-generation optoelectronic devices where
+            mechanical deformation modulates optical response.
+          </p>
+
+          <div class="latest-pub-tags">
+            <span class="latest-pub-tag">2D Materials</span>
+            <span class="latest-pub-tag">TDDFT</span>
+            <span class="latest-pub-tag">Strain Engineering</span>
+            <span class="latest-pub-tag">Optical Properties</span>
+            <span class="latest-pub-tag">\(\mathrm{Sb_2Te_3}\)</span>
+          </div>
+
+          <div class="latest-pub-buttons">
+            <a
+              href="https://pubs.aip.org/aip/adv/issue/15/1"
+              target="_blank"
+              rel="noopener"
+              class="latest-pub-btn latest-pub-btn-primary"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Read Paper
+            </a>
+            <a
+              href="https://pubs.aip.org/aip/adv/issue/15/1"
+              target="_blank"
+              rel="noopener"
+              class="latest-pub-btn latest-pub-btn-secondary"
+            >
+              <i class="fas fa-download"></i>
+              More Info
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logos-section">
+    <div class="logos-container">
+      <h2 class="logos-title">Supported by</h2>
+
+      <div class="logos-grid">
+        <div class="logo-item">
+          <a href="https://secihti.mx/" target="_blank" rel="noopener">
+            <img src="https://secihti.mx/wp-content/uploads/2025/03/logo_secihti_vertical_color.svg" alt="SECIHTI" />
+            <div class="logo-name">SECIHTI</div>
+            <div class="logo-description">Secretaría de Ciencia, Humanidades, Tecnología e Innovación</div>
           </a>
-          <a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" class="latest-pub-btn latest-pub-btn-secondary">
-            <i class="fas fa-download"></i>
-            More Info
+        </div>
+
+        <div class="logo-item">
+          <a href="https://www.uaslp.mx/" target="_blank" rel="noopener">
+            <img src="https://wp.uaslp.mx/noticias/wp-content/uploads/sites/5/2022/01/UASLP.png" alt="UASLP" />
+            <div class="logo-name">UASLP</div>
+            <div class="logo-description">Universidad Autónoma de San Luis Potosí</div>
+          </a>
+        </div>
+
+        <div class="logo-item">
+          <a href="https://www.iico.uaslp.mx/#gsc.tab=0" target="_blank" rel="noopener">
+            <img
+              src="https://adminportal.uaslp.mx/ImgEntidad/50/Paginas/19-07-2022_84_Investigacion-UASLP-24.jpg"
+              alt="IICO"
+            />
+            <div class="logo-name">IICO</div>
+            <div class="logo-description">Instituto de Investigación en Comunicación Óptica</div>
+          </a>
+        </div>
+
+        <div class="logo-item">
+          <a href="https://lns.buap.mx/" target="_blank" rel="noopener">
+            <img
+              src="https://lh6.googleusercontent.com/proxy/WlYAbhxsWt91y4uOsZndw5rbi3wORmlAOWhX1b1LYy9Ut4Wd-qDWtGQbLLfEIrfNBP7QZVnSCKlwLrBnaF6R6w"
+              alt="LNS"
+            />
+            <div class="logo-name">LNS</div>
+            <div class="logo-description">Laboratorio Nacional de Supercómputo del Sureste de México</div>
+          </a>
+        </div>
+
+        <div class="logo-item">
+          <a href="https://cic.mhc.ipicyt.edu.mx/" target="_blank" rel="noopener">
+            <img src="https://cic.mhc.ipicyt.edu.mx/wp-content/uploads/2024/03/Logo-CNS.png" alt="CNS" />
+            <div class="logo-name">CNS</div>
+            <div class="logo-description">Centro Nacional de Supercómputo</div>
           </a>
         </div>
       </div>
@@ -668,50 +924,42 @@
   </div>
 </div>
 
+<script>
+  // 1) Cambia estos 2 valores (pon algo único)
+  const COUNTER_WORKSPACE = "oscar-ruiz-site";
+  const COUNTER_NAME = "home-visits";
 
-<div class="logos-section">
-  <div class="logos-container">
-    <h2 class="logos-title">Supported by</h2>
-    <div class="logos-grid">
+  async function updateHomeVisitCounter() {
+    const el = document.getElementById("homeVisitCount");
+    if (!el) return;
 
-      <div class="logo-item">
-        <a href="https://secihti.mx/" target="_blank" rel="noopener">
-          <img src="https://secihti.mx/wp-content/uploads/2025/03/logo_secihti_vertical_color.svg" alt="SECIHTI">
-          <div class="logo-name">SECIHTI</div>
-          <div class="logo-description">Secretaría de Ciencia, Humanidades, Tecnología e Innovación</div>
-        </a>
-      </div>
+    try {
+      // Cuenta 1 vez por día por navegador (para evitar subir loco)
+      const today = new Date().toISOString().slice(0, 10);
+      const key = `homeVisitCounted_${today}`;
+      const alreadyCounted = localStorage.getItem(key);
 
-      <div class="logo-item">
-        <a href="https://www.uaslp.mx/" target="_blank" rel="noopener">
-          <img src="https://wp.uaslp.mx/noticias/wp-content/uploads/sites/5/2022/01/UASLP.png" alt="UASLP">
-          <div class="logo-name">UASLP</div>
-          <div class="logo-description">Universidad Autónoma de San Luis Potosí</div>
-        </a>
-      </div>
+      const url = alreadyCounted
+        ? `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(
+            COUNTER_NAME
+          )}/get`
+        : `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(
+            COUNTER_NAME
+          )}/up`;
 
-      <div class="logo-item">
-        <a href="https://www.iico.uaslp.mx/#gsc.tab=0" target="_blank" rel="noopener">
-          <img src="https://adminportal.uaslp.mx/ImgEntidad/50/Paginas/19-07-2022_84_Investigacion-UASLP-24.jpg" alt="IICO">
-          <div class="logo-name">IICO</div>
-          <div class="logo-description">Instituto de Investigación en Comunicación Óptica</div>
-        </a>
-      </div>
+      const res = await fetch(url);
+      const data = await res.json();
 
-      <div class="logo-item">
-        <a href="https://lns.buap.mx/" target="_blank" rel="noopener">
-          <img src="https://lh6.googleusercontent.com/proxy/WlYAbhxsWt91y4uOsZndw5rbi3wORmlAOWhX1b1LYy9Ut4Wd-qDWtGQbLLfEIrfNBP7QZVnSCKlwLrBnaF6R6w" alt="LNS">
-          <div class="logo-name">LNS</div>
-          <div class="logo-description">Laboratorio Nacional de Supercómputo del Sureste de México</div>
-        </a>
-      </div>
- <div class="logo-item">
-        <a href="https://lns.buap.mx/" target="_blank" rel="noopener">
-          <img src="https://cic.mhc.ipicyt.edu.mx/wp-content/uploads/2024/03/Logo-CNS.png" alt="LNS">
-          <div class="logo-name">CNS</div>
-          <div class="logo-description">Centro Nacional de Supercómputo</div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+      if (!alreadyCounted) localStorage.setItem(key, "1");
+
+      const value = data && (data.data ?? data.count ?? data.value);
+      el.textContent = value !== undefined && value !== null ? value : "—";
+    } catch (err) {
+      console.log("Counter error:", err);
+      el.textContent = "—";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", updateHomeVisitCounter);
+</script>
+<!-- =================== END HOME (FULL) =================== -->

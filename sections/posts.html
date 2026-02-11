@@ -1,0 +1,420 @@
+<style>
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #04f4e8;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 3px solid #04f4e8;
+    padding-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* top bar: search + counter */
+  .posts-topbar {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 0.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .posts-search {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(110, 110, 128, 0.35);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .posts-search i {
+    color: #06f2ca;
+    font-size: 1.1rem;
+  }
+
+  .posts-search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f8f9fc;
+    font-size: 1rem;
+  }
+
+  .posts-search input::placeholder {
+    color: #94a3b8;
+  }
+
+  .visit-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: rgba(4, 244, 232, 0.08);
+    border: 1px solid rgba(4, 244, 232, 0.25);
+    color: #e2e8f0;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+  }
+
+  .visit-counter i {
+    color: #04f4e8;
+  }
+
+  .visit-counter span {
+    color: #06f2ca;
+    font-weight: 800;
+  }
+
+  /* grid */
+  .posts-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 0 0.5rem 1rem;
+  }
+
+  .post-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 4px solid #06f2ca;
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, transparent);
+    transition: left 0.6s ease;
+  }
+
+  .post-card:hover::before {
+    left: 120%;
+  }
+
+  .post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(4, 244, 232, 0.12);
+    border-left-color: #04f4e8;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .post-meta .dot {
+    opacity: 0.7;
+  }
+
+  .post-title {
+    margin: 0 0 0.8rem;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .post-title a {
+    color: #04f4e8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .post-title a:hover {
+    color: #06f2ca;
+    text-decoration: underline;
+  }
+
+  .post-excerpt {
+    color: #e2e8f0;
+    line-height: 1.75;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    color: #06f2ca;
+    background: rgba(4, 244, 232, 0.12);
+    border: 1px solid rgba(4, 244, 232, 0.25);
+  }
+
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #82e6d9;
+    border: 1px solid rgba(130, 230, 217, 0.35);
+    padding: 0.55rem 0.9rem;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+  }
+
+  .read-more:hover {
+    border-color: #04f4e8;
+    color: #04f4e8;
+    background: rgba(4, 244, 232, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .empty-state {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 0.5rem;
+    color: #94a3b8;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 2rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .posts-topbar {
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<div class="section-header">
+  <h2 class="section-title">
+    <i class="fas fa-pen-nib"></i>
+    Posts
+  </h2>
+  <p class="section-subtitle">
+    Short notes, research updates, mini-tutorials and random physics thoughts (the universe is weird; we document it anyway).
+  </p>
+</div>
+
+<div class="posts-topbar">
+  <div class="posts-search">
+    <i class="fas fa-search"></i>
+    <input id="postsSearch" type="text" placeholder="Search posts (title, tags, text)..." />
+  </div>
+
+  <div class="visit-counter" title="Total visits (simple counter)">
+    <i class="fas fa-eye"></i>
+    Visits: <span id="visitCount">...</span>
+  </div>
+</div>
+
+<div id="postsGrid" class="posts-grid"></div>
+<div id="postsEmpty" class="empty-state" style="display:none;">
+  No posts match your search.
+</div>
+
+<script>
+  // -----------------------
+  // 1) EDITA TUS POSTS AQUÍ
+  // -----------------------
+  // Tip: "url" puede apuntar a un html dentro de /posts/ o donde tú quieras.
+  const POSTS = [
+    {
+      title: "How to interpret ε(ω) from TDDFT-LRC (quick intuition)",
+      date: "2026-02-10",
+      readingTime: "5 min",
+      tags: ["TDDFT", "Optics", "LRC"],
+      excerpt:
+        "A practical way to connect the imaginary part of the dielectric function to absorption features, and what the LRC kernel is really doing (without mystical hand-waving).",
+      url: "./posts/tddft-lrc-eps.html"
+    },
+    {
+      title: "GW vs BSE: what each one fixes (and what it absolutely doesn’t)",
+      date: "2026-01-28",
+      readingTime: "7 min",
+      tags: ["MBPT", "GW", "BSE"],
+      excerpt:
+        "A mental model for quasiparticles and excitons: what changes in the band structure, what changes in the optical spectrum, and where people commonly confuse the two.",
+      url: "./posts/gw-vs-bse.html"
+    },
+    {
+      title: "ASE tip: keep bilayers centered when you add vacuum",
+      date: "2026-01-08",
+      readingTime: "3 min",
+      tags: ["ASE", "2D Materials"],
+      excerpt:
+        "A tiny trick that prevents your slab from drifting when you change cell size. Your future self will thank you.",
+      url: "./posts/ase-center-vacuum.html"
+    }
+  ];
+
+  // -----------------------
+  // 2) RENDER
+  // -----------------------
+  function formatDate(isoDate) {
+    // isoDate: YYYY-MM-DD
+    const [y, m, d] = isoDate.split("-").map(Number);
+    const dt = new Date(y, m - 1, d);
+    return dt.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
+  }
+
+  function postMatchesQuery(post, q) {
+    if (!q) return true;
+    const haystack = [
+      post.title,
+      post.excerpt,
+      (post.tags || []).join(" "),
+      post.date,
+      post.readingTime
+    ].join(" ").toLowerCase();
+    return haystack.includes(q);
+  }
+
+  function renderPosts(query = "") {
+    const q = query.trim().toLowerCase();
+    const grid = document.getElementById("postsGrid");
+    const empty = document.getElementById("postsEmpty");
+    grid.innerHTML = "";
+
+    const filtered = POSTS.filter(p => postMatchesQuery(p, q));
+
+    if (filtered.length === 0) {
+      empty.style.display = "block";
+      return;
+    }
+    empty.style.display = "none";
+
+    filtered
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .forEach(post => {
+        const card = document.createElement("div");
+        card.className = "post-card";
+
+        const tagsHtml = (post.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+
+        card.innerHTML = `
+          <div class="post-meta">
+            <span><i class="fas fa-calendar"></i> ${formatDate(post.date)}</span>
+            <span class="dot">•</span>
+            <span><i class="fas fa-hourglass-half"></i> ${post.readingTime || "—"}</span>
+          </div>
+
+          <h3 class="post-title">
+            <a href="${post.url}" target="_blank" rel="noopener">${post.title}</a>
+          </h3>
+
+          <p class="post-excerpt">${post.excerpt}</p>
+
+          <div class="post-footer">
+            <div class="post-tags">${tagsHtml}</div>
+            <a class="read-more" href="${post.url}" target="_blank" rel="noopener">
+              Read <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+  }
+
+  // -----------------------
+  // 3) SEARCH
+  // -----------------------
+  function setupSearch() {
+    const input = document.getElementById("postsSearch");
+    if (!input) return;
+    input.addEventListener("input", (e) => renderPosts(e.target.value));
+  }
+
+  // -----------------------
+  // 4) VISIT COUNTER (VISIBLE)
+  // -----------------------
+  // Usa CounterAPI (necesitas crear workspace/counter).
+  // Docs: counterapi.dev  [oai_citation:1‡CounterAPI](https://counterapi.dev/)
+  //
+  // PASOS:
+  // 1) Crea una cuenta y un workspace (ej. "oscar-site")
+  // 2) Crea un counter público (ej. "visits")
+  // 3) Reemplaza WORKSPACE y COUNTER abajo.
+  //
+  // Nota: esto cuenta "hits" (cargas). No es analytics fino (para eso ya tienes GA).
+  const COUNTER_WORKSPACE = "oscar-site"; // <-- CAMBIA ESTO
+  const COUNTER_NAME = "visits";          // <-- CAMBIA ESTO
+
+  async function updateVisitCounter() {
+    const el = document.getElementById("visitCount");
+    if (!el) return;
+
+    try {
+      // incrementa y regresa el valor
+      const url = `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/up`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      // La API responde con el valor en data.data (según ejemplo en su sitio)
+      el.textContent = (data && (data.data ?? data.count ?? data.value)) ?? "—";
+    } catch (err) {
+      console.log("Counter error:", err);
+      el.textContent = "—";
+    }
+  }
+
+  // -----------------------
+  // 5) INIT
+  // -----------------------
+  document.addEventListener("DOMContentLoaded", function () {
+    renderPosts("");
+    setupSearch();
+    updateVisitCounter();
+  });
+</script>
