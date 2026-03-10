@@ -1,0 +1,10 @@
+[
+  {
+    "id": "tddft-lrc",
+    "title": "TDDFT-LRC en monocapas: qué captura y qué no",
+    "date": "2026-02-10",
+    "summary": "Notas prácticas sobre el kernel LRC, excitones y comparación cualitativa con PL. Incluye pitfalls comunes y checks rápidos.",
+    "tags": ["TDDFT", "2D", "Optics"],
+    "file": "posts/2026-02-10.html"
+  }
+]

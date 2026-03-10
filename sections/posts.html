@@ -1,420 +1,414 @@
 <style>
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
+  /* === Posts layout (lista + detalle) === */
+  .posts-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
   }
 
-  .section-title {
+  .posts-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .posts-title {
     font-size: 2.5rem;
     font-weight: 700;
     color: #04f4e8;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     border-bottom: 3px solid #04f4e8;
     padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
-  .section-subtitle {
-    font-size: 1.2rem;
+  .posts-subtitle {
     color: #94a3b8;
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
     line-height: 1.6;
   }
 
-  /* top bar: search + counter */
-  .posts-topbar {
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-    padding: 0 0.5rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* === Lista === */
+  .posts-list {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
   }
 
   .posts-search {
-    flex: 1;
-    min-width: 240px;
     display: flex;
-    align-items: center;
     gap: 0.7rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(110, 110, 128, 0.35);
-    border-radius: 12px;
-    padding: 0.9rem 1rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .posts-search i {
-    color: #06f2ca;
-    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 
   .posts-search input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #f8f9fc;
-    font-size: 1rem;
-  }
-
-  .posts-search input::placeholder {
-    color: #94a3b8;
-  }
-
-  .visit-counter {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.85rem 1rem;
-    border-radius: 12px;
-    background: rgba(4, 244, 232, 0.08);
+    flex: 1;
+    padding: 0.8rem 0.9rem;
+    border-radius: 10px;
     border: 1px solid rgba(4, 244, 232, 0.25);
+    background: rgba(0,0,0,0.15);
     color: #e2e8f0;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    white-space: nowrap;
+    outline: none;
   }
 
-  .visit-counter i {
-    color: #04f4e8;
-  }
+  .posts-search input::placeholder { color: #94a3b8; }
 
-  .visit-counter span {
-    color: #06f2ca;
-    font-weight: 800;
-  }
-
-  /* grid */
-  .posts-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    padding: 0 0.5rem 1rem;
-  }
-
-  .post-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-left: 4px solid #06f2ca;
-    border-radius: 15px;
-    padding: 1.5rem;
-    backdrop-filter: blur(10px);
+  .post-item {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(110, 110, 128, 0.25);
+    background: rgba(255,255,255,0.03);
+    margin-bottom: 0.9rem;
+    cursor: pointer;
     transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
   }
 
-  .post-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 120%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #04f4e8, #06f2ca, transparent);
-    transition: left 0.6s ease;
+  .post-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(4, 244, 232, 0.5);
+    box-shadow: 0 10px 25px rgba(4, 244, 232, 0.12);
   }
 
-  .post-card:hover::before {
-    left: 120%;
+  .post-item.active {
+    border-left: 4px solid #06f2ca;
+    border-color: rgba(4, 244, 232, 0.7);
   }
 
-  .post-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(4, 244, 232, 0.12);
-    border-left-color: #04f4e8;
+  .post-item-title {
+    color: #06f2ca;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
   }
 
-  .post-meta {
+  .post-item-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
-    align-items: center;
+    gap: 0.8rem;
     color: #94a3b8;
-    font-size: 0.95rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
-  .post-meta .dot {
-    opacity: 0.7;
-  }
-
-  .post-title {
-    margin: 0 0 0.8rem;
-    font-size: 1.25rem;
-    line-height: 1.35;
-  }
-
-  .post-title a {
-    color: #04f4e8;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .post-title a:hover {
-    color: #06f2ca;
-    text-decoration: underline;
-  }
-
-  .post-excerpt {
+  .post-item-summary {
     color: #e2e8f0;
-    line-height: 1.75;
-    font-size: 1rem;
-    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
-  .post-tags {
+  .tag-row {
+    margin-top: 0.7rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 0.5rem;
   }
 
   .tag {
-    font-size: 0.85rem;
     padding: 0.25rem 0.7rem;
     border-radius: 999px;
-    color: #06f2ca;
-    background: rgba(4, 244, 232, 0.12);
     border: 1px solid rgba(4, 244, 232, 0.25);
+    background: rgba(4, 244, 232, 0.10);
+    color: #82e6d9;
+    font-size: 0.8rem;
   }
 
-  .post-footer {
+  /* === Visor del post === */
+  .post-viewer {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.4rem;
+    backdrop-filter: blur(10px);
+    min-height: 420px;
+  }
+
+  .viewer-topbar {
     display: flex;
+    gap: 0.8rem;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(4, 244, 232, 0.15);
   }
 
-  .read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    font-weight: 700;
-    color: #82e6d9;
-    border: 1px solid rgba(130, 230, 217, 0.35);
+  .viewer-status {
+    color: #94a3b8;
+    font-size: 0.95rem;
+  }
+
+  .viewer-btn {
+    border: 2px solid #04f4e8;
+    color: #04f4e8;
+    background: rgba(4, 244, 232, 0.10);
     padding: 0.55rem 0.9rem;
     border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
     transition: all 0.25s ease;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    text-decoration: none;
   }
 
-  .read-more:hover {
-    border-color: #04f4e8;
+  .viewer-btn:hover {
+    background: rgba(4, 244, 232, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .post-article .post-title {
     color: #04f4e8;
-    background: rgba(4, 244, 232, 0.08);
-    transform: translateY(-2px);
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .post-article .post-meta {
+    color: #94a3b8;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.3rem;
+  }
+
+  .post-article .post-body {
+    color: #e2e8f0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  .post-article h2 {
+    color: #06f2ca;
+    margin-top: 1.6rem;
+    margin-bottom: 0.6rem;
   }
 
   .empty-state {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2.5rem 0.5rem;
-    color: #94a3b8;
+    padding: 2rem;
     text-align: center;
+    color: #94a3b8;
   }
 
-  @media (max-width: 480px) {
-    .section-title {
-      font-size: 2rem;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .posts-topbar {
-      gap: 0.8rem;
-    }
+  @media (max-width: 900px) {
+    .posts-grid { grid-template-columns: 1fr; }
+    .post-viewer { min-height: 300px; }
   }
 </style>
 
-<div class="section-header">
-  <h2 class="section-title">
-    <i class="fas fa-pen-nib"></i>
-    Posts
-  </h2>
-  <p class="section-subtitle">
-    Short notes, research updates, mini-tutorials and random physics thoughts (the universe is weird; we document it anyway).
-  </p>
-</div>
-
-<div class="posts-topbar">
-  <div class="posts-search">
-    <i class="fas fa-search"></i>
-    <input id="postsSearch" type="text" placeholder="Search posts (title, tags, text)..." />
+<div class="posts-wrap">
+  <div class="posts-header">
+    <h2 class="posts-title"><i class="fas fa-pen-nib"></i> Posts</h2>
+    <p class="posts-subtitle">
+      Resúmenes cortos, notas técnicas y cosas útiles. Selecciona un post y se abrirá aquí mismo.
+    </p>
   </div>
 
-  <div class="visit-counter" title="Total visits (simple counter)">
-    <i class="fas fa-eye"></i>
-    Visits: <span id="visitCount">...</span>
-  </div>
-</div>
+  <div class="posts-grid">
+    <!-- LISTA -->
+    <aside class="posts-list">
+      <div class="posts-search">
+        <input id="postsSearch" type="text" placeholder="Buscar por título, tag o resumen..." />
+      </div>
+      <div id="postsList"></div>
+    </aside>
 
-<div id="postsGrid" class="posts-grid"></div>
-<div id="postsEmpty" class="empty-state" style="display:none;">
-  No posts match your search.
+    <!-- VISOR -->
+    <section class="post-viewer">
+      <div class="viewer-topbar">
+        <div class="viewer-status" id="viewerStatus">
+          Selecciona un post de la lista 👈
+        </div>
+        <button class="viewer-btn" id="backToListBtn" style="display:none;">
+          <i class="fas fa-arrow-left"></i> Volver
+        </button>
+      </div>
+
+      <div id="postViewerBody">
+        <div class="empty-state">
+          <i class="fas fa-book-open" style="font-size:2rem; color:#06f2ca;"></i>
+          <p style="margin-top:1rem;">Aquí se cargará el contenido del post.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 <script>
-  // -----------------------
-  // 1) EDITA TUS POSTS AQUÍ
-  // -----------------------
-  // Tip: "url" puede apuntar a un html dentro de /posts/ o donde tú quieras.
-  const POSTS = [
-    {
-      title: "How to interpret ε(ω) from TDDFT-LRC (quick intuition)",
-      date: "2026-02-10",
-      readingTime: "5 min",
-      tags: ["TDDFT", "Optics", "LRC"],
-      excerpt:
-        "A practical way to connect the imaginary part of the dielectric function to absorption features, and what the LRC kernel is really doing (without mystical hand-waving).",
-      url: "./posts/tddft-lrc-eps.html"
-    },
-    {
-      title: "GW vs BSE: what each one fixes (and what it absolutely doesn’t)",
-      date: "2026-01-28",
-      readingTime: "7 min",
-      tags: ["MBPT", "GW", "BSE"],
-      excerpt:
-        "A mental model for quasiparticles and excitons: what changes in the band structure, what changes in the optical spectrum, and where people commonly confuse the two.",
-      url: "./posts/gw-vs-bse.html"
-    },
-    {
-      title: "ASE tip: keep bilayers centered when you add vacuum",
-      date: "2026-01-08",
-      readingTime: "3 min",
-      tags: ["ASE", "2D Materials"],
-      excerpt:
-        "A tiny trick that prevents your slab from drifting when you change cell size. Your future self will thank you.",
-      url: "./posts/ase-center-vacuum.html"
+  (function () {
+    const POSTS_JSON = './data/posts.json';
+
+    const listEl = document.getElementById('postsList');
+    const viewerBody = document.getElementById('postViewerBody');
+    const viewerStatus = document.getElementById('viewerStatus');
+    const searchEl = document.getElementById('postsSearch');
+    const backBtn = document.getElementById('backToListBtn');
+
+    let posts = [];
+    let activeId = null;
+
+    function escapeHtml(s) {
+      return (s || '').replace(/[&<>"']/g, (c) => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[c]));
     }
-  ];
 
-  // -----------------------
-  // 2) RENDER
-  // -----------------------
-  function formatDate(isoDate) {
-    // isoDate: YYYY-MM-DD
-    const [y, m, d] = isoDate.split("-").map(Number);
-    const dt = new Date(y, m - 1, d);
-    return dt.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
-  }
-
-  function postMatchesQuery(post, q) {
-    if (!q) return true;
-    const haystack = [
-      post.title,
-      post.excerpt,
-      (post.tags || []).join(" "),
-      post.date,
-      post.readingTime
-    ].join(" ").toLowerCase();
-    return haystack.includes(q);
-  }
-
-  function renderPosts(query = "") {
-    const q = query.trim().toLowerCase();
-    const grid = document.getElementById("postsGrid");
-    const empty = document.getElementById("postsEmpty");
-    grid.innerHTML = "";
-
-    const filtered = POSTS.filter(p => postMatchesQuery(p, q));
-
-    if (filtered.length === 0) {
-      empty.style.display = "block";
-      return;
+    function fmtDate(dateStr) {
+      // dateStr: YYYY-MM-DD
+      if (!dateStr) return '';
+      return dateStr;
     }
-    empty.style.display = "none";
 
-    filtered
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .forEach(post => {
-        const card = document.createElement("div");
-        card.className = "post-card";
+    function renderList(filter = '') {
+      const q = filter.trim().toLowerCase();
+      const filtered = !q ? posts : posts.filter(p => {
+        const hay = [
+          p.title, p.summary, (p.tags || []).join(' '), p.date
+        ].join(' ').toLowerCase();
+        return hay.includes(q);
+      });
 
-        const tagsHtml = (post.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+      if (!filtered.length) {
+        listEl.innerHTML = `<div class="empty-state">No hay resultados.</div>`;
+        return;
+      }
 
-        card.innerHTML = `
-          <div class="post-meta">
-            <span><i class="fas fa-calendar"></i> ${formatDate(post.date)}</span>
-            <span class="dot">•</span>
-            <span><i class="fas fa-hourglass-half"></i> ${post.readingTime || "—"}</span>
-          </div>
-
-          <h3 class="post-title">
-            <a href="${post.url}" target="_blank" rel="noopener">${post.title}</a>
-          </h3>
-
-          <p class="post-excerpt">${post.excerpt}</p>
-
-          <div class="post-footer">
-            <div class="post-tags">${tagsHtml}</div>
-            <a class="read-more" href="${post.url}" target="_blank" rel="noopener">
-              Read <i class="fas fa-arrow-right"></i>
-            </a>
+      listEl.innerHTML = filtered.map(p => {
+        const isActive = p.id === activeId ? 'active' : '';
+        const tags = (p.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+        return `
+          <div class="post-item ${isActive}" data-id="${escapeHtml(p.id)}" data-file="${escapeHtml(p.file)}">
+            <div class="post-item-title">${escapeHtml(p.title)}</div>
+            <div class="post-item-meta">
+              <span><i class="fas fa-calendar"></i> ${escapeHtml(fmtDate(p.date))}</span>
+              <span><i class="fas fa-file-lines"></i> Post</span>
+            </div>
+            <div class="post-item-summary">${escapeHtml(p.summary || '')}</div>
+            <div class="tag-row">${tags}</div>
           </div>
         `;
-
-        grid.appendChild(card);
-      });
-  }
-
-  // -----------------------
-  // 3) SEARCH
-  // -----------------------
-  function setupSearch() {
-    const input = document.getElementById("postsSearch");
-    if (!input) return;
-    input.addEventListener("input", (e) => renderPosts(e.target.value));
-  }
-
-  // -----------------------
-  // 4) VISIT COUNTER (VISIBLE)
-  // -----------------------
-  // Usa CounterAPI (necesitas crear workspace/counter).
-  // Docs: counterapi.dev  [oai_citation:1‡CounterAPI](https://counterapi.dev/)
-  //
-  // PASOS:
-  // 1) Crea una cuenta y un workspace (ej. "oscar-site")
-  // 2) Crea un counter público (ej. "visits")
-  // 3) Reemplaza WORKSPACE y COUNTER abajo.
-  //
-  // Nota: esto cuenta "hits" (cargas). No es analytics fino (para eso ya tienes GA).
-  const COUNTER_WORKSPACE = "oscar-site"; // <-- CAMBIA ESTO
-  const COUNTER_NAME = "visits";          // <-- CAMBIA ESTO
-
-  async function updateVisitCounter() {
-    const el = document.getElementById("visitCount");
-    if (!el) return;
-
-    try {
-      // incrementa y regresa el valor
-      const url = `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/up`;
-      const res = await fetch(url);
-      const data = await res.json();
-
-      // La API responde con el valor en data.data (según ejemplo en su sitio)
-      el.textContent = (data && (data.data ?? data.count ?? data.value)) ?? "—";
-    } catch (err) {
-      console.log("Counter error:", err);
-      el.textContent = "—";
+      }).join('');
     }
-  }
 
-  // -----------------------
-  // 5) INIT
-  // -----------------------
-  document.addEventListener("DOMContentLoaded", function () {
-    renderPosts("");
-    setupSearch();
-    updateVisitCounter();
-  });
+    async function loadPostById(id, pushHash=true) {
+      const p = posts.find(x => x.id === id);
+      if (!p) return;
+
+      activeId = id;
+      renderList(searchEl.value);
+
+      viewerStatus.textContent = `Cargando: ${p.title}`;
+      backBtn.style.display = 'inline-flex';
+
+      try {
+        const res = await fetch(p.file, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const html = await res.text();
+        viewerBody.innerHTML = html;
+        viewerStatus.textContent = p.title;
+
+        // MathJax re-typeset (si existe en tu index)
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          window.MathJax.typesetPromise().catch(err => console.log('MathJax error:', err));
+        }
+
+        // Dejar la URL con #posts?post=id (sin romper tu router)
+        if (pushHash) {
+          history.replaceState(null, '', `#posts?post=${encodeURIComponent(p.id)}`);
+        }
+      } catch (e) {
+        viewerStatus.textContent = 'Error al cargar el post';
+        viewerBody.innerHTML = `
+          <div class="empty-state">
+            <p>No pude cargar <strong>${escapeHtml(p.file)}</strong>.</p>
+            <p style="margin-top:0.6rem;">Revisa que el archivo exista y la ruta sea correcta.</p>
+          </div>
+        `;
+      }
+    }
+
+    function clearViewer(pushHash=true) {
+      activeId = null;
+      renderList(searchEl.value);
+      backBtn.style.display = 'none';
+      viewerStatus.textContent = 'Selecciona un post de la lista 👈';
+      viewerBody.innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-book-open" style="font-size:2rem; color:#06f2ca;"></i>
+          <p style="margin-top:1rem;">Aquí se cargará el contenido del post.</p>
+        </div>
+      `;
+      if (pushHash) history.replaceState(null, '', '#posts');
+    }
+
+    function getPostFromHash() {
+      // Espera #posts?post=ID
+      const h = (window.location.hash || '');
+      if (!h.startsWith('#posts')) return null;
+      const idx = h.indexOf('?');
+      if (idx === -1) return null;
+      const qs = new URLSearchParams(h.slice(idx + 1));
+      return qs.get('post');
+    }
+
+    async function init() {
+      try {
+        const res = await fetch(POSTS_JSON, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        posts = await res.json();
+
+        // Orden: más nuevo arriba (YYYY-MM-DD funciona lexicográficamente)
+        posts.sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+
+        renderList('');
+
+        // Click en items
+        listEl.addEventListener('click', (e) => {
+          const item = e.target.closest('.post-item');
+          if (!item) return;
+          loadPostById(item.dataset.id);
+        });
+
+        // Buscar
+        searchEl.addEventListener('input', () => renderList(searchEl.value));
+
+        // Volver
+        backBtn.addEventListener('click', () => clearViewer());
+
+        // Si abres directo con hash
+        const fromHash = getPostFromHash();
+        if (fromHash) loadPostById(fromHash, false);
+
+        // Si cambia el hash (back/forward)
+        window.addEventListener('hashchange', () => {
+          const p = getPostFromHash();
+          if (p) loadPostById(p, false);
+          else if ((window.location.hash || '') === '#posts') clearViewer(false);
+        });
+
+      } catch (e) {
+        listEl.innerHTML = `
+          <div class="empty-state">
+            <p>No pude leer <strong>${POSTS_JSON}</strong>.</p>
+            <p style="margin-top:0.6rem;">Crea el archivo y verifica la ruta.</p>
+          </div>
+        `;
+      }
+    }
+
+    init();
+  })();
 </script>
