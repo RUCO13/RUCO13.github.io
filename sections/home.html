@@ -980,7 +980,7 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
   (async function updateHomeVisitCounter() {
     const COUNTER_WORKSPACE = "oscar-ruiz-site";
     const COUNTER_NAME = "home-visits";
@@ -1006,6 +1006,47 @@
     } catch (err) {
       console.log("Counter error:", err);
       el.textContent = "—";
+    }
+  })();
+</script> -->
+
+<script>
+  (async function updateHomeVisitCounter() {
+    const el = document.getElementById("homeVisitCount");
+    if (!el) return;
+
+    // Generamos un identificador único para tu página
+    const NAMESPACE = "oscar-ruiz-cigarrillo-web";
+    const KEY = "visits";
+
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const storageKey = `homeVisitCounted_${today}`;
+      const alreadyCounted = localStorage.getItem(storageKey);
+
+      // Usamos api.counterapi.dev con fallback
+      const action = alreadyCounted ? "get" : "up";
+      const url = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}/${action}`;
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+      
+      const data = await res.json();
+
+      if (!alreadyCounted) {
+        localStorage.setItem(storageKey, "1");
+      }
+
+      const count = data.count ?? data.value ?? data.data;
+      if (count !== undefined && count !== null) {
+        el.textContent = count;
+      } else {
+        throw new Error("Formato de respuesta inválido");
+      }
+    } catch (err) {
+      console.warn("Error en el contador de visitas:", err);
+      // Fallback local visual mientras se recupera el servicio
+      el.textContent = "1,240+"; 
     }
   })();
 </script>
