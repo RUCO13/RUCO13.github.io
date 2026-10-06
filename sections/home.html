@@ -65,6 +65,10 @@
 
   .profile-section {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .profile-image {
@@ -125,30 +129,6 @@
     transform: translateY(-5px) scale(1.1);
     background: rgba(6, 242, 202, 0.2);
     box-shadow: 0 10px 25px rgba(6, 242, 202, 0.3);
-  }
-
-  /* Visit counter */
-  .home-visit-counter {
-    margin: 1.2rem auto 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.7rem 1rem;
-    border-radius: 12px;
-    background: rgba(4, 244, 232, 0.08);
-    border: 1px solid rgba(4, 244, 232, 0.25);
-    color: #e2e8f0;
-    font-weight: 700;
-    backdrop-filter: blur(10px);
-  }
-
-  .home-visit-counter i {
-    color: #04f4e8;
-  }
-
-  .home-visit-counter span {
-    color: #06f2ca;
-    font-weight: 900;
   }
 
   .hero-content {
@@ -682,12 +662,6 @@
             <i class="fa-brands fa-orcid"></i>
           </a>
         </div>
-
-        <!-- Visit counter (HOME) -->
-        <div class="home-visit-counter" title="Total visits">
-          <i class="fas fa-eye"></i>
-          Visits: <span id="homeVisitCount">Loading...</span>
-        </div>
       </div>
 
       <div class="hero-content">
@@ -802,7 +776,7 @@
               <i class="fas fa-users"></i>
               <span class="latest-pub-meta-label">Authors:</span>
               <span class="latest-pub-meta-value">
-                L. E. Tapia-Rodríguez, J. F. Hernandez-Martínez, A. Ramírez-Pérez; M. A. Lastras-Montaño, <strong> O. Ruiz-Cigarrillo</strong> , K. Biermann, P. V. Santos, L. F. Lastras-Martínez.
+                L. E. Tapia-Rodríguez, J. F. Hernandez-Martínez, A. Ramírez-Pérez, M. A. Lastras-Montaño, <strong>O. Ruiz-Cigarrillo</strong>, K. Biermann, P. V. Santos, L. F. Lastras-Martínez
               </span>
             </div>
 
@@ -816,8 +790,8 @@
               <i class="fas fa-link"></i>
               <span class="latest-pub-meta-label">DOI:</span>
               <span class="latest-pub-meta-value">
-                <a href="https://aipp.silverchair-cdn.com/data/SiteBuilderAssets/Live/Images/jap/jap_cover1224123699.jpg" target="_blank" rel="noopener">
-                  https://doi.org/10.1063/5.0346326
+                <a href="https://pubs.aip.org/aip/jap/article/140/12/125703/3405187" target="_blank" rel="noopener">
+                  10.1063/5.0346326
                 </a>
               </span>
             </div>
@@ -979,75 +953,4 @@
     </div>
   </div>
 </div>
-
-<!-- <script>
-  (async function updateHomeVisitCounter() {
-    const COUNTER_WORKSPACE = "oscar-ruiz-site";
-    const COUNTER_NAME = "home-visits";
-    const el = document.getElementById("homeVisitCount");
-    if (!el) return;
-
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      const key = `homeVisitCounted_${today}`;
-      const alreadyCounted = localStorage.getItem(key);
-
-      const url = alreadyCounted
-        ? `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/get`
-        : `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/up`;
-
-      const res = await fetch(url);
-      const data = await res.json();
-
-      if (!alreadyCounted) localStorage.setItem(key, "1");
-
-      const value = data && (data.data ?? data.count ?? data.value);
-      el.textContent = value !== undefined && value !== null ? value : "—";
-    } catch (err) {
-      console.log("Counter error:", err);
-      el.textContent = "—";
-    }
-  })();
-</script> -->
-
-<script>
-  (async function updateHomeVisitCounter() {
-    const el = document.getElementById("homeVisitCount");
-    if (!el) return;
-
-    // Generamos un identificador único para tu página
-    const NAMESPACE = "oscar-ruiz-cigarrillo-web";
-    const KEY = "visits";
-
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      const storageKey = `homeVisitCounted_${today}`;
-      const alreadyCounted = localStorage.getItem(storageKey);
-
-      // Usamos api.counterapi.dev con fallback
-      const action = alreadyCounted ? "get" : "up";
-      const url = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}/${action}`;
-
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
-      
-      const data = await res.json();
-
-      if (!alreadyCounted) {
-        localStorage.setItem(storageKey, "1");
-      }
-
-      const count = data.count ?? data.value ?? data.data;
-      if (count !== undefined && count !== null) {
-        el.textContent = count;
-      } else {
-        throw new Error("Formato de respuesta inválido");
-      }
-    } catch (err) {
-      console.warn("Error en el contador de visitas:", err);
-      // Fallback local visual mientras se recupera el servicio
-      el.textContent = "1,240+"; 
-    }
-  })();
-</script>
 <!-- =================== END HOME (FULL) =================== -->
