@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme" content="hugo-academic">
+  <meta name="theme" content="oscar-academic">
   <meta name="author" content="Oscar Ruiz Cigarrillo">
   <title>Oscar's web page</title>
   <link rel="icon" href="data/images/logo.png" type="image/icon type">
@@ -36,7 +36,11 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
 
     body {
       font-family: 'Roboto', sans-serif;
@@ -47,7 +51,6 @@
       scrollbar-width: thin;
     }
 
-    /* Global image safety: prevents overflow in any section */
     img, svg, video, canvas {
       max-width: 100%;
       height: auto;
@@ -118,19 +121,15 @@
     .section {
       display: none;
       min-height: calc(100vh - 80px);
-      padding: 0; /* IMPORTANT: no padding here, we control padding with .section-content */
+      padding: 0;
     }
     .section.active { display: block; }
 
-    /* IMPORTANT FIX:
-       - Remove the global max-width constraint from the wrapper that hosts home.html
-       - Let each section define its own width logic.
-    */
     .section-content {
       width: 100%;
-      max-width: none;     /* ✅ key fix */
-      margin: 0;           /* ✅ key fix */
-      padding: 0;          /* ✅ key fix */
+      max-width: none;
+      margin: 0;
+      padding: 0;
     }
 
     /* Loading UI */
@@ -215,7 +214,6 @@
   </nav>
 
   <div class="main-container">
-    <!-- Home Section -->
     <section class="section active" id="home">
       <div class="section-content">
         <div class="loading">
@@ -225,7 +223,6 @@
       </div>
     </section>
 
-    <!-- Research Section -->
     <section class="section" id="research">
       <div class="section-content">
         <div class="loading">
@@ -235,7 +232,6 @@
       </div>
     </section>
 
-    <!-- Posts Section -->
     <section class="section" id="posts">
       <div class="section-content">
         <div class="loading">
@@ -245,7 +241,6 @@
       </div>
     </section>
 
-    <!-- Code Section -->
     <section class="section" id="code">
       <div class="section-content">
         <div class="loading">
@@ -255,7 +250,6 @@
       </div>
     </section>
 
-    <!-- Teaching Section -->
     <section class="section" id="teaching">
       <div class="section-content">
         <div class="loading">
@@ -265,7 +259,6 @@
       </div>
     </section>
 
-    <!-- Acknowledges Section -->
     <section class="section" id="acknowledges">
       <div class="section-content">
         <div class="loading">
@@ -277,7 +270,6 @@
   </div>
 
   <script>
-    // Lazy section loader
     const loadedSections = new Set();
 
     const sectionPaths = {
@@ -315,12 +307,8 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const html = await response.text();
-
-        // Put section HTML directly into container
         contentDiv.innerHTML = html;
 
-        // IMPORTANT:
-        // If your section file contains <style> tags, keep them, but avoid duplicates:
         const styles = contentDiv.querySelectorAll('style');
         styles.forEach(styleTag => {
           const key = `section-style-${sectionId}`;
@@ -330,16 +318,12 @@
             s.textContent = styleTag.textContent;
             document.head.appendChild(s);
           }
-          styleTag.remove(); // remove inline style from body to keep DOM clean
+          styleTag.remove();
         });
 
-        // Re-execute scripts inside section
         retargetScripts(contentDiv);
-
         loadedSections.add(sectionId);
-        console.log(`✅ Loaded section: ${sectionId}`);
 
-        // Re-typeset MathJax after injection
         if (window.MathJax && window.MathJax.typesetPromise) {
           window.MathJax.typesetPromise().catch(err => console.log('MathJax error:', err));
         }
@@ -388,7 +372,6 @@
           const sectionId = this.getAttribute('data-section');
           showSection(sectionId);
 
-          // Close mobile menu
           navLinksContainer.classList.remove('active');
           const icon = mobileToggle.querySelector('i');
           icon.classList.remove('fa-times');
@@ -408,14 +391,12 @@
         }
       });
 
-      // Initial route
       const initial = getSectionFromHash();
       showSection(initial, false);
 
-      // Hash changes
       window.addEventListener('hashchange', () => {
         const target = getSectionFromHash();
-        showSection(target, false);
+        showSection(target, false); 
       });
     });
   </script>

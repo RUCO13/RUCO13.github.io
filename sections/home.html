@@ -308,6 +308,11 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .latest-pub-card:last-child {
+    margin-bottom: 0;
   }
 
   .latest-pub-card::before {
@@ -681,7 +686,7 @@
         <!-- Visit counter (HOME) -->
         <div class="home-visit-counter" title="Total visits">
           <i class="fas fa-eye"></i>
-          Visits: <span id="homeVisitCount"> </span>
+          Visits: <span id="homeVisitCount">Loading...</span>
         </div>
       </div>
 
@@ -698,14 +703,14 @@
         <div class="hero-highlights">
           <div class="highlight-item">
             <i class="fas fa-atom"></i>
-            <h3>DFT Work</h3>
+            <h3>DFT-MBPT Work</h3>
             <p>Advanced computational modeling for electronic and optical properties of nanostructures</p>
           </div>
 
           <div class="highlight-item">
             <i class="fas fa-microscope"></i>
             <h3>Experimental Physics</h3>
-            <p>Solid state physics and nanophotonics research</p>
+            <p>Condensed Matter Physics and Nanophotonics research</p>
           </div>
 
           <div class="highlight-item">
@@ -723,7 +728,7 @@
           <div class="highlight-item">
             <i class="fas fa-handshake"></i>
             <h3>Acknowledges</h3>
-            <p>Grateful to SECIHTI, UASLP,  LNS and CNS for their invaluable support</p>
+            <p>Grateful to SECIHTI, UASLP, LNS and CNS for their invaluable support</p>
           </div>
         </div>
       </div>
@@ -771,15 +776,79 @@
     <div class="latest-pub-container">
       <h2 class="latest-pub-title">
         <i class="fas fa-newspaper"></i>
-        Latest Publication
+        Latest Publications
       </h2>
 
+      <!-- PUBLICATION 1 (NUEVA) -->
       <div class="latest-pub-card">
         <div class="latest-pub-badge">
           <i class="fas fa-star"></i>
-          NEW 2025
+          NEW 2026
         </div>
 
+        <img
+          src="https://pubs.aip.org/data/Journals/JAPIAU/939883/jap_140_12_125703_online.jpg"
+          alt="Journal of Applied Physics Cover"
+          class="latest-pub-image"
+        />
+
+        <div class="latest-pub-info">
+          <h3>
+            Non-linear intensity dependence of circularly polarized reflectance difference spectra as a probe for spin dynamics in quantum wells
+          </h3>
+
+          <div class="latest-pub-meta">
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-users"></i>
+              <span class="latest-pub-meta-label">Authors:</span>
+              <span class="latest-pub-meta-value">
+                L. E. Tapia-Rodríguez, J. F. Hernandez-Martínez, A. Ramírez-Pérez; M. A. Lastras-Montaño, <strong> O. Ruiz-Cigarrillo</strong> , K. Biermann, P. V. Santos, L. F. Lastras-Martínez.
+              </span>
+            </div>
+
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-journal-whills"></i>
+              <span class="latest-pub-meta-label">Journal:</span>
+              <span class="latest-pub-meta-value"><strong>Journal of Applied Physics</strong></span>
+            </div>
+
+            <div class="latest-pub-meta-item">
+              <i class="fas fa-link"></i>
+              <span class="latest-pub-meta-label">DOI:</span>
+              <span class="latest-pub-meta-value">
+                <a href="https://aipp.silverchair-cdn.com/data/SiteBuilderAssets/Live/Images/jap/jap_cover1224123699.jpg" target="_blank" rel="noopener">
+                  https://doi.org/10.1063/5.0346326
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <p class="latest-pub-abstract">
+            <strong>Abstract:</strong> Reflectance difference spectroscopy (RDS)/reflectance anisotropy spectroscopy is traditionally used to study symmetry breaking in cubic crystals using linearly polarized light. In this work, we demonstrate a modified approach using circularly polarized light (RDSc) to investigate spin dynamics in (001)-oriented quantum well structures. While standard RDS generates a homogeneous spin distribution, RDSc creates spin-polarized carriers in the conduction band. We show that the resulting anisotropy line shape remains consistent with standard RDS; however, the signal strength is sensitive to carrier spin relaxation. By analyzing the dependence of the RDSc signal strength on probe light intensity, we successfully monitored the spin dynamics of photogenerated carriers. Our results reveal that the RDSc strength is highly intensity-dependent, establishing the non-linear response of this technique as an effective, non-invasive method for studying spin evolution and relaxation mechanisms in semiconductor heterostructures.
+          </p>
+
+          <div class="latest-pub-tags">
+            <span class="latest-pub-tag">Condensed Matter</span>
+            <span class="latest-pub-tag">Optical Response</span>
+            <span class="latest-pub-tag">Applied Physics</span>
+          </div>
+
+          <div class="latest-pub-buttons">
+            <a
+              href="https://pubs.aip.org/aip/jap/article/140/12/125703/3405187"
+              target="_blank"
+              rel="noopener"
+              class="latest-pub-btn latest-pub-btn-primary"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Read Paper
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUBLICATION 2 -->
+      <div class="latest-pub-card">
         <img
           src="https://cms.iopscience.org/25885147-ec1f-11e5-b0b6-759f86a2008e/journal_cover?guest=true"
           alt="Publication Cover"
@@ -796,11 +865,11 @@
             <div class="latest-pub-meta-item">
               <i class="fas fa-users"></i>
               <span class="latest-pub-meta-label">Authors:</span>
-              <span class="latest-pub-meta-value"
-                ><strong>Oscar Ruiz-Cigarrillo</strong>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García,
+              <span class="latest-pub-meta-value">
+                <strong>Oscar Ruiz-Cigarrillo</strong>, Raul Eduardo Balderas-Navarro, Adonay Benjamín Culebro-García,
                 David Alejandro Zarazúa-Martínez, Ulises Zavala-Moran, Osvaldo Del Pozo-Zamudio, Gabriela Flores
-                Rangel, Boris Mizaikoff</span
-              >
+                Rangel, Boris Mizaikoff
+              </span>
             </div>
 
             <div class="latest-pub-meta-item">
@@ -812,11 +881,11 @@
             <div class="latest-pub-meta-item">
               <i class="fas fa-link"></i>
               <span class="latest-pub-meta-label">DOI:</span>
-              <span class="latest-pub-meta-value"
-                ><a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" rel="noopener"
-                  >10.1063/5.0243213</a
-                ></span
-              >
+              <span class="latest-pub-meta-value">
+                <a href="https://pubs.aip.org/aip/adv/issue/15/1" target="_blank" rel="noopener">
+                  10.1063/5.0243213
+                </a>
+              </span>
             </div>
           </div>
 
@@ -826,13 +895,7 @@
             Functional Theory (TDDFT) with optimized hybrid functionals (B3LYP and Gau-PBE) and a long-range corrected
             kernel (LRC), we study strain-tunable optical properties in monolayer \(\mathrm{Sb_2Te_3}\). Uniaxial
             tensile strain along the \(x\)-direction induces optical anisotropy between in-plane components and
-            modified near-infrared absorption. Both functionals yield consistent results for 0-5% strain, validating
-            our predictions. The TDDFT-LRC approach captures the essential physics, validating through this comparison
-            with more robust reference calculations. Strain-induced anisotropy with \(\varepsilon_{xx}/\varepsilon_{yy}\)
-            ratios of 1.4-3 eV suggests applications in polarization-sensitive photodetectors and strain sensors. This
-            work presents a computational framework for strain-engineered optical properties in \(\mathrm{Sb_2Te_3}\)
-            and related chalcogenides, helping in the development of next-generation optoelectronic devices where
-            mechanical deformation modulates optical response.
+            modified near-infrared absorption.
           </p>
 
           <div class="latest-pub-tags">
@@ -883,7 +946,7 @@
 
         <div class="logo-item">
           <a href="https://www.uaslp.mx/" target="_blank" rel="noopener">
-            <img src="https://wp.uaslp.mx/noticias/wp-content/uploads/sites/5/2022/01/UASLP.png" alt="UASLP" />
+            <img src="./logos/uaslp-1.png" alt="UASLP" />
             <div class="logo-name">UASLP</div>
             <div class="logo-description">Universidad Autónoma de San Luis Potosí</div>
           </a>
@@ -891,10 +954,7 @@
 
         <div class="logo-item">
           <a href="https://www.iico.uaslp.mx/#gsc.tab=0" target="_blank" rel="noopener">
-            <img
-              src="https://adminportal.uaslp.mx/ImgEntidad/50/Paginas/19-07-2022_84_Investigacion-UASLP-24.jpg"
-              alt="IICO"
-            />
+            <img src="./logos/iico-logo.png" alt="IICO" />
             <div class="logo-name">IICO</div>
             <div class="logo-description">Instituto de Investigación en Comunicación Óptica</div>
           </a>
@@ -902,10 +962,7 @@
 
         <div class="logo-item">
           <a href="https://lns.buap.mx/" target="_blank" rel="noopener">
-            <img
-              src="https://lh6.googleusercontent.com/proxy/WlYAbhxsWt91y4uOsZndw5rbi3wORmlAOWhX1b1LYy9Ut4Wd-qDWtGQbLLfEIrfNBP7QZVnSCKlwLrBnaF6R6w"
-              alt="LNS"
-            />
+            <img src="./logos/lns.svg" alt="LNS" />
             <div class="logo-name">LNS</div>
             <div class="logo-description">Laboratorio Nacional de Supercómputo del Sureste de México</div>
           </a>
@@ -923,28 +980,21 @@
   </div>
 </div>
 
-<!-- <script>
-  // 1) Cambia estos 2 valores (pon algo único)
-  const COUNTER_WORKSPACE = "oscar-ruiz-site";
-  const COUNTER_NAME = "home-visits";
-
-  async function updateHomeVisitCounter() {
+<script>
+  (async function updateHomeVisitCounter() {
+    const COUNTER_WORKSPACE = "oscar-ruiz-site";
+    const COUNTER_NAME = "home-visits";
     const el = document.getElementById("homeVisitCount");
     if (!el) return;
 
     try {
-      // Cuenta 1 vez por día por navegador (para evitar subir loco)
       const today = new Date().toISOString().slice(0, 10);
       const key = `homeVisitCounted_${today}`;
       const alreadyCounted = localStorage.getItem(key);
 
       const url = alreadyCounted
-        ? `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(
-            COUNTER_NAME
-          )}/get`
-        : `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(
-            COUNTER_NAME
-          )}/up`;
+        ? `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/get`
+        : `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_WORKSPACE)}/${encodeURIComponent(COUNTER_NAME)}/up`;
 
       const res = await fetch(url);
       const data = await res.json();
@@ -957,8 +1007,6 @@
       console.log("Counter error:", err);
       el.textContent = "—";
     }
-  }
-
-  document.addEventListener("DOMContentLoaded", updateHomeVisitCounter);
-</script> -->
+  })();
+</script>
 <!-- =================== END HOME (FULL) =================== -->
